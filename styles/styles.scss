@@ -228,6 +228,7 @@ footer {
                 width: 60%;
                 flex-wrap: wrap;
                 justify-content: center;
+                letter-spacing:5px;
 
                 #exitBattle {
                     background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
@@ -240,6 +241,7 @@ footer {
                     color: white;
                     box-shadow: 0 0 20px #eee;
                     border-radius: 10px;
+
                 }
 
                 #exitBattle:hover {
@@ -329,6 +331,7 @@ footer {
                     border-radius: 5px;
                     font-weight: bolder;
                     box-shadow: 1px 1px 3px black;
+                    letter-spacing:2px;
                 }
             }
 
