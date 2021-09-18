@@ -16,27 +16,7 @@
         box-shadow: 5px 5px 10px black;
         overflow: hidden;
 
-        #myPokeballs {
 
-            img {
-                width: 2rem;
-            }
-
-            position: absolute;
-            right: 1rem;
-
-        }
-
-        #enemyPokeballs {
-
-            img {
-                width: 2rem;
-            }
-
-            position: absolute;
-            left: 1rem;
-
-        }
 
         #volume {
             position: absolute;
@@ -150,229 +130,255 @@
             }
         }
 
-
-        #battleField {
-            background-image: url(../media/img/fieldBackground.png);
-            height: 68%;
+        #game{
             width: 100%;
-            background-size: contain;
-            position: relative;
+            height: 100%;
+            #battleField {
+                background-image: url(../media/img/fieldBackground.png);
+                height: 68%;
+                width: 100%;
+                background-size: contain;
+                position: relative;
+                #myPokeballs {
 
-            #myPkm {
-                width: 20rem;
-                position: absolute;
-                bottom: 0;
-                left: 10rem;
-
-                img {
-                    width: 9rem;
-                    height: 9rem;
-                    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-                    margin: -1rem;
+                    img {
+                        width: 2rem;
+                    }
+        
+                    position: absolute;
+                    right: 1rem;
+        
                 }
-
-
-            }
-
-            #enemyPkm {
-                width: 20rem;
-                position: absolute;
-                top: 5rem;
-                right: 0;
-
-                img {
-                    width: 13rem;
-                    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7))
+        
+                #enemyPokeballs {
+        
+                    img {
+                        width: 2rem;
+                    }
+        
+                    position: absolute;
+                    left: 1rem;
+        
+                }
+    
+                #myPkm {
+                    width: 20rem;
+                    position: absolute;
+                    bottom: 0;
+                    left: 10rem;
+    
+                    img {
+                        width: 9rem;
+                        height: 9rem;
+                        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+                        margin: -1rem;
+                    }
+    
+    
+                }
+    
+                #enemyPkm {
+                    width: 20rem;
+                    position: absolute;
+                    top: 5rem;
+                    right: 0;
+    
+                    img {
+                        width: 13rem;
+                        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7))
+                    }
                 }
             }
-        }
-
-        #display {
-            display: flex;
-            justify-content: space-around;
-            height: 32%;
-            width: 100%;
-            background: linear-gradient(to right, #6190e8, #a7bfe8);
-            bottom: 10;
-            position: absolute;
-            border-top: 1px solid black;
-
-
-            #actionButtons {
+    
+            #display {
                 display: flex;
-                align-items: center;
-                width: 60%;
-                flex-wrap: wrap;
-                justify-content: center;
-                letter-spacing: 5px;
-
-                #exitBattle {
-                    background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
-                    margin: 10px;
-                    padding: 15px 45px;
-                    text-align: center;
-                    text-transform: uppercase;
-                    transition: 0.5s;
-                    background-size: 200% auto;
-                    color: white;
-                    box-shadow: 0 0 20px #eee;
-                    border-radius: 10px;
-
-                }
-
-                #exitBattle:hover {
-                    background-position: right center;
-                    /* change the direction of the change here */
-                    color: #fff;
-                    text-decoration: none;
-                }
-
-                #fight {
-                    background-image: linear-gradient(to right, #093028 0%, #237A57 51%, #093028 100%)
-                }
-
-                #fight {
-                    margin: 10px;
-                    padding: 15px 45px;
-                    text-align: center;
-                    text-transform: uppercase;
-                    transition: 0.5s;
-                    background-size: 200% auto;
-                    color: white;
-                    box-shadow: 0 0 20px #eee;
-                    border-radius: 10px;
-                    display: block;
-                }
-
-                #fight:hover {
-                    background-position: right center;
-                    /* change the direction of the change here */
-                    color: #fff;
-                    text-decoration: none;
-                }
-
-
-                #resetBattle {
-                    background-image: linear-gradient(to right, #FF8008 0%, #FFC837 51%, #FF8008 100%)
-                }
-
-                #resetBattle {
-                    margin: 10px;
-                    padding: 15px 45px;
-                    text-align: center;
-                    text-transform: uppercase;
-                    transition: 0.5s;
-                    background-size: 200% auto;
-                    color: white;
-                    box-shadow: 0 0 20px #eee;
-                    border-radius: 10px;
-                    display: block;
-                }
-
-                #resetBattle:hover {
-                    background-position: right center;
-                    /* change the direction of the change here */
-                    color: #fff;
-                    text-decoration: none;
-                }
-
-                #skipBattle {
-                    background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%)
-                }
-
-                #skipBattle {
-                    margin: 10px;
-                    padding: 15px 45px;
-                    text-align: center;
-                    text-transform: uppercase;
-                    transition: 0.5s;
-                    background-size: 200% auto;
-                    color: white;
-                    box-shadow: 0 0 20px #eee;
-                    border-radius: 10px;
-                    display: block;
-                }
-
-                #skipBattle:hover {
-                    background-position: right center;
-                    /* change the direction of the change here */
-                    color: #fff;
-                    text-decoration: none;
-                }
-
-                .actionButton {
-                    width: 15rem;
-                    height: 3rem;
-                    margin: 0.5rem;
-                    border-radius: 5px;
-                    font-weight: bolder;
-                    box-shadow: 1px 1px 3px black;
+                justify-content: space-around;
+                height: 32%;
+                width: 100%;
+                background: linear-gradient(to right, #6190e8, #a7bfe8);
+                bottom: 10;
+                position: absolute;
+                border-top: 1px solid black;
+    
+    
+                #actionButtons {
+                    display: flex;
+                    align-items: center;
+                    width: 60%;
+                    flex-wrap: wrap;
+                    justify-content: center;
                     letter-spacing: 5px;
+    
+                    #exitBattle {
+                        background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+                        margin: 10px;
+                        padding: 15px 45px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        transition: 0.5s;
+                        background-size: 200% auto;
+                        color: white;
+                        box-shadow: 0 0 20px #eee;
+                        border-radius: 10px;
+    
+                    }
+    
+                    #exitBattle:hover {
+                        background-position: right center;
+                        /* change the direction of the change here */
+                        color: #fff;
+                        text-decoration: none;
+                    }
+    
+                    #fight {
+                        background-image: linear-gradient(to right, #093028 0%, #237A57 51%, #093028 100%)
+                    }
+    
+                    #fight {
+                        margin: 10px;
+                        padding: 15px 45px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        transition: 0.5s;
+                        background-size: 200% auto;
+                        color: white;
+                        box-shadow: 0 0 20px #eee;
+                        border-radius: 10px;
+                        display: block;
+                    }
+    
+                    #fight:hover {
+                        background-position: right center;
+                        /* change the direction of the change here */
+                        color: #fff;
+                        text-decoration: none;
+                    }
+    
+    
+                    #resetBattle {
+                        background-image: linear-gradient(to right, #FF8008 0%, #FFC837 51%, #FF8008 100%)
+                    }
+    
+                    #resetBattle {
+                        margin: 10px;
+                        padding: 15px 45px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        transition: 0.5s;
+                        background-size: 200% auto;
+                        color: white;
+                        box-shadow: 0 0 20px #eee;
+                        border-radius: 10px;
+                        display: block;
+                    }
+    
+                    #resetBattle:hover {
+                        background-position: right center;
+                        /* change the direction of the change here */
+                        color: #fff;
+                        text-decoration: none;
+                    }
+    
+                    #skipBattle {
+                        background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%)
+                    }
+    
+                    #skipBattle {
+                        margin: 10px;
+                        padding: 15px 45px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        transition: 0.5s;
+                        background-size: 200% auto;
+                        color: white;
+                        box-shadow: 0 0 20px #eee;
+                        border-radius: 10px;
+                        display: block;
+                    }
+    
+                    #skipBattle:hover {
+                        background-position: right center;
+                        /* change the direction of the change here */
+                        color: #fff;
+                        text-decoration: none;
+                    }
+    
+                    .actionButton {
+                        width: 15rem;
+                        height: 3rem;
+                        margin: 0.5rem;
+                        border-radius: 5px;
+                        font-weight: bolder;
+                        box-shadow: 1px 1px 3px black;
+                        letter-spacing: 5px;
+                    }
                 }
-            }
-
-            #pkmBox {
-                width: 18rem;
-                overflow-y: scroll;
-                text-align: center;
-
-                button {
-                    width: 16rem;
-                    height: 4rem;
-                    margin: 0.5rem;
-                    border-radius: 5px;
-                    font-weight: bolder;
-                    background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
-                    margin: 10px;
+    
+                #pkmBox {
+                    width: 18rem;
+                    overflow-y: scroll;
                     text-align: center;
-                    text-transform: uppercase;
-                    transition: 0.5s;
-                    background-size: 200% auto;
-                    box-shadow: 0 0 20px #eee;
-                    border-radius: 10px;
-                    display: block;
-
-                    figure {
-                        padding: 0.5rem;
-                        display: flex;
-
-                        img {
-                            width: 3rem;
-                            height: 3rem;
-                        }
-
-                        figcaption {
-                            margin-left: 0.5rem;
-
-                            .statusPkm {
-                                border: 1px solid black;
-                                background-color: green;
-                                width: 5rem;
-                                border-radius: 5px;
-
+    
+                    button {
+                        width: 16rem;
+                        height: 4rem;
+                        margin: 0.5rem;
+                        border-radius: 5px;
+                        font-weight: bolder;
+                        background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+                        margin: 10px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        transition: 0.5s;
+                        background-size: 200% auto;
+                        box-shadow: 0 0 20px #eee;
+                        border-radius: 10px;
+                        display: block;
+    
+                        figure {
+                            padding: 0.5rem;
+                            display: flex;
+    
+                            img {
+                                width: 3rem;
+                                height: 3rem;
+                            }
+    
+                            figcaption {
+                                margin-left: 0.5rem;
+    
+                                .statusPkm {
+                                    border: 1px solid black;
+                                    background-color: green;
+                                    width: 5rem;
+                                    border-radius: 5px;
+    
+                                }
                             }
                         }
+    
                     }
-
+    
+                    button:hover {
+                        background-position: right center;
+                        /* change the direction of the change here */
+                        text-decoration: none;
+                    }
                 }
-
-                button:hover {
-                    background-position: right center;
-                    /* change the direction of the change here */
-                    text-decoration: none;
+    
+                #pkmBox::-webkit-scrollbar {
+                    width: 7px;
                 }
-            }
-
-            #pkmBox::-webkit-scrollbar {
-                width: 7px;
-            }
-
-            #pkmBox::-webkit-scrollbar-thumb {
-                background-color: gainsboro;
-                border: 1px solid white;
-                border-radius: 10px;
-                margin: 0.5rem;
+    
+                #pkmBox::-webkit-scrollbar-thumb {
+                    background-color: gainsboro;
+                    border: 1px solid white;
+                    border-radius: 10px;
+                    margin: 0.5rem;
+                }
             }
         }
-    }
+            
+        }
+
 }
