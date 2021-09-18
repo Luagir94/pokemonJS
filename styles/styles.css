@@ -1,0 +1,366 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background-color: black;
+}
+
+header {
+  height: 10vh;
+  background-color: red;
+  margin-bottom: 10vh;
+}
+
+footer {
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10vh;
+}
+
+#mainGame {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60vh;
+  position: relative;
+}
+
+#mainGame #monitor {
+  position: relative;
+  background-size: contain;
+  border: 1px solid black;
+  width: 50vw;
+  height: 50vh;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px black;
+  overflow: hidden;
+}
+
+#mainGame #monitor #myPokeballs {
+  position: absolute;
+  right: 1rem;
+}
+
+#mainGame #monitor #myPokeballs img {
+  width: 2rem;
+}
+
+#mainGame #monitor #enemyPokeballs {
+  position: absolute;
+  left: 1rem;
+}
+
+#mainGame #monitor #enemyPokeballs img {
+  width: 2rem;
+}
+
+#mainGame #monitor #volume {
+  position: absolute;
+  z-index: 10;
+  right: -2rem;
+  top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 15rem;
+}
+
+#mainGame #monitor #volume div {
+  margin: 0.5rem;
+  margin: 1.5rem;
+}
+
+#mainGame #monitor #volume input {
+  transform: rotate(90deg);
+  opacity: 0.3;
+}
+
+#mainGame #monitor #volume input:hover {
+  opacity: 1;
+}
+
+#mainGame #monitor #volume input[type='range'] {
+  display: block;
+  width: 5rem;
+}
+
+#mainGame #monitor #volume input[type='range']:focus {
+  outline: none;
+}
+
+#mainGame #monitor #volume input[type='range'],
+#mainGame #monitor #volume input[type='range']::-webkit-slider-runnable-track,
+#mainGame #monitor #volume input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+#mainGame #monitor #volume input[type=range]::-webkit-slider-thumb {
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border: 3px solid black;
+  border-radius: 50%;
+  margin-top: -5px;
+}
+
+#mainGame #monitor #volume input[type=range]::-ms-thumb {
+  background-color: #777;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #333;
+  border-radius: 50%;
+  rotate: 180deg;
+}
+
+#mainGame #monitor #volume input[type=range]::-webkit-slider-runnable-track {
+  background-color: black;
+  height: 3px;
+  rotate: 180deg;
+}
+
+#mainGame #monitor #volume input[type=range]::-moz-range-track {
+  background-color: #777;
+  height: 3px;
+  rotate: 180deg;
+}
+
+#mainGame #monitor #volume input[type=range]::-ms-track {
+  background-color: #777;
+  height: 3px;
+  rotate: 180deg;
+}
+
+#mainGame #monitor #volume input[type=range]::-ms-fill-lower {
+  background-color: HotPink;
+}
+
+#mainGame #monitor #volume input[type=range]::-ms-fill-upper {
+  background-color: black;
+}
+
+#mainGame #monitor #volume #volButton {
+  opacity: 0.3;
+}
+
+#mainGame #monitor #volume #volButton button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+#mainGame #monitor #volume #volButton button img {
+  width: 1rem;
+}
+
+#mainGame #monitor #volume #volButton:hover {
+  opacity: 1;
+}
+
+#mainGame #monitor #battleField {
+  background-image: url(../media/img/fieldBackground.png);
+  height: 68%;
+  width: 100%;
+  background-size: contain;
+  position: relative;
+}
+
+#mainGame #monitor #battleField #myPkm {
+  width: 20rem;
+  position: absolute;
+  bottom: 0;
+  left: 10rem;
+}
+
+#mainGame #monitor #battleField #myPkm img {
+  width: 9rem;
+  height: 9rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+  margin: -1rem;
+}
+
+#mainGame #monitor #battleField #enemyPkm {
+  width: 20rem;
+  position: absolute;
+  top: 5rem;
+  right: 0;
+}
+
+#mainGame #monitor #battleField #enemyPkm img {
+  width: 13rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+#mainGame #monitor #display {
+  display: flex;
+  justify-content: space-around;
+  height: 32%;
+  width: 100%;
+  background: linear-gradient(to right, #6190e8, #a7bfe8);
+  bottom: 10;
+  position: absolute;
+  border-top: 1px solid black;
+}
+
+#mainGame #monitor #display #actionButtons {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#mainGame #monitor #display #actionButtons #exitBattle {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+
+#mainGame #monitor #display #actionButtons #exitBattle:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#mainGame #monitor #display #actionButtons #fight {
+  background-image: linear-gradient(to right, #093028 0%, #237A57 51%, #093028 100%);
+}
+
+#mainGame #monitor #display #actionButtons #fight {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+#mainGame #monitor #display #actionButtons #fight:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#mainGame #monitor #display #actionButtons #resetBattle {
+  background-image: linear-gradient(to right, #FF8008 0%, #FFC837 51%, #FF8008 100%);
+}
+
+#mainGame #monitor #display #actionButtons #resetBattle {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+#mainGame #monitor #display #actionButtons #resetBattle:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#mainGame #monitor #display #actionButtons #skipBattle {
+  background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%);
+}
+
+#mainGame #monitor #display #actionButtons #skipBattle {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+#mainGame #monitor #display #actionButtons #skipBattle:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#mainGame #monitor #display #actionButtons .actionButton {
+  width: 15rem;
+  height: 3rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-weight: bolder;
+  box-shadow: 1px 1px 3px black;
+}
+
+#mainGame #monitor #display #pkmBox {
+  width: 18rem;
+  overflow-y: scroll;
+  text-align: center;
+}
+
+#mainGame #monitor #display #pkmBox button {
+  width: 16rem;
+  height: 4rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-weight: bolder;
+  box-shadow: 1px 1px 3px black;
+}
+
+#mainGame #monitor #display #pkmBox button figure {
+  padding: 0.5rem;
+  display: flex;
+}
+
+#mainGame #monitor #display #pkmBox button figure img {
+  width: 3rem;
+  height: 3rem;
+}
+
+#mainGame #monitor #display #pkmBox button figure figcaption {
+  margin-left: 0.5rem;
+}
+
+#mainGame #monitor #display #pkmBox button figure figcaption .statusPkm {
+  border: 1px solid black;
+  background-color: green;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame #monitor #display #pkmBox::-webkit-scrollbar {
+  width: 7px;
+}
+
+#mainGame #monitor #display #pkmBox::-webkit-scrollbar-thumb {
+  background-color: gainsboro;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 0.5rem;
+}
