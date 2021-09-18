@@ -332,7 +332,15 @@ footer {
   margin: 0.5rem;
   border-radius: 5px;
   font-weight: bolder;
-  box-shadow: 1px 1px 3px black;
+  background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
 }
 
 #mainGame #monitor #display #pkmBox button figure {
@@ -354,6 +362,12 @@ footer {
   background-color: green;
   width: 5rem;
   border-radius: 5px;
+}
+
+#mainGame #monitor #display #pkmBox button:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  text-decoration: none;
 }
 
 #mainGame #monitor #display #pkmBox::-webkit-scrollbar {
