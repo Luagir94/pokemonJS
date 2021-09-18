@@ -385,3 +385,164 @@ footer {
   border-radius: 10px;
   margin: 0.5rem;
 }
+
+#mainGame #monitor #pkmSelection {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+  flex-wrap: wrap;
+}
+
+#mainGame #monitor #pkmSelection p {
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#mainGame #monitor #pkmSelection #pkmList {
+  background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+  width: 50%;
+  height: 90%;
+  overflow-y: scroll;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+#mainGame #monitor #pkmSelection #pkmList ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton {
+  width: 11rem;
+  height: 4rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure {
+  padding: 0.5rem;
+  display: flex;
+}
+
+#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure img {
+  width: 3rem;
+  height: 3rem;
+}
+
+#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure figcaption {
+  margin-left: 0.5rem;
+}
+
+#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure figcaption .fireType {
+  border: 1px solid black;
+  background-color: red;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  text-decoration: none;
+}
+
+#mainGame #monitor #pkmSelection #pkmList::-webkit-scrollbar {
+  width: 7px;
+}
+
+#mainGame #monitor #pkmSelection #pkmList::-webkit-scrollbar-thumb {
+  background-color: gainsboro;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 0.5rem;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox {
+  width: 50%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  position: relative;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 33%);
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm {
+  position: absolute;
+  top: 3rem;
+  left: 2rem;
+  width: 25rem;
+  background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .selectionButton {
+  width: 11rem;
+  height: 4rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .selectionButton figure {
+  padding: 0.5rem;
+  display: flex;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .selectionButton figure img {
+  width: 3rem;
+  height: 3rem;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .selectionButton figure figcaption {
+  margin-left: 0.5rem;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .selectionButton figure figcaption .fireType {
+  border: 1px solid black;
+  background-color: red;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .selectionButton:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  text-decoration: none;
+}
