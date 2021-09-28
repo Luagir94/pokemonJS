@@ -485,16 +485,67 @@ footer {
   background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 33%);
 }
 
-#mainGame #monitor #pkmSelection #selectedBox p {
-  position: absolute;
-  top: 0;
+#mainGame #monitor #pkmSelection #selectedBox #deleteNext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #deleteNext .actionButton {
+  width: 10rem;
+  height: 3rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-weight: bolder;
+  box-shadow: 1px 1px 3px black;
+  letter-spacing: 5px;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #deleteNext #deletePkm {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #deleteNext #deletePkm:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #deleteNext #toGame {
+  background-image: linear-gradient(to right, #3de527 0%, #2db312 51%, #27e527 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #deleteNext #toGame:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
 #mainGame #monitor #pkmSelection #selectedBox #selectedPkm {
-  position: absolute;
+  display: flex;
+  flex-direction: column;
   top: 3rem;
   left: 2rem;
   width: 25rem;
+  height: 16rem;
   background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
   border-radius: 10px;
   border: 1px solid black;
@@ -508,7 +559,7 @@ footer {
   justify-content: center;
 }
 
-#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .selectionButton {
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton {
   width: 11rem;
   height: 4rem;
   margin: 0.5rem;
@@ -525,21 +576,28 @@ footer {
   display: block;
 }
 
-#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .selectionButton figure {
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton figure {
   padding: 0.5rem;
   display: flex;
 }
 
-#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .selectionButton figure img {
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton figure img {
   width: 3rem;
   height: 3rem;
 }
 
-#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .selectionButton figure figcaption {
-  margin-left: 0.5rem;
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton figure figcaption {
+  margin-left: 0.1rem;
+  font-size: 0.8rem;
+  text-align: left;
 }
 
-#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .selectionButton:hover {
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton figure figcaption div {
+  text-align: center;
+  font-weight: 1000;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton:hover {
   background-position: right center;
   /* change the direction of the change here */
   text-decoration: none;

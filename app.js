@@ -1,5 +1,4 @@
-const pkm = [
-    {
+const pkm = [{
         id: 01,
         name: "Bulbasaur",
         spriteFront: "./media/img/sprites/front/001.png",
@@ -386,33 +385,71 @@ const pkm = [
 
 
 ]
-
+const pkmSelected = []
 let pkmListSelection = document.getElementById("pkmToChoose")
+let pokelist =false
+
 for (const pokemons of pkm) {
     let btnPkm = document.createElement("li")
 
-    btnPkm.innerHTML = `<button class="selectionButton">
+    btnPkm.innerHTML = `<button class="selectionButton" id="selectionButton${pokemons.id}">
     <figure>
         <img src="${pokemons.spriteFront}" alt="boton${pokemons.name}">
         <figcaption>${pokemons.name} <div id="" class="${pokemons.type}Type">${pokemons.type}</div></figcaption>
     </figure>
 </button>`
     pkmListSelection.appendChild(btnPkm)
+    btnPkm.onclick = () => {
+        if (pkmSelected.length <= 5) {
+            pkmSelected.push(pokemons)
+            console.log(pkmSelected)
+            addToList(pokemons.id, pokemons.name, pokemons.type, pokemons.spriteFront)
+        }
+    }
 
 }
 
-const pkmSelected = [pkm[6-1], pkm[34-1], pkm[15-1], pkm[25-1], pkm[55-1],pkm[44-1] ]
-
-let pkmListSelected = document.getElementById("pkmChosen")
-for (const pokemons of pkmSelected) {
+const addToList = function (id, name, type, spriteFront) {
+    let selectedPkm = document.getElementById("selectedPkm")
+    if (!pokelist) {
+        pokelist = document.createElement("ol")
+        let att = document.createAttribute("id")
+        att.value = "pkmChosen"
+        pokelist.setAttributeNode(att)
+        selectedPkm.appendChild(pokelist)
+        let pkmListSelected = document.getElementById("pkmChosen")
     let btnPkm = document.createElement("li")
-
-    btnPkm.innerHTML = `<button class="selectionButton">
+    btnPkm.className = "deletePkmn"
+    btnPkm.innerHTML = `<button class="desSelectionButton">
     <figure>
-        <img src="${pokemons.spriteFront}" alt="boton${pokemons.name}">
-        <figcaption>${pokemons.name} <div id="" class="${pokemons.type}Type">${pokemons.type}</div></figcaption>
+        <img src="${spriteFront}" alt="boton${name}">
+        <figcaption>${name} <div id="" class="${type}Type">${type}</div></figcaption>
     </figure>
 </button>`
-pkmListSelected.appendChild(btnPkm)
+    
+    pkmListSelected.appendChild(btnPkm)
+    }else{
+        let pkmListSelected = document.getElementById("pkmChosen")
+    let btnPkm = document.createElement("li")
+    btnPkm.className = "deletePkmn"
+    btnPkm.innerHTML = `<button class="desSelectionButton">
+    <figure>
+        <img src="${spriteFront}" alt="boton${name}">
+        <figcaption>${name} <div id="" class="${type}Type">${type}</div></figcaption>
+    </figure>
+</button>`
+    
+    pkmListSelected.appendChild(btnPkm)
 
+    }
+    
+}
+
+let erasePkm = document.getElementById("deletePkm")
+erasePkm.onclick = () => {
+    pkmSelected.splice(0, pkmSelected.length)
+    console.log(pkmSelected)
+    let liItems = document.getElementById("pkmChosen")
+    liItems.parentNode.removeChild(liItems)
+    pokelist=false
 }
