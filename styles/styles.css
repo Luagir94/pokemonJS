@@ -448,14 +448,14 @@ footer {
 }
 
 #mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure figcaption {
-  margin-left: 0.5rem;
+  margin-left: 0.1rem;
+  font-size: 0.8rem;
+  text-align: left;
 }
 
-#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure figcaption .fireType {
-  border: 1px solid black;
-  background-color: red;
-  width: 5rem;
-  border-radius: 5px;
+#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure figcaption div {
+  text-align: center;
+  font-weight: 1000;
 }
 
 #mainGame #monitor #pkmSelection #pkmList ol li .selectionButton:hover {
@@ -483,6 +483,11 @@ footer {
   height: auto;
   position: relative;
   background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 33%);
+}
+
+#mainGame #monitor #pkmSelection #selectedBox p {
+  position: absolute;
+  top: 0;
 }
 
 #mainGame #monitor #pkmSelection #selectedBox #selectedPkm {
@@ -534,15 +539,85 @@ footer {
   margin-left: 0.5rem;
 }
 
-#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .selectionButton figure figcaption .fireType {
-  border: 1px solid black;
-  background-color: red;
-  width: 5rem;
-  border-radius: 5px;
-}
-
 #mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .selectionButton:hover {
   background-position: right center;
   /* change the direction of the change here */
   text-decoration: none;
+}
+
+.fireType {
+  border: 1px solid black;
+  background-color: #df5900;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.grassType {
+  border: 1px solid black;
+  background-color: #27df27;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.iceType {
+  border: 1px solid black;
+  background-color: #79fff4;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.waterType {
+  border: 1px solid black;
+  background-color: #00aeff;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.bugType {
+  border: 1px solid black;
+  background-color: #bbff1b;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.poisonType {
+  border: 1px solid black;
+  background-color: #cc5df8;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.electricType {
+  border: 1px solid black;
+  background-color: #ffe600;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.groundType {
+  border: 1px solid black;
+  background-color: #ad8d47;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.rockType {
+  border: 1px solid black;
+  background-color: #663f20;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.fairyType {
+  border: 1px solid black;
+  background-color: #fb7eff;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.normalType {
+  border: 1px solid black;
+  background-color: #b3a8a8;
+  width: 5rem;
+  border-radius: 5px;
 }

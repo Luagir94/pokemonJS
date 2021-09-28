@@ -53,14 +53,12 @@
                                     }
             
                                     figcaption {
-                                        margin-left: 0.5rem;
-            
-                                        .fireType {
-                                            border: 1px solid black;
-                                            background-color: red;
-                                            width: 5rem;
-                                            border-radius: 5px;
-            
+                                        margin-left: 0.1rem;
+                                        font-size: 0.8rem;
+                                        text-align: left;
+                                        div{
+                                            text-align: center;
+                                            font-weight: 1000;
                                         }
                                     }
                                 }
@@ -92,7 +90,10 @@
                     height:auto;
                     position: relative;
                     background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 33%);
-                    
+                    p{
+                        position: absolute;
+                        top: 0;
+                    }
                     #selectedPkm{
                         position: absolute;
                         top: 3rem;
@@ -134,13 +135,8 @@
                                         figcaption {
                                             margin-left: 0.5rem;
                 
-                                            .fireType {
-                                                border: 1px solid black;
-                                                background-color: red;
-                                                width: 5rem;
-                                                border-radius: 5px;
-                
-                                            }
+
+
                                         }
                                     }
                                 }
