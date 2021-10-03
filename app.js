@@ -519,24 +519,14 @@ goToGame.onclick = () => {
     `
         pkmBox.appendChild(btnPkm)
         let myChoose = document.getElementById(`myPkm${pokemons.id}`)
-        myChoose.onclick =  async function appendPkm(){
-            battlinPkm.splice(0, battlinPkm.length)
-            battlinPkm.push(pokemons)
-            const result3 = await generateBattlinPkm()
-            console.log(result3)
-           
-
+        myChoose.onclick =() =>{
+            let myPkm = document.getElementById("myPkm")
+            let myBattlinPkmn = document.createElement("figure")
+            myPkm.innerHTML = `<img src="${pokemons.spriteBack}" alt="">`
+            myPkm.appendChild(myBattlinPkmn)
         }
         
     }
-    function generateBattlinPkm() {
-        let myPkm = document.getElementById("myPkm")
-        let myBattlinPkmn = document.createElement("figure")
-        myPkm.innerHTML = `<img src="${battlinPkm.spriteFront}" alt="">`
-            myPkm.appendChild(myBattlinPkmn)
-        
-    }
-
 
 }
 
