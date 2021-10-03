@@ -386,12 +386,14 @@ const pkm = [{
 
 ]
 const pkmSelected = []
+const battlinPkm = []
 let pkmListSelection = document.getElementById("pkmToChoose")
-let pokelist =false
+let goToGame = document.getElementById("toGame")
+let pokelist = false
+let mainGame = false
 
 for (const pokemons of pkm) {
     let btnPkm = document.createElement("li")
-
     btnPkm.innerHTML = `<button class="selectionButton" id="selectionButton${pokemons.id}">
     <figure>
         <img src="${pokemons.spriteFront}" alt="boton${pokemons.name}">
@@ -403,13 +405,13 @@ for (const pokemons of pkm) {
         if (pkmSelected.length <= 5) {
             pkmSelected.push(pokemons)
             console.log(pkmSelected)
-            addToList(pokemons.id, pokemons.name, pokemons.type, pokemons.spriteFront)
+            addToList(pokemons.name, pokemons.type, pokemons.spriteFront)
         }
     }
 
 }
 
-const addToList = function (id, name, type, spriteFront) {
+const addToList = function (name, type, spriteFront) {
     let selectedPkm = document.getElementById("selectedPkm")
     if (!pokelist) {
         pokelist = document.createElement("ol")
@@ -418,31 +420,30 @@ const addToList = function (id, name, type, spriteFront) {
         pokelist.setAttributeNode(att)
         selectedPkm.appendChild(pokelist)
         let pkmListSelected = document.getElementById("pkmChosen")
-    let btnPkm = document.createElement("li")
-    btnPkm.className = "deletePkmn"
-    btnPkm.innerHTML = `<button class="desSelectionButton">
+        let btnPkm = document.createElement("li")
+        btnPkm.innerHTML = `<button class="desSelectionButton">
     <figure>
         <img src="${spriteFront}" alt="boton${name}">
         <figcaption>${name} <div id="" class="${type}Type">${type}</div></figcaption>
     </figure>
 </button>`
-    
-    pkmListSelected.appendChild(btnPkm)
-    }else{
+
+        pkmListSelected.appendChild(btnPkm)
+    } else {
         let pkmListSelected = document.getElementById("pkmChosen")
-    let btnPkm = document.createElement("li")
-    btnPkm.className = "deletePkmn"
-    btnPkm.innerHTML = `<button class="desSelectionButton">
+        let btnPkm = document.createElement("li")
+
+        btnPkm.innerHTML = `<button class="desSelectionButton">
     <figure>
         <img src="${spriteFront}" alt="boton${name}">
         <figcaption>${name} <div id="" class="${type}Type">${type}</div></figcaption>
     </figure>
 </button>`
-    
-    pkmListSelected.appendChild(btnPkm)
+
+        pkmListSelected.appendChild(btnPkm)
 
     }
-    
+
 }
 
 let erasePkm = document.getElementById("deletePkm")
@@ -451,5 +452,92 @@ erasePkm.onclick = () => {
     console.log(pkmSelected)
     let liItems = document.getElementById("pkmChosen")
     liItems.parentNode.removeChild(liItems)
-    pokelist=false
+    pokelist = false
 }
+
+
+
+goToGame.onclick = () => {
+    if (pkmSelected && (pkmSelected.length === 6)) {
+        let selectionStage = document.getElementById("pkmSelection")
+        selectionStage.parentNode.removeChild(selectionStage)
+        let monitor = document.getElementById("monitor")
+        mainGame = document.createElement("div")
+        let att = document.createAttribute("id")
+        att.value = "game"
+        mainGame.setAttributeNode(att)
+        mainGame.innerHTML = `
+        <div id="battleField">
+                        <div id="myPokeballs">
+                            <img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt="">
+                        </div>
+                        <div id="enemyPokeballs">
+                            <img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt="">
+                        </div>
+                        <div id="myPkm">
+                            <figure>
+                                
+                            </figure>
+                        </div>
+                        <div id="enemyPkm">
+                            <figure>
+                                <img src="./media/img/sprites/front/Mewtwo_HGSS.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div id="display">
+                        <div id="actionButtons">
+                            <button class="actionButton" id="fight">Pelear</button>
+                            <button class="actionButton" id="skipBattle">Skip</button>
+                            <button class="actionButton" id="resetBattle">Reiniciar</button>
+                            <button class="actionButton" id="exitBattle">Salir</button>
+                        </div>
+                        <div id="pkmBox">
+                        </div>
+                    </div>
+                </div>
+        
+        
+        `
+        monitor.appendChild(mainGame)
+    }
+    console.log(pkmSelected)
+    for (const pokemons of pkmSelected) {
+        let pkmBox = document.getElementById("pkmBox")
+        let btnPkm = document.createElement("button")
+        let att = document.createAttribute("id")
+        att.value = `myPkm${pokemons.id}`
+        btnPkm.setAttributeNode(att)
+
+
+
+        btnPkm.innerHTML = `
+                                <figure>
+                                    <img src="${pokemons.spriteFront}" alt="">
+                                    <figcaption>${pokemons.name} <div id="statusPkm1" class="statusPkm">Status</div> </figcaption>
+                                </figure>
+    `
+        pkmBox.appendChild(btnPkm)
+        let myChoose = document.getElementById(`myPkm${pokemons.id}`)
+        myChoose.onclick =  async function appendPkm(){
+            battlinPkm.splice(0, battlinPkm.length)
+            battlinPkm.push(pokemons)
+            const result3 = await generateBattlinPkm()
+            console.log(battlinPkm.spriteBack)
+           
+
+        }
+        
+    }
+    async function generateBattlinPkm() {
+        let myPkm = document.getElementById("myPkm")
+        let myBattlinPkmn = document.createElement("figure")
+        myPkm.innerHTML = `<img src="${battlinPkm.spriteFront}" alt="">`
+            myPkm.appendChild(myBattlinPkmn)
+        
+    }
+
+
+}
+
+
