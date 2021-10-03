@@ -523,13 +523,13 @@ goToGame.onclick = () => {
             battlinPkm.splice(0, battlinPkm.length)
             battlinPkm.push(pokemons)
             const result3 = await generateBattlinPkm()
-            console.log(battlinPkm.spriteBack)
+            console.log(result3)
            
 
         }
         
     }
-    async function generateBattlinPkm() {
+    function generateBattlinPkm() {
         let myPkm = document.getElementById("myPkm")
         let myBattlinPkmn = document.createElement("figure")
         myPkm.innerHTML = `<img src="${battlinPkm.spriteFront}" alt="">`
