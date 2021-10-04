@@ -161,20 +161,21 @@ footer {
 
 #mainGame #monitor #game #battleField #myPokeballs {
   position: absolute;
-  right: 1rem;
+  left: 1rem;
 }
 
 #mainGame #monitor #game #battleField #myPokeballs img {
   width: 2rem;
 }
 
-#mainGame #monitor #game #battleField #enemyPokeballs {
+#mainGame #monitor #game #battleField #score {
   position: absolute;
-  left: 1rem;
+  top: 0;
+  left: 50%;
 }
 
-#mainGame #monitor #game #battleField #enemyPokeballs img {
-  width: 2rem;
+#mainGame #monitor #game #battleField #score p {
+  font-size: 1.5rem;
 }
 
 #mainGame #monitor #game #battleField #myPkm {
@@ -243,11 +244,11 @@ footer {
   text-decoration: none;
 }
 
-#mainGame #monitor #game #display #actionButtons #fight {
+#mainGame #monitor #game #display #actionButtons #pkmFight {
   background-image: linear-gradient(to right, #093028 0%, #237A57 51%, #093028 100%);
 }
 
-#mainGame #monitor #game #display #actionButtons #fight {
+#mainGame #monitor #game #display #actionButtons #pkmFight {
   margin: 10px;
   padding: 15px 45px;
   text-align: center;
@@ -260,7 +261,7 @@ footer {
   display: block;
 }
 
-#mainGame #monitor #game #display #actionButtons #fight:hover {
+#mainGame #monitor #game #display #actionButtons #pkmFight:hover {
   background-position: right center;
   /* change the direction of the change here */
   color: #fff;
@@ -367,9 +368,23 @@ footer {
   margin-bottom: 3px;
 }
 
-#mainGame #monitor #game #display #pkmBox button figure figcaption .statusPkmOk {
+#mainGame #monitor #game #display #pkmBox button figure figcaption .okStatusPkm {
   border: 1px solid black;
   background-color: green;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame #monitor #game #display #pkmBox button figure figcaption .injuredStatusPkm {
+  border: 1px solid black;
+  background-color: yellow;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame #monitor #game #display #pkmBox button figure figcaption .koStatusPkm {
+  border: 1px solid black;
+  background-color: red;
   width: 5rem;
   border-radius: 5px;
 }
@@ -682,6 +697,13 @@ footer {
 .normalType {
   border: 1px solid black;
   background-color: #b3a8a8;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.flyingType {
+  border: 1px solid black;
+  background-color: #c6a8f7;
   width: 5rem;
   border-radius: 5px;
 }

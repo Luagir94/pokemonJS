@@ -4,8 +4,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/001.png",
         spriteBack: "./media/img/sprites/back/001.png",
         type: "grass",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 2,
@@ -13,8 +13,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/002.png",
         spriteBack: "./media/img/sprites/back/002.png",
         type: "grass",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 3,
@@ -22,8 +22,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/003.png",
         spriteBack: "./media/img/sprites/back/003.png",
         type: "grass",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 4,
@@ -31,8 +31,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/004.png",
         spriteBack: "./media/img/sprites/back/004.png",
         type: "fire",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 5,
@@ -40,8 +40,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/005.png",
         spriteBack: "./media/img/sprites/back/005.png",
         type: "fire",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 6,
@@ -49,8 +49,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/006.png",
         spriteBack: "./media/img/sprites/back/006.png",
         type: "fire",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 7,
@@ -58,8 +58,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/007.png",
         spriteBack: "./media/img/sprites/back/007.png",
         type: "water",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 8,
@@ -67,8 +67,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/008.png",
         spriteBack: "./media/img/sprites/back/008.png",
         type: "water",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 9,
@@ -76,8 +76,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/009.png",
         spriteBack: "./media/img/sprites/back/009.png",
         type: "water",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 10,
@@ -85,8 +85,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/010.png",
         spriteBack: "./media/img/sprites/back/010.png",
         type: "bug",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 11,
@@ -94,8 +94,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/011.png",
         spriteBack: "./media/img/sprites/back/011.png",
         type: "bug",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 12,
@@ -103,8 +103,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/012.png",
         spriteBack: "./media/img/sprites/back/012.png",
         type: "bug",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 13,
@@ -112,8 +112,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/013.png",
         spriteBack: "./media/img/sprites/back/013.png",
         type: "bug",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 14,
@@ -121,8 +121,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/014.png",
         spriteBack: "./media/img/sprites/back/014.png",
         type: "bug",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 15,
@@ -130,35 +130,35 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/015.png",
         spriteBack: "./media/img/sprites/back/015.png",
         type: "bug",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 16,
         name: "Pidgey",
         spriteFront: "./media/img/sprites/front/016.png",
         spriteBack: "./media/img/sprites/back/016.png",
-        type: "normal",
-        status: "Ok",
-        active: false
+        type: "flying",
+        status: "ok",
+        active: true
     },
     {
         id: 17,
         name: "Pidgeotto",
         spriteFront: "./media/img/sprites/front/017.png",
         spriteBack: "./media/img/sprites/back/017.png",
-        type: "normal",
-        status: "Ok",
-        active: false
+        type: "flying",
+        status: "ok",
+        active: true
     },
     {
         id: 18,
         name: "Pidgeot",
         spriteFront: "./media/img/sprites/front/018.png",
         spriteBack: "./media/img/sprites/back/018.png",
-        type: "normal",
-        status: "Ok",
-        active: false
+        type: "flying",
+        status: "ok",
+        active: true
     },
     {
         id: 19,
@@ -166,8 +166,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/019.png",
         spriteBack: "./media/img/sprites/back/019.png",
         type: "normal",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 20,
@@ -175,25 +175,25 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/020.png",
         spriteBack: "./media/img/sprites/back/020.png",
         type: "normal",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     }, {
         id: 21,
         name: "Spearow",
         spriteFront: "./media/img/sprites/front/021.png",
         spriteBack: "./media/img/sprites/back/021.png",
-        type: "normal",
-        status: "Ok",
-        active: false
+        type: "flying",
+        status: "ok",
+        active: true
     },
     {
         id: 22,
         name: "Fearow",
         spriteFront: "./media/img/sprites/front/022.png",
         spriteBack: "./media/img/sprites/back/022.png",
-        type: "normal",
-        status: "Ok",
-        active: false
+        type: "flying",
+        status: "ok",
+        active: true
     },
     {
         id: 23,
@@ -201,17 +201,17 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/023.png",
         spriteBack: "./media/img/sprites/back/023.png",
         type: "poison",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 24,
-        name: "ArbOk",
+        name: "Arbok",
         spriteFront: "./media/img/sprites/front/024.png",
         spriteBack: "./media/img/sprites/back/024.png",
         type: "poison",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 25,
@@ -219,8 +219,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/025.png",
         spriteBack: "./media/img/sprites/back/025.png",
         type: "electric",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 26,
@@ -228,8 +228,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/026.png",
         spriteBack: "./media/img/sprites/back/026.png",
         type: "electric",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 27,
@@ -237,8 +237,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/027.png",
         spriteBack: "./media/img/sprites/back/027.png",
         type: "ground",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 28,
@@ -246,8 +246,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/028.png",
         spriteBack: "./media/img/sprites/back/028.png",
         type: "ground",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 29,
@@ -255,8 +255,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/029.png",
         spriteBack: "./media/img/sprites/back/029.png",
         type: "poison",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 30,
@@ -264,8 +264,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/030.png",
         spriteBack: "./media/img/sprites/back/030.png",
         type: "poison",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 31,
@@ -273,8 +273,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/031.png",
         spriteBack: "./media/img/sprites/back/031.png",
         type: "poison",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 32,
@@ -282,8 +282,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/032.png",
         spriteBack: "./media/img/sprites/back/032.png",
         type: "poison",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 33,
@@ -291,17 +291,17 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/033.png",
         spriteBack: "./media/img/sprites/back/033.png",
         type: "poison",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 34,
-        name: "NidOking",
+        name: "Nidoking",
         spriteFront: "./media/img/sprites/front/034.png",
         spriteBack: "./media/img/sprites/back/034.png",
         type: "poison",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 35,
@@ -309,8 +309,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/035.png",
         spriteBack: "./media/img/sprites/back/035.png",
         type: "fairy",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 36,
@@ -318,8 +318,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/036.png",
         spriteBack: "./media/img/sprites/back/036.png",
         type: "fairy",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 37,
@@ -327,8 +327,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/037.png",
         spriteBack: "./media/img/sprites/back/037.png",
         type: "fire",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 38,
@@ -336,8 +336,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/038.png",
         spriteBack: "./media/img/sprites/back/038.png",
         type: "fire",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 39,
@@ -345,8 +345,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/039.png",
         spriteBack: "./media/img/sprites/back/039.png",
         type: "normal",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 40,
@@ -354,8 +354,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/040.png",
         spriteBack: "./media/img/sprites/back/040.png",
         type: "normal",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 41,
@@ -363,8 +363,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/041.png",
         spriteBack: "./media/img/sprites/back/041.png",
         type: "poison",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 42,
@@ -372,8 +372,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/042.png",
         spriteBack: "./media/img/sprites/back/042.png",
         type: "poison",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 43,
@@ -381,8 +381,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/043.png",
         spriteBack: "./media/img/sprites/back/043.png",
         type: "grass",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 44,
@@ -390,8 +390,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/044.png",
         spriteBack: "./media/img/sprites/back/044.png",
         type: "grass",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 45,
@@ -399,8 +399,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/045.png",
         spriteBack: "./media/img/sprites/back/045.png",
         type: "grass",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 46,
@@ -408,8 +408,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/046.png",
         spriteBack: "./media/img/sprites/back/046.png",
         type: "bug",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 47,
@@ -417,8 +417,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/047.png",
         spriteBack: "./media/img/sprites/back/047.png",
         type: "bug",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 48,
@@ -426,8 +426,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/048.png",
         spriteBack: "./media/img/sprites/back/048.png",
         type: "bug",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 49,
@@ -435,8 +435,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/049.png",
         spriteBack: "./media/img/sprites/back/049.png",
         type: "bug",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 50,
@@ -444,8 +444,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/050.png",
         spriteBack: "./media/img/sprites/back/050.png",
         type: "ground",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 51,
@@ -453,8 +453,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/051.png",
         spriteBack: "./media/img/sprites/back/051.png",
         type: "ground",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 52,
@@ -462,8 +462,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/052.png",
         spriteBack: "./media/img/sprites/back/052.png",
         type: "normal",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 53,
@@ -471,8 +471,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/053.png",
         spriteBack: "./media/img/sprites/back/053.png",
         type: "normal",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 54,
@@ -480,8 +480,8 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/054.png",
         spriteBack: "./media/img/sprites/back/054.png",
         type: "water",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
     {
         id: 55,
@@ -489,20 +489,23 @@ const pkm = [{
         spriteFront: "./media/img/sprites/front/055.png",
         spriteBack: "./media/img/sprites/back/055.png",
         type: "water",
-        status: "Ok",
-        active: false
+        status: "ok",
+        active: true
     },
 
 
 ]
 const pkmSelected = []
 const enemybattlinPkm = []
-let myBattlinPkm =undefined
+let myBattlinPkm = undefined
 let pkmListSelection = document.getElementById("pkmToChoose")
 let goToGame = document.getElementById("toGame")
-let pkmFight = document.getElementById("fight")
+let getStatus = document.getElementById("okStatusPkm")
+
+let getScoreText = document.getElementById("scoreText")
 let pokelist = false
 let mainGame = false
+let score = 0
 
 
 
@@ -585,8 +588,8 @@ goToGame.onclick = () => {
                         <div id="myPokeballs">
                             <img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt="">
                         </div>
-                        <div id="enemyPokeballs">
-                            <img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt="">
+                        <div id="score">
+                        <p>SCORE:    ${score} </p>
                         </div>
                         <div id="myPkm">
                         </div>
@@ -595,7 +598,7 @@ goToGame.onclick = () => {
                     </div>
                     <div id="display">
                         <div id="actionButtons">
-                            <button class="actionButton" id="fight">Pelear</button>
+                            <button class="actionButton" id="pkmFight">Pelear</button>
                             <button class="actionButton" id="generateEnemy">Generar Enemigo</button>
                             <button class="actionButton" id="resetBattle">Reiniciar</button>
                             <button class="actionButton" id="exitBattle">Salir</button>
@@ -616,8 +619,12 @@ goToGame.onclick = () => {
             enemybattlinPkm.push(chosenEnemy)
             let enemyPkm = document.getElementById("enemyPkm")
             let enemyChosenPkmn = document.createElement("figure")
+            let att = document.createAttribute("id")
+            att.value = `myEnemyPkm`
+            enemyChosenPkmn.setAttributeNode(att)
             enemyChosenPkmn.innerHTML = `<img src="${enemybattlinPkm[0].spriteFront}" alt="">`
             enemyPkm.appendChild(enemyChosenPkmn)
+            console.log(enemybattlinPkm[0], enemybattlinPkm[0].type)
         }
     }
     for (const pokemons of pkmSelected) {
@@ -628,18 +635,454 @@ goToGame.onclick = () => {
         btnPkm.setAttributeNode(att)
         btnPkm.innerHTML = `<figure>
                                     <img src="${pokemons.spriteFront}" alt="">
-                                    <figcaption>${pokemons.name} <div id="" class="${pokemons.type}Type">${pokemons.type}</div><div id="statusPkm" class="statusPkm${pokemons.status}">Status</div> </figcaption>
+                                    <figcaption>${pokemons.name} <div id="" class="${pokemons.type}Type">${pokemons.type}</div><div id="statusPkm${pokemons.id}" class="${pokemons.status}StatusPkm">Status</div> </figcaption>
                                 </figure>`
         pkmBox.appendChild(btnPkm)
         let myChoose = document.getElementById(`myPkm${pokemons.id}`)
-        
-        
+
         myChoose.onclick = () => {
-                myPkm.innerHTML = `<img src="${pokemons.spriteBack}" alt="">`
+            if (pokemons.active === true) {
+                myPkm.innerHTML = `<figure id="myChosenPkm">
+            <img src="${pokemons.spriteBack}" alt="">
+            </figure>`
                 myBattlinPkm = pkmSelected.findIndex((pkm) => pkm === pokemons);
-
+                console.log(pkmSelected[myBattlinPkm], pkmSelected[myBattlinPkm].type)
             }
-
         }
 
+        let pkmFight = document.getElementById("pkmFight")
+    pkmFight.onclick = () => {
+        if (pkmSelected[myBattlinPkm].type === "fairy") {
+            if ((enemybattlinPkm[0].type === "dragon") || (enemybattlinPkm[0].type === "fight")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+            } else if ((enemybattlinPkm[0].type === "poison")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "dragon") {
+            if ((enemybattlinPkm[0].type === "dragon")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+                pkmSelected[myBattlinPkm].status === "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else if ((enemybattlinPkm[0].type === "ice") || (enemybattlinPkm[0].type === "fairy")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "ghost") {
+            if ((enemybattlinPkm[0].type === "ghost")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+                pkmSelected[myBattlinPkm].status === "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else if ((enemybattlinPkm[0].type === "psychc")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+            } else if ((enemybattlinPkm[0].type === "normal")) {} else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "rock") {
+            if ((enemybattlinPkm[0].type === "fire") || (enemybattlinPkm[0].type === "ice") || (enemybattlinPkm[0].type === "flying") || (enemybattlinPkm[0].type === "bug")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+            } else if ((enemybattlinPkm[0].type === "water") || (enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "fight") || (enemybattlinPkm[0].type === "ground")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "bug") {
+            if ((enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "psychc")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+            } else if ((enemybattlinPkm[0].type === "fire") || (enemybattlinPkm[0].type === "flying") || (enemybattlinPkm[0].type === "rock")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+
+
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "psychc") {
+            if ((enemybattlinPkm[0].type === "fight") || (enemybattlinPkm[0].type === "poison")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+            } else if ((enemybattlinPkm[0].type === "bug") || (enemybattlinPkm[0].type === "ghost")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "flying") {
+            if ((enemybattlinPkm[0].type === "electric") || (enemybattlinPkm[0].type === "ice") || (enemybattlinPkm[0].type === "rock")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+            } else if ((enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "fight") || (enemybattlinPkm[0].type === "bug")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "ground") {
+            if ((enemybattlinPkm[0].type === "water") || (enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "ice")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+            } else if ((enemybattlinPkm[0].type === "fire") || (enemybattlinPkm[0].type === "electric") || (enemybattlinPkm[0].type === "poison") || (enemybattlinPkm[0].type === "rock")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "poison") {
+            if ((enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "fairy")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+            } else if ((enemybattlinPkm[0].type === "ground") || (enemybattlinPkm[0].type === "psychc")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "fight") {
+            if ((enemybattlinPkm[0].type === "normal") || (enemybattlinPkm[0].type === "ice") || (enemybattlinPkm[0].type === "rock")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+            } else if ((enemybattlinPkm[0].type === "flying") || (enemybattlinPkm[0].type === "psychc") || (enemybattlinPkm[0].type === "fairy")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "ice") {
+            if ((enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "ground") || (enemybattlinPkm[0].type === "flying") || (enemybattlinPkm[0].type === "dragon")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+            } else if ((enemybattlinPkm[0].type === "fire") || (enemybattlinPkm[0].type === "fight") || (enemybattlinPkm[0].type === "rock")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "grass") {
+            if ((enemybattlinPkm[0].type === "water") || (enemybattlinPkm[0].type === "ground") || (enemybattlinPkm[0].type === "rock")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+            } else if ((enemybattlinPkm[0].type === "fire") || (enemybattlinPkm[0].type === "ice") || (enemybattlinPkm[0].type === "poison") || (enemybattlinPkm[0].type === "flying") || (enemybattlinPkm[0].type === "bug")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "electric") {
+            if ((enemybattlinPkm[0].type === "water") || (enemybattlinPkm[0].type === "flying")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+            } else if ((enemybattlinPkm[0].type === "ground")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "water") {
+            if ((enemybattlinPkm[0].type === "fire") || (enemybattlinPkm[0].type === "ground") || (enemybattlinPkm[0].type === "rock")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+            } else if ((enemybattlinPkm[0].type === "electric") || (enemybattlinPkm[0].type === "grass")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "fire") {
+            if ((enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "ice") || (enemybattlinPkm[0].type === "bug")) {
+                enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                let liItems = document.getElementById("myEnemyPkm")
+                liItems.parentNode.removeChild(liItems)
+                console.log('ganaste')
+            } else if ((enemybattlinPkm[0].type === "water") || (enemybattlinPkm[0].type === "rock") || (enemybattlinPkm[0].type === "ground")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        } else if (pkmSelected[myBattlinPkm].type === "normal") {
+            if ((enemybattlinPkm[0].type === "fight")) {
+                pkmSelected[myBattlinPkm].status = "ko"
+                pkmSelected[myBattlinPkm].active = false
+                console.log('perdiste')
+                let myChosedPkm = document.getElementById("myChosenPkm")
+                myChosedPkm.parentNode.removeChild(myChosedPkm)
+
+            } else if ((enemybattlinPkm[0].type === "ghost")) {} else {
+                if (pkmSelected[myBattlinPkm].status === "ok") {
+                    pkmSelected[myBattlinPkm].status = "injured"
+                } else if (pkmSelected[myBattlinPkm].status === "ko") {
+                    pkmSelected[myBattlinPkm].active = false
+
+                } else if (pkmSelected[myBattlinPkm].status === "injured") {
+                    pkmSelected[myBattlinPkm].active = false
+                    pkmSelected[myBattlinPkm].status = "ko"
+                    let myChosedPkm = document.getElementById("myChosenPkm")
+                    myChosedPkm.parentNode.removeChild(myChosedPkm)
+                }
+            }
+        }
+        let getScore = document.getElementById("score")
+        if (enemybattlinPkm.length === 0) {
+            score += 1
+            console.log(score)
+            getScore.innerHTML= `<p>SCORE:    ${score} </p>`
+        }
     }
+    }
+    
+}
