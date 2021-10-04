@@ -1,396 +1,511 @@
 const pkm = [{
-        id: 01,
+        id: 1,
         name: "Bulbasaur",
         spriteFront: "./media/img/sprites/front/001.png",
         spriteBack: "./media/img/sprites/back/001.png",
-        type: "grass"
+        type: "grass",
+        status: "Ok",
+        active: false
     },
     {
-        id: 02,
+        id: 2,
         name: "Yvysaur",
         spriteFront: "./media/img/sprites/front/002.png",
         spriteBack: "./media/img/sprites/back/002.png",
-        type: "grass"
+        type: "grass",
+        status: "Ok",
+        active: false
     },
     {
-        id: 03,
-        name: "Venasaur",
+        id: 3,
+        name: "Venusaur",
         spriteFront: "./media/img/sprites/front/003.png",
         spriteBack: "./media/img/sprites/back/003.png",
-        type: "grass"
+        type: "grass",
+        status: "Ok",
+        active: false
     },
     {
-        id: 004,
+        id: 4,
         name: "Charmander",
         spriteFront: "./media/img/sprites/front/004.png",
         spriteBack: "./media/img/sprites/back/004.png",
-        type: "fire"
+        type: "fire",
+        status: "Ok",
+        active: false
     },
     {
-        id: 05,
+        id: 5,
         name: "Charmeleon",
         spriteFront: "./media/img/sprites/front/005.png",
         spriteBack: "./media/img/sprites/back/005.png",
-        type: "fire"
+        type: "fire",
+        status: "Ok",
+        active: false
     },
     {
-        id: 06,
+        id: 6,
         name: "Charizard",
         spriteFront: "./media/img/sprites/front/006.png",
         spriteBack: "./media/img/sprites/back/006.png",
-        type: "fire"
+        type: "fire",
+        status: "Ok",
+        active: false
     },
     {
-        id: 07,
+        id: 7,
         name: "Squirtle",
         spriteFront: "./media/img/sprites/front/007.png",
         spriteBack: "./media/img/sprites/back/007.png",
-        type: "water"
+        type: "water",
+        status: "Ok",
+        active: false
     },
     {
-        id: 08,
+        id: 8,
         name: "Warturtle",
         spriteFront: "./media/img/sprites/front/008.png",
         spriteBack: "./media/img/sprites/back/008.png",
-        type: "water"
+        type: "water",
+        status: "Ok",
+        active: false
     },
     {
-        id: 09,
+        id: 9,
         name: "Blastoise",
         spriteFront: "./media/img/sprites/front/009.png",
         spriteBack: "./media/img/sprites/back/009.png",
-        type: "water"
+        type: "water",
+        status: "Ok",
+        active: false
     },
     {
         id: 10,
         name: "Caterpie",
         spriteFront: "./media/img/sprites/front/010.png",
         spriteBack: "./media/img/sprites/back/010.png",
-        type: "bug"
+        type: "bug",
+        status: "Ok",
+        active: false
     },
     {
         id: 11,
         name: "Metapod",
         spriteFront: "./media/img/sprites/front/011.png",
         spriteBack: "./media/img/sprites/back/011.png",
-        type: "bug"
+        type: "bug",
+        status: "Ok",
+        active: false
     },
     {
         id: 12,
         name: "Butterfree",
         spriteFront: "./media/img/sprites/front/012.png",
         spriteBack: "./media/img/sprites/back/012.png",
-        type: "bug"
+        type: "bug",
+        status: "Ok",
+        active: false
     },
     {
         id: 13,
         name: "Weedle",
         spriteFront: "./media/img/sprites/front/013.png",
         spriteBack: "./media/img/sprites/back/013.png",
-        type: "bug"
+        type: "bug",
+        status: "Ok",
+        active: false
     },
     {
         id: 14,
         name: "Kakuna",
         spriteFront: "./media/img/sprites/front/014.png",
         spriteBack: "./media/img/sprites/back/014.png",
-        type: "bug"
+        type: "bug",
+        status: "Ok",
+        active: false
     },
     {
         id: 15,
         name: "Beedrill",
         spriteFront: "./media/img/sprites/front/015.png",
         spriteBack: "./media/img/sprites/back/015.png",
-        type: "bug"
+        type: "bug",
+        status: "Ok",
+        active: false
     },
     {
         id: 16,
         name: "Pidgey",
         spriteFront: "./media/img/sprites/front/016.png",
         spriteBack: "./media/img/sprites/back/016.png",
-        type: "normal"
+        type: "normal",
+        status: "Ok",
+        active: false
     },
     {
         id: 17,
         name: "Pidgeotto",
         spriteFront: "./media/img/sprites/front/017.png",
         spriteBack: "./media/img/sprites/back/017.png",
-        type: "normal"
+        type: "normal",
+        status: "Ok",
+        active: false
     },
     {
         id: 18,
         name: "Pidgeot",
         spriteFront: "./media/img/sprites/front/018.png",
         spriteBack: "./media/img/sprites/back/018.png",
-        type: "normal"
+        type: "normal",
+        status: "Ok",
+        active: false
     },
     {
         id: 19,
         name: "Ratatta",
         spriteFront: "./media/img/sprites/front/019.png",
         spriteBack: "./media/img/sprites/back/019.png",
-        type: "normal"
+        type: "normal",
+        status: "Ok",
+        active: false
     },
     {
         id: 20,
         name: "Raticate",
         spriteFront: "./media/img/sprites/front/020.png",
         spriteBack: "./media/img/sprites/back/020.png",
-        type: "normal"
+        type: "normal",
+        status: "Ok",
+        active: false
     }, {
         id: 21,
         name: "Spearow",
         spriteFront: "./media/img/sprites/front/021.png",
         spriteBack: "./media/img/sprites/back/021.png",
-        type: "normal"
+        type: "normal",
+        status: "Ok",
+        active: false
     },
     {
         id: 22,
         name: "Fearow",
         spriteFront: "./media/img/sprites/front/022.png",
         spriteBack: "./media/img/sprites/back/022.png",
-        type: "normal"
+        type: "normal",
+        status: "Ok",
+        active: false
     },
     {
         id: 23,
         name: "Ekans",
         spriteFront: "./media/img/sprites/front/023.png",
         spriteBack: "./media/img/sprites/back/023.png",
-        type: "poison"
+        type: "poison",
+        status: "Ok",
+        active: false
     },
     {
         id: 24,
-        name: "Arbok",
+        name: "ArbOk",
         spriteFront: "./media/img/sprites/front/024.png",
         spriteBack: "./media/img/sprites/back/024.png",
-        type: "poison"
+        type: "poison",
+        status: "Ok",
+        active: false
     },
     {
         id: 25,
         name: "Pikachu",
         spriteFront: "./media/img/sprites/front/025.png",
         spriteBack: "./media/img/sprites/back/025.png",
-        type: "electric"
+        type: "electric",
+        status: "Ok",
+        active: false
     },
     {
         id: 26,
         name: "Raichu",
         spriteFront: "./media/img/sprites/front/026.png",
         spriteBack: "./media/img/sprites/back/026.png",
-        type: "electric"
+        type: "electric",
+        status: "Ok",
+        active: false
     },
     {
         id: 27,
         name: "Sandshrew",
         spriteFront: "./media/img/sprites/front/027.png",
         spriteBack: "./media/img/sprites/back/027.png",
-        type: "ground"
+        type: "ground",
+        status: "Ok",
+        active: false
     },
     {
         id: 28,
         name: "Sandslash",
         spriteFront: "./media/img/sprites/front/028.png",
         spriteBack: "./media/img/sprites/back/028.png",
-        type: "ground"
+        type: "ground",
+        status: "Ok",
+        active: false
     },
     {
         id: 29,
         name: "Nidoran♀",
         spriteFront: "./media/img/sprites/front/029.png",
         spriteBack: "./media/img/sprites/back/029.png",
-        type: "poison"
+        type: "poison",
+        status: "Ok",
+        active: false
     },
     {
         id: 30,
         name: "Nidorina",
         spriteFront: "./media/img/sprites/front/030.png",
         spriteBack: "./media/img/sprites/back/030.png",
-        type: "poison"
+        type: "poison",
+        status: "Ok",
+        active: false
     },
     {
         id: 31,
         name: "Nidoqueen",
         spriteFront: "./media/img/sprites/front/031.png",
         spriteBack: "./media/img/sprites/back/031.png",
-        type: "poison"
+        type: "poison",
+        status: "Ok",
+        active: false
     },
     {
         id: 32,
         name: "Nidoran♂",
         spriteFront: "./media/img/sprites/front/032.png",
         spriteBack: "./media/img/sprites/back/032.png",
-        type: "poison"
+        type: "poison",
+        status: "Ok",
+        active: false
     },
     {
         id: 33,
         name: "Nidorino",
         spriteFront: "./media/img/sprites/front/033.png",
         spriteBack: "./media/img/sprites/back/033.png",
-        type: "poison"
+        type: "poison",
+        status: "Ok",
+        active: false
     },
     {
         id: 34,
-        name: "Nidoking",
+        name: "NidOking",
         spriteFront: "./media/img/sprites/front/034.png",
         spriteBack: "./media/img/sprites/back/034.png",
-        type: "poison"
+        type: "poison",
+        status: "Ok",
+        active: false
     },
     {
         id: 35,
         name: "Clefairy",
         spriteFront: "./media/img/sprites/front/035.png",
         spriteBack: "./media/img/sprites/back/035.png",
-        type: "fairy"
+        type: "fairy",
+        status: "Ok",
+        active: false
     },
     {
         id: 36,
         name: "Clefable",
         spriteFront: "./media/img/sprites/front/036.png",
         spriteBack: "./media/img/sprites/back/036.png",
-        type: "fairy"
+        type: "fairy",
+        status: "Ok",
+        active: false
     },
     {
         id: 37,
         name: "Vulpix",
         spriteFront: "./media/img/sprites/front/037.png",
         spriteBack: "./media/img/sprites/back/037.png",
-        type: "fire"
+        type: "fire",
+        status: "Ok",
+        active: false
     },
     {
         id: 38,
         name: "Ninetales",
         spriteFront: "./media/img/sprites/front/038.png",
         spriteBack: "./media/img/sprites/back/038.png",
-        type: "fire"
+        type: "fire",
+        status: "Ok",
+        active: false
     },
     {
         id: 39,
         name: "Jigglypuff",
         spriteFront: "./media/img/sprites/front/039.png",
         spriteBack: "./media/img/sprites/back/039.png",
-        type: "normal"
+        type: "normal",
+        status: "Ok",
+        active: false
     },
     {
         id: 40,
         name: "Wigglytuff",
         spriteFront: "./media/img/sprites/front/040.png",
         spriteBack: "./media/img/sprites/back/040.png",
-        type: "normal"
+        type: "normal",
+        status: "Ok",
+        active: false
     },
     {
         id: 41,
         name: "Zubat",
         spriteFront: "./media/img/sprites/front/041.png",
         spriteBack: "./media/img/sprites/back/041.png",
-        type: "poison"
+        type: "poison",
+        status: "Ok",
+        active: false
     },
     {
         id: 42,
         name: "Golbat",
         spriteFront: "./media/img/sprites/front/042.png",
         spriteBack: "./media/img/sprites/back/042.png",
-        type: "poison"
+        type: "poison",
+        status: "Ok",
+        active: false
     },
     {
         id: 43,
         name: "Odish",
         spriteFront: "./media/img/sprites/front/043.png",
         spriteBack: "./media/img/sprites/back/043.png",
-        type: "grass"
+        type: "grass",
+        status: "Ok",
+        active: false
     },
     {
         id: 44,
         name: "Gloom",
         spriteFront: "./media/img/sprites/front/044.png",
         spriteBack: "./media/img/sprites/back/044.png",
-        type: "grass"
+        type: "grass",
+        status: "Ok",
+        active: false
     },
     {
         id: 45,
         name: "Vileplume",
         spriteFront: "./media/img/sprites/front/045.png",
         spriteBack: "./media/img/sprites/back/045.png",
-        type: "grass"
+        type: "grass",
+        status: "Ok",
+        active: false
     },
     {
         id: 46,
         name: "Paras",
         spriteFront: "./media/img/sprites/front/046.png",
         spriteBack: "./media/img/sprites/back/046.png",
-        type: "bug"
+        type: "bug",
+        status: "Ok",
+        active: false
     },
     {
         id: 47,
         name: "Parasect",
         spriteFront: "./media/img/sprites/front/047.png",
         spriteBack: "./media/img/sprites/back/047.png",
-        type: "bug"
+        type: "bug",
+        status: "Ok",
+        active: false
     },
     {
         id: 48,
         name: "Venonat",
         spriteFront: "./media/img/sprites/front/048.png",
         spriteBack: "./media/img/sprites/back/048.png",
-        type: "bug"
+        type: "bug",
+        status: "Ok",
+        active: false
     },
     {
         id: 49,
         name: "Venomoth",
         spriteFront: "./media/img/sprites/front/049.png",
         spriteBack: "./media/img/sprites/back/049.png",
-        type: "bug"
+        type: "bug",
+        status: "Ok",
+        active: false
     },
     {
         id: 50,
         name: "Diglett",
         spriteFront: "./media/img/sprites/front/050.png",
         spriteBack: "./media/img/sprites/back/050.png",
-        type: "ground"
+        type: "ground",
+        status: "Ok",
+        active: false
     },
     {
         id: 51,
         name: "Dugtrio",
         spriteFront: "./media/img/sprites/front/051.png",
         spriteBack: "./media/img/sprites/back/051.png",
-        type: "ground"
+        type: "ground",
+        status: "Ok",
+        active: false
     },
     {
         id: 52,
         name: "Meowth",
         spriteFront: "./media/img/sprites/front/052.png",
         spriteBack: "./media/img/sprites/back/052.png",
-        type: "normal"
+        type: "normal",
+        status: "Ok",
+        active: false
     },
     {
         id: 53,
         name: "Persian",
         spriteFront: "./media/img/sprites/front/053.png",
         spriteBack: "./media/img/sprites/back/053.png",
-        type: "normal"
+        type: "normal",
+        status: "Ok",
+        active: false
     },
     {
         id: 54,
         name: "Psyduck",
         spriteFront: "./media/img/sprites/front/054.png",
         spriteBack: "./media/img/sprites/back/054.png",
-        type: "water"
+        type: "water",
+        status: "Ok",
+        active: false
     },
     {
         id: 55,
         name: "Golduck",
         spriteFront: "./media/img/sprites/front/055.png",
         spriteBack: "./media/img/sprites/back/055.png",
-        type: "water"
+        type: "water",
+        status: "Ok",
+        active: false
     },
 
 
 ]
 const pkmSelected = []
-const battlinPkm = []
+const enemybattlinPkm = []
+let myBattlinPkm =undefined
 let pkmListSelection = document.getElementById("pkmToChoose")
 let goToGame = document.getElementById("toGame")
+let pkmFight = document.getElementById("fight")
 let pokelist = false
 let mainGame = false
+
+
+
 
 for (const pokemons of pkm) {
     let btnPkm = document.createElement("li")
@@ -449,7 +564,6 @@ const addToList = function (name, type, spriteFront) {
 let erasePkm = document.getElementById("deletePkm")
 erasePkm.onclick = () => {
     pkmSelected.splice(0, pkmSelected.length)
-    console.log(pkmSelected)
     let liItems = document.getElementById("pkmChosen")
     liItems.parentNode.removeChild(liItems)
     pokelist = false
@@ -475,20 +589,14 @@ goToGame.onclick = () => {
                             <img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt="">
                         </div>
                         <div id="myPkm">
-                            <figure>
-                                
-                            </figure>
                         </div>
                         <div id="enemyPkm">
-                            <figure>
-                                <img src="./media/img/sprites/front/Mewtwo_HGSS.png" alt="">
-                            </figure>
                         </div>
                     </div>
                     <div id="display">
                         <div id="actionButtons">
                             <button class="actionButton" id="fight">Pelear</button>
-                            <button class="actionButton" id="skipBattle">Skip</button>
+                            <button class="actionButton" id="generateEnemy">Generar Enemigo</button>
                             <button class="actionButton" id="resetBattle">Reiniciar</button>
                             <button class="actionButton" id="exitBattle">Salir</button>
                         </div>
@@ -501,33 +609,37 @@ goToGame.onclick = () => {
         `
         monitor.appendChild(mainGame)
     }
-    console.log(pkmSelected)
+    let generateEnemy = document.getElementById("generateEnemy")
+    generateEnemy.onclick = () => {
+        if (enemybattlinPkm.length === 0) {
+            let chosenEnemy = pkm[Math.floor(Math.random() * pkm.length)]
+            enemybattlinPkm.push(chosenEnemy)
+            let enemyPkm = document.getElementById("enemyPkm")
+            let enemyChosenPkmn = document.createElement("figure")
+            enemyChosenPkmn.innerHTML = `<img src="${enemybattlinPkm[0].spriteFront}" alt="">`
+            enemyPkm.appendChild(enemyChosenPkmn)
+        }
+    }
     for (const pokemons of pkmSelected) {
         let pkmBox = document.getElementById("pkmBox")
         let btnPkm = document.createElement("button")
         let att = document.createAttribute("id")
         att.value = `myPkm${pokemons.id}`
         btnPkm.setAttributeNode(att)
-
-
-
-        btnPkm.innerHTML = `
-                                <figure>
+        btnPkm.innerHTML = `<figure>
                                     <img src="${pokemons.spriteFront}" alt="">
-                                    <figcaption>${pokemons.name} <div id="statusPkm1" class="statusPkm">Status</div> </figcaption>
-                                </figure>
-    `
+                                    <figcaption>${pokemons.name} <div id="" class="${pokemons.type}Type">${pokemons.type}</div><div id="statusPkm" class="statusPkm${pokemons.status}">Status</div> </figcaption>
+                                </figure>`
         pkmBox.appendChild(btnPkm)
         let myChoose = document.getElementById(`myPkm${pokemons.id}`)
-        myChoose.onclick =() =>{
-            let myPkm = document.getElementById("myPkm")
-            let myBattlinPkmn = document.createElement("figure")
-            myPkm.innerHTML = `<img src="${pokemons.spriteBack}" alt="">`
-            myPkm.appendChild(myBattlinPkmn)
-        }
         
+        
+        myChoose.onclick = () => {
+                myPkm.innerHTML = `<img src="${pokemons.spriteBack}" alt="">`
+                myBattlinPkm = pkmSelected.findIndex((pkm) => pkm === pokemons);
+
+            }
+
+        }
+
     }
-
-}
-
-
