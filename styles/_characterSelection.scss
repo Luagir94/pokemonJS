@@ -130,7 +130,7 @@
             }
         }
 
-        #characterCreation{
+        #characterCreation {
             display: flex;
             width: 100%;
             height: 100%;
@@ -138,65 +138,80 @@
             font-size: 1.5rem;
             font-weight: 1000;
             text-align: center;
-            #dataDiv{
+
+            #dataDiv {
                 width: 50%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                #genderSelection{
+
+                #genderSelection {
                     display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                #genderButtons{
-                    display: flex;
-                    flex-direction: row;
-                    gap: 4rem;
-                    button{
-                        height: 12rem;
-                        width: 6rem;
-                        border-radius: 5px;
-                        img{
-                            width: 100%;
-                            height: 100%;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    #genderButtons {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 4rem;
+
+                        button {
+                            height: 12rem;
+                            width: 6rem;
+                            border-radius: 5px;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
                         }
                     }
                 }
-                }
-                form{
+
+                form {
                     display: flex;
                     flex-direction: column;
-                    input{
-                        height: 2rem;
+
+                    input {
+                        height: 3rem;
                     }
                 }
-                #goToPkmSelection {background-image: linear-gradient(to right, #52c234 0%, #061700  51%, #52c234  100%)}
+
                 #goToPkmSelection {
-                   margin: 10px;
-                   padding: 15px 45px;
-                   text-align: center;
-                   text-transform: uppercase;
-                   transition: 0.5s;
-                   background-size: 200% auto;
-                   color: white;            
-                   box-shadow: 0 0 20px #eee;
-                   border-radius: 10px;
-                   display: block;
-                 }
-       
-                 #goToPkmSelection:hover {
-                   background-position: right center; /* change the direction of the change here */
-                   color: #fff;
-                   text-decoration: none;
-                 }
+                    background-image: linear-gradient(to right, #52c234 0%, #061700 51%, #52c234 100%)
+                }
+
+                #goToPkmSelection {
+                    margin: 10px;
+                    padding: 15px 45px;
+                    text-align: center;
+                    text-transform: uppercase;
+                    transition: 0.5s;
+                    background-size: 200% auto;
+                    color: white;
+                    box-shadow: 0 0 20px #eee;
+                    border-radius: 10px;
+                    display: block;
+                }
+
+                #goToPkmSelection:hover {
+                    background-position: right center;
+                    /* change the direction of the change here */
+                    color: #fff;
+                    text-decoration: none;
+                }
             }
-            #oakDiv{
+
+            #oakDiv {
                 width: 50%;
-                p{
+
+                p {
                     padding: 1rem;
                 }
-                img{
+
+                img {
                     position: relative;
                     height: 40rem;
                     left: 5rem;
@@ -204,7 +219,7 @@
                 }
             }
         }
-            
-        }
+
+    }
 
 }
