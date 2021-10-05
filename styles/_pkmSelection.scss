@@ -43,6 +43,7 @@
                                 box-shadow: 0 0 20px #eee;
                                 border-radius: 10px;
                                 display: block;
+                                position: relative;
                                 figure {
                                     padding: 0.5rem;
                                     display: flex;
@@ -59,6 +60,11 @@
                                         div{
                                             text-align: center;
                                             font-weight: 1000;
+                                        }
+                                        span{
+                                            position: absolute;
+                                            bottom: 0.2rem;
+                                            right: 1rem;
                                         }
                                     }
                                 }
@@ -177,6 +183,7 @@
                                     box-shadow: 0 0 20px #eee;
                                     border-radius: 10px;
                                     display: block;
+                                    position: relative;
                                     figure {
                                         padding: 0.5rem;
                                         display: flex;
@@ -194,6 +201,7 @@
                                                 text-align: center;
                                                 font-weight: 1000;
                                             }
+                                           
                                         }
                                     }
                                 }
@@ -204,7 +212,6 @@
                                 }
                             }
                         }
-                       
                     }
                 }
             }

@@ -501,21 +501,17 @@ let myBattlinPkm = undefined
 let pkmListSelection = document.getElementById("pkmToChoose")
 let goToGame = document.getElementById("toGame")
 let getStatus = document.getElementById("okStatusPkm")
-
 let getScoreText = document.getElementById("scoreText")
 let pokelist = false
 let mainGame = false
 let score = 0
-
-
-
 
 for (const pokemons of pkm) {
     let btnPkm = document.createElement("li")
     btnPkm.innerHTML = `<button class="selectionButton" id="selectionButton${pokemons.id}">
     <figure>
         <img src="${pokemons.spriteFront}" alt="boton${pokemons.name}">
-        <figcaption>${pokemons.name} <div id="" class="${pokemons.type}Type">${pokemons.type}</div></figcaption>
+        <figcaption>${pokemons.name} <div id="" class="${pokemons.type}Type">${pokemons.type}</div> <span>${pokemons.id}</span></figcaption>
     </figure>
 </button>`
     pkmListSelection.appendChild(btnPkm)
@@ -528,7 +524,6 @@ for (const pokemons of pkm) {
     }
 
 }
-
 const addToList = function (name, type, spriteFront) {
     let selectedPkm = document.getElementById("selectedPkm")
     if (!pokelist) {
@@ -563,7 +558,6 @@ const addToList = function (name, type, spriteFront) {
     }
 
 }
-
 let erasePkm = document.getElementById("deletePkm")
 erasePkm.onclick = () => {
     pkmSelected.splice(0, pkmSelected.length)
@@ -571,9 +565,6 @@ erasePkm.onclick = () => {
     liItems.parentNode.removeChild(liItems)
     pokelist = false
 }
-
-
-
 goToGame.onclick = () => {
     if (pkmSelected && (pkmSelected.length === 6)) {
         let selectionStage = document.getElementById("pkmSelection")
@@ -639,7 +630,6 @@ goToGame.onclick = () => {
                                 </figure>`
         pkmBox.appendChild(btnPkm)
         let myChoose = document.getElementById(`myPkm${pokemons.id}`)
-
         myChoose.onclick = () => {
             if (pokemons.active === true) {
                 myPkm.innerHTML = `<figure id="myChosenPkm">
@@ -649,7 +639,6 @@ goToGame.onclick = () => {
                 console.log(pkmSelected[myBattlinPkm], pkmSelected[myBattlinPkm].type)
             }
         }
-
         let pkmFight = document.getElementById("pkmFight")
         let koMyPkmByInjuries = () => {
             pkmSelected[myBattlinPkm].active = false
@@ -670,7 +659,6 @@ goToGame.onclick = () => {
             let myChosedPkm = document.getElementById("myChosenPkm")
             myChosedPkm.parentNode.removeChild(myChosedPkm)
         }
-
         pkmFight.onclick = () => {
             if (pkmSelected[myBattlinPkm].type === "fairy") {
                 if ((enemybattlinPkm[0].type === "dragon") || (enemybattlinPkm[0].type === "fight")) {

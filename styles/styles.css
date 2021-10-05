@@ -455,6 +455,7 @@ footer {
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
+  position: relative;
 }
 
 #mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure {
@@ -476,6 +477,12 @@ footer {
 #mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure figcaption div {
   text-align: center;
   font-weight: 1000;
+}
+
+#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure figcaption span {
+  position: absolute;
+  bottom: 0.2rem;
+  right: 1rem;
 }
 
 #mainGame #monitor #pkmSelection #pkmList ol li .selectionButton:hover {
@@ -595,6 +602,7 @@ footer {
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
+  position: relative;
 }
 
 #mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton figure {
