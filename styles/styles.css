@@ -146,242 +146,92 @@ footer {
   opacity: 1;
 }
 
-#mainGame #monitor #game {
+#mainGame #monitor #characterCreation {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #4ecdc4, #556270);
+  font-size: 1.5rem;
+  font-weight: 1000;
+  text-align: center;
+}
+
+#mainGame #monitor #characterCreation #dataDiv {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#mainGame #monitor #characterCreation #dataDiv #genderSelection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#mainGame #monitor #characterCreation #dataDiv #genderSelection #genderButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+}
+
+#mainGame #monitor #characterCreation #dataDiv #genderSelection #genderButtons button {
+  height: 12rem;
+  width: 6rem;
+  border-radius: 5px;
+}
+
+#mainGame #monitor #characterCreation #dataDiv #genderSelection #genderButtons button img {
   width: 100%;
   height: 100%;
 }
 
-#mainGame #monitor #game #battleField {
-  background-image: url(../media/img/fieldBackground.png);
-  height: 68%;
-  width: 100%;
-  background-size: contain;
+#mainGame #monitor #characterCreation #dataDiv form {
+  display: flex;
+  flex-direction: column;
+}
+
+#mainGame #monitor #characterCreation #dataDiv form input {
+  height: 2rem;
+}
+
+#mainGame #monitor #characterCreation #dataDiv #goToPkmSelection {
+  background-image: linear-gradient(to right, #52c234 0%, #061700 51%, #52c234 100%);
+}
+
+#mainGame #monitor #characterCreation #dataDiv #goToPkmSelection {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+#mainGame #monitor #characterCreation #dataDiv #goToPkmSelection:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#mainGame #monitor #characterCreation #oakDiv {
+  width: 50%;
+}
+
+#mainGame #monitor #characterCreation #oakDiv p {
+  padding: 1rem;
+}
+
+#mainGame #monitor #characterCreation #oakDiv img {
   position: relative;
-}
-
-#mainGame #monitor #game #battleField #myPokeballs {
-  position: absolute;
-  right: 1rem;
-}
-
-#mainGame #monitor #game #battleField #myPokeballs img {
-  width: 2rem;
-}
-
-#mainGame #monitor #game #battleField #enemyPokeballs {
-  position: absolute;
-  left: 1rem;
-}
-
-#mainGame #monitor #game #battleField #enemyPokeballs img {
-  width: 2rem;
-}
-
-#mainGame #monitor #game #battleField #myPkm {
-  width: 20rem;
-  position: absolute;
-  bottom: 0;
-  left: 10rem;
-}
-
-#mainGame #monitor #game #battleField #myPkm img {
-  width: 9rem;
-  height: 9rem;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-  margin: -1rem;
-}
-
-#mainGame #monitor #game #battleField #enemyPkm {
-  width: 20rem;
-  position: absolute;
-  top: 5rem;
-  right: 0;
-}
-
-#mainGame #monitor #game #battleField #enemyPkm img {
-  width: 13rem;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-}
-
-#mainGame #monitor #game #display {
-  display: flex;
-  justify-content: space-around;
-  height: 32%;
-  width: 100%;
-  background: linear-gradient(to right, #6190e8, #a7bfe8);
-  bottom: 10;
-  position: absolute;
-  border-top: 1px solid black;
-}
-
-#mainGame #monitor #game #display #actionButtons {
-  display: flex;
-  align-items: center;
-  width: 60%;
-  flex-wrap: wrap;
-  justify-content: center;
-  letter-spacing: 5px;
-}
-
-#mainGame #monitor #game #display #actionButtons #exitBattle {
-  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
-  margin: 10px;
-  padding: 15px 45px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-}
-
-#mainGame #monitor #game #display #actionButtons #exitBattle:hover {
-  background-position: right center;
-  /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
-}
-
-#mainGame #monitor #game #display #actionButtons #fight {
-  background-image: linear-gradient(to right, #093028 0%, #237A57 51%, #093028 100%);
-}
-
-#mainGame #monitor #game #display #actionButtons #fight {
-  margin: 10px;
-  padding: 15px 45px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
-}
-
-#mainGame #monitor #game #display #actionButtons #fight:hover {
-  background-position: right center;
-  /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
-}
-
-#mainGame #monitor #game #display #actionButtons #resetBattle {
-  background-image: linear-gradient(to right, #FF8008 0%, #FFC837 51%, #FF8008 100%);
-}
-
-#mainGame #monitor #game #display #actionButtons #resetBattle {
-  margin: 10px;
-  padding: 15px 45px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
-}
-
-#mainGame #monitor #game #display #actionButtons #resetBattle:hover {
-  background-position: right center;
-  /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
-}
-
-#mainGame #monitor #game #display #actionButtons #skipBattle {
-  background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%);
-}
-
-#mainGame #monitor #game #display #actionButtons #skipBattle {
-  margin: 10px;
-  padding: 15px 45px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
-}
-
-#mainGame #monitor #game #display #actionButtons #skipBattle:hover {
-  background-position: right center;
-  /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
-}
-
-#mainGame #monitor #game #display #actionButtons .actionButton {
-  width: 15rem;
-  height: 3rem;
-  margin: 0.5rem;
-  border-radius: 5px;
-  font-weight: bolder;
-  box-shadow: 1px 1px 3px black;
-  letter-spacing: 5px;
-}
-
-#mainGame #monitor #game #display #pkmBox {
-  width: 18rem;
-  overflow-y: scroll;
-  text-align: center;
-}
-
-#mainGame #monitor #game #display #pkmBox button {
-  width: 16rem;
-  height: 4rem;
-  margin: 0.5rem;
-  border-radius: 5px;
-  font-weight: bolder;
-  background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
-  margin: 10px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
-}
-
-#mainGame #monitor #game #display #pkmBox button figure {
-  padding: 0.5rem;
-  display: flex;
-}
-
-#mainGame #monitor #game #display #pkmBox button figure img {
-  width: 3rem;
-  height: 3rem;
-}
-
-#mainGame #monitor #game #display #pkmBox button figure figcaption {
-  margin-left: 0.5rem;
-}
-
-#mainGame #monitor #game #display #pkmBox button figure figcaption .statusPkm {
-  border: 1px solid black;
-  background-color: green;
-  width: 5rem;
-  border-radius: 5px;
-}
-
-#mainGame #monitor #game #display #pkmBox button:hover {
-  background-position: right center;
-  /* change the direction of the change here */
-  text-decoration: none;
-}
-
-#mainGame #monitor #game #display #pkmBox::-webkit-scrollbar {
-  width: 7px;
-}
-
-#mainGame #monitor #game #display #pkmBox::-webkit-scrollbar-thumb {
-  background-color: gainsboro;
-  border: 1px solid white;
-  border-radius: 10px;
-  margin: 0.5rem;
+  height: 40rem;
+  left: 5rem;
+  top: 2rem;
 }
