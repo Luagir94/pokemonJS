@@ -499,6 +499,7 @@ const pkm = [{
 let runGame = document.getElementById("runGame")
 let getStatus = document.getElementById("okStatusPkm")
 let getScoreText = document.getElementById("scoreText")
+const pkmSelected = []
 class Trainer {
     constructor(name, gender, team, score) {
         this.name = name;
@@ -532,7 +533,14 @@ modal.addEventListener('click', (e) => {
 //
 // =========== AVANZA A LA SELECCION DE PERSONAJE ===========
 const runGameFunction = () => {
-    const pkmSelected = []
+    console.log(pkmSelected)
+
+    console.log(pkmSelected)
+    pkmSelected.splice(0, pkmSelected.length)
+    console.log(pkmSelected)
+
+
+
     const enemybattlinPkm = []
     let myBattlinPkm = undefined
 
@@ -706,6 +714,11 @@ const runGameFunction = () => {
             // =========== EVENTO DISPARADOR DEL JUEGO PRINCIPAL ===========
             goToGame.onclick = () => {
                 if (pkmSelected && (pkmSelected.length === 6)) {
+                    for (let i = 0; i < pkmSelected.length; i++) {
+                        pkmSelected[i].status = "ok"
+                        pkmSelected[i].active = true
+                    }
+                    console.log(pkmSelected)
                     let selectionStage = document.getElementById("pkmSelection")
                     selectionStage.parentNode.removeChild(selectionStage)
                     let monitor = document.getElementById("monitor")
@@ -802,6 +815,7 @@ const runGameFunction = () => {
                     }
                     let pkmFight = document.getElementById("pkmFight")
                     // =========== VALIDACIONES DE LAS PELEAS ===========
+                     // =========== PELEA GANADA ===========
                     let succesBattle = () => {
                         enemybattlinPkm.splice(0, enemybattlinPkm.length)
                         let liItems = document.getElementById("myEnemyPkm")
@@ -813,6 +827,7 @@ const runGameFunction = () => {
                             getScore.innerHTML = `<p>SCORE:    ${score} </p>`
                         }
                     }
+                     // =========== CAMBIOS DE STATUS ===========
                     let koMyPkmByInjuries = () => {
                         if (pkmSelected[myBattlinPkm].status === "ok") {
                             pkmSelected[myBattlinPkm].status = "ko"
@@ -830,7 +845,7 @@ const runGameFunction = () => {
                             let statusEnemyColor = document.getElementById("statusEnemy")
                             statusEnemyColor.classList.remove('okStatusPkm')
                             statusEnemyColor.classList.add('injuredStatusPkm')
-                            console.log('entra por el if', enemybattlinPkm[0].status)
+
                         } else {
                             enemybattlinPkm.splice(0, enemybattlinPkm.length)
                             let liItems = document.getElementById("myEnemyPkm")
@@ -838,10 +853,11 @@ const runGameFunction = () => {
                             let getScore = document.getElementById("score")
                             score += 1
                             getScore.innerHTML = `<p>SCORE:    ${score} </p>`
-                            console.log(enemybattlinPkm[0].status)
+                            
                         }
 
                     }
+                     // =========== PELEA PERDIDA ===========
                     let failedBattle = () => {
                         pkmSelected[myBattlinPkm].status = "ko"
                         pkmSelected[myBattlinPkm].active = false
@@ -853,6 +869,7 @@ const runGameFunction = () => {
 
                     // =========== TRIGGER DE LA PELEA ===========
                     pkmFight.onclick = () => {
+
                         if (pkmSelected[myBattlinPkm].type === "fairy") {
                             if ((enemybattlinPkm[0].type === "dragon") || (enemybattlinPkm[0].type === "fight")) {
                                 succesBattle()
@@ -1048,8 +1065,10 @@ runGame.onclick = () => {
 }
 const resetGameFunction = () => {
     let resetGame = document.getElementById("runGame")
-
+    console.log(pkmSelected)
     resetGame.onclick = () => {
+
+        
         runGameFunction()
     }
 }

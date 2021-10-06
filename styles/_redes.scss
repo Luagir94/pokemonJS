@@ -1,4 +1,4 @@
-#rules {
+#redes {
     position: absolute;
     z-index: 11;
     right: 1rem;
@@ -14,7 +14,7 @@
     font-size: 2rem;
 }
 
-#rules:hover {
+#redes:hover {
     transform: scale(2, 2);
 }
 
@@ -29,11 +29,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    visibility: hidden;
-    opacity: 0;
+
 
     transition: all 0.3s ease-in;
-    z-index: 10000000;
+    z-index: 100000000;
 }
 
 .modal-active {
@@ -69,11 +68,11 @@
         }
     }
 
-    #modal-cerrar {
+    #modalRedes-cerrar {
         background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%)
     }
 
-    #modal-cerrar {
+    #modalRedes-cerrar {
         margin: auto;
         padding: 15px 45px;
         text-align: center;
@@ -87,7 +86,7 @@
         margin-top: 1rem;
     }
 
-    #modal-cerrar:hover {
+    #modalRedes-cerrar:hover {
         background-position: right center;
         /* change the direction of the change here */
         color: #fff;
