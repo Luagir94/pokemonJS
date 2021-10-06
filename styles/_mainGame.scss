@@ -22,200 +22,72 @@
 
 
 
-        #game{
+        #game {
             width: 100%;
             height: 100%;
+
             #battleField {
                 background-image: url(../media/img/fieldBackground.png);
                 height: 68%;
                 width: 100%;
                 background-size: contain;
                 position: relative;
+
                 #myPokeballs {
 
                     img {
                         width: 2rem;
                     }
-        
+
                     position: absolute;
                     left: 1rem;
-        
+
                 }
-        
+
                 #score {
-                    p{
+                    p {
                         font-size: 1.5rem;
                     }
-        
+
                     position: absolute;
                     top: 0;
                     left: 50%;
-        
+
                 }
-    
+
                 #myPkm {
                     width: 20rem;
                     position: absolute;
                     bottom: -2rem;
                     left: 10rem;
-    
+
                     img {
                         width: 12rem;
                         height: 12rem;
                         filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
                         margin: -1rem;
                     }
-    
-    
+
+
                 }
-    
+
                 #enemyPkm {
                     width: 20rem;
                     position: absolute;
-                    top: 5rem;
+                    top: 3rem;
                     right: 0;
-    
-                    img {
+
+                    #enemyPkmSprite {
                         width: 13rem;
                         filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7))
                     }
-                }
-            }
-    
-            #display {
-                display: flex;
-                justify-content: space-around;
-                height: 32%;
-                width: 100%;
-                background: linear-gradient(to right, #6190e8, #a7bfe8);
-                bottom: 10;
-                position: absolute;
-                border-top: 1px solid black;
-    
-    
-                #actionButtons {
-                    display: flex;
-                    align-items: center;
-                    width: 60%;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    letter-spacing: 5px;
-    
-                    #exitBattle {
-                        background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
-                        margin: 10px;
-                        padding: 15px 45px;
-                        text-align: center;
-                        text-transform: uppercase;
-                        transition: 0.5s;
-                        background-size: 200% auto;
-                        color: white;
-                        box-shadow: 0 0 20px #eee;
-                        border-radius: 10px;
-    
-                    }
-    
-                    #exitBattle:hover {
-                        background-position: right center;
-                        /* change the direction of the change here */
-                        color: #fff;
-                        text-decoration: none;
-                    }
-    
-                    #pkmFight {
-                        background-image: linear-gradient(to right, #093028 0%, #237A57 51%, #093028 100%)
-                    }
-    
-                    #pkmFight {
-                        margin: 10px;
-                        padding: 15px 45px;
-                        text-align: center;
-                        text-transform: uppercase;
-                        transition: 0.5s;
-                        background-size: 200% auto;
-                        color: white;
-                        box-shadow: 0 0 20px #eee;
-                        border-radius: 10px;
-                        display: block;
-                    }
-    
-                    #pkmFight:hover {
-                        background-position: right center;
-                        /* change the direction of the change here */
-                        color: #fff;
-                        text-decoration: none;
-                    }
-    
-    
-                    #resetBattle {
-                        background-image: linear-gradient(to right, #FF8008 0%, #FFC837 51%, #FF8008 100%)
-                    }
-    
-                    #resetBattle {
-                        margin: 10px;
-                        padding: 15px 45px;
-                        text-align: center;
-                        text-transform: uppercase;
-                        transition: 0.5s;
-                        background-size: 200% auto;
-                        color: white;
-                        box-shadow: 0 0 20px #eee;
-                        border-radius: 10px;
-                        display: block;
-                    }
-    
-                    #resetBattle:hover {
-                        background-position: right center;
-                        /* change the direction of the change here */
-                        color: #fff;
-                        text-decoration: none;
-                    }
-    
-                    #generateEnemy {
-                        background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%)
-                    }
-    
-                    #generateEnemy {
-                        font-size: 0.8rem;
-                        margin: 10px;
-                        padding: 6px 45px;
-                        text-align: center;
-                        text-transform: uppercase;
-                        transition: 0.5s;
-                        background-size: 200% auto;
-                        color: white;
-                        box-shadow: 0 0 20px #eee;
-                        border-radius: 10px;
-                        display: block;
-                    }
-    
-                    #generateEnemy:hover {
-                        background-position: right center;
-                        /* change the direction of the change here */
-                        color: #fff;
-                        text-decoration: none;
-                    }
-    
-                    .actionButton {
-                        width: 15rem;
-                        height: 3rem;
-                        margin: 0.5rem;
-                        border-radius: 5px;
-                        font-weight: bolder;
-                        box-shadow: 1px 1px 3px black;
-                        letter-spacing: 5px;
-                    }
-                }
-    
-                #pkmBox {
-                    width: 18rem;
-                    overflow-y: scroll;
-                    text-align: center;
-    
-                    button {
+
+                    #enemyPkmCard {
+                        position: absolute;
                         width: 16rem;
                         height: 4rem;
                         margin: 0.5rem;
+                        border: black solid 1px;
                         border-radius: 5px;
                         font-weight: bolder;
                         background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
@@ -227,66 +99,267 @@
                         box-shadow: 0 0 20px #eee;
                         border-radius: 10px;
                         display: block;
-    
-                        figure {
-                            padding: 0.1rem;
-                            display: flex;
-    
-                            img {
-                                width: 3rem;
-                                height: 3rem;
-                            }
-    
-                            figcaption {
-                                margin-left: 0.5rem;
-                                div{
-                                    margin-bottom: 3px;
-                                }
+                        bottom: -2.5rem;
+                        visibility: hidden;
+                        opacity: 0;
+                    }
 
-    
-                                .okStatusPkm {
-                                    border: 1px solid black;
-                                    background-color: green;
-                                    width: 5rem;
-                                    border-radius: 5px;
-                                }
-                                .injuredStatusPkm {
-                                    border: 1px solid black;
-                                    background-color: yellow;
-                                    width: 5rem;
-                                    border-radius: 5px;
-                                }
-                                .koStatusPkm {
-                                    border: 1px solid black;
-                                    background-color: red;
-                                    width: 5rem;
-                                    border-radius: 5px;
-                                }
+                    figure {
+                        padding: 0.1rem;
+                        display: flex;
+
+                        #enemyPkmCardSprite {
+                            width: 3rem;
+                            height: 3rem;
+                        }
+
+                        figcaption {
+                            margin-left: 0.5rem;
+
+                            div {
+                                margin-bottom: 3px;
+                            }
+
+
+                            .okStatusPkm {
+                                border: 1px solid black;
+                                background-color: green;
+                                width: 5rem;
+                                border-radius: 5px;
+                            }
+
+                            .injuredStatusPkm {
+                                border: 1px solid black;
+                                background-color: yellow;
+                                width: 5rem;
+                                border-radius: 5px;
+                            }
+
+                            .koStatusPkm {
+                                border: 1px solid black;
+                                background-color: red;
+                                width: 5rem;
+                                border-radius: 5px;
                             }
                         }
-    
                     }
-    
-                    button:hover {
-                        background-position: right center;
-                        /* change the direction of the change here */
-                        text-decoration: none;
+
+                }
+
+                #enemyPkm:hover {
+                    #enemyPkmCard {
+                        visibility: visible;
+                        opacity: 1;
                     }
-                }
-    
-                #pkmBox::-webkit-scrollbar {
-                    width: 7px;
-                }
-    
-                #pkmBox::-webkit-scrollbar-thumb {
-                    background-color: gainsboro;
-                    border: 1px solid white;
-                    border-radius: 10px;
-                    margin: 0.5rem;
                 }
             }
         }
-            
+    }
+
+    #display {
+        display: flex;
+        justify-content: space-around;
+        height: 32%;
+        width: 100%;
+        background: linear-gradient(to right, #6190e8, #a7bfe8);
+        bottom: 10;
+        position: absolute;
+        border-top: 1px solid black;
+
+
+        #actionButtons {
+            display: flex;
+            align-items: center;
+            width: 60%;
+            flex-wrap: wrap;
+            justify-content: center;
+            letter-spacing: 5px;
+
+            #exitBattle {
+                background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+                margin: 10px;
+                padding: 15px 45px;
+                text-align: center;
+                text-transform: uppercase;
+                transition: 0.5s;
+                background-size: 200% auto;
+                color: white;
+                box-shadow: 0 0 20px #eee;
+                border-radius: 10px;
+
+            }
+
+            #exitBattle:hover {
+                background-position: right center;
+                /* change the direction of the change here */
+                color: #fff;
+                text-decoration: none;
+            }
+
+            #pkmFight {
+                background-image: linear-gradient(to right, #093028 0%, #237A57 51%, #093028 100%)
+            }
+
+            #pkmFight {
+                margin: 10px;
+                padding: 15px 45px;
+                text-align: center;
+                text-transform: uppercase;
+                transition: 0.5s;
+                background-size: 200% auto;
+                color: white;
+                box-shadow: 0 0 20px #eee;
+                border-radius: 10px;
+                display: block;
+            }
+
+            #pkmFight:hover {
+                background-position: right center;
+                /* change the direction of the change here */
+                color: #fff;
+                text-decoration: none;
+            }
+
+
+            #resetBattle {
+                background-image: linear-gradient(to right, #FF8008 0%, #FFC837 51%, #FF8008 100%)
+            }
+
+            #resetBattle {
+                margin: 10px;
+                padding: 15px 45px;
+                text-align: center;
+                text-transform: uppercase;
+                transition: 0.5s;
+                background-size: 200% auto;
+                color: white;
+                box-shadow: 0 0 20px #eee;
+                border-radius: 10px;
+                display: block;
+            }
+
+            #resetBattle:hover {
+                background-position: right center;
+                /* change the direction of the change here */
+                color: #fff;
+                text-decoration: none;
+            }
+
+            #generateEnemy {
+                background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%)
+            }
+
+            #generateEnemy {
+                font-size: 0.8rem;
+                margin: 10px;
+                padding: 6px 45px;
+                text-align: center;
+                text-transform: uppercase;
+                transition: 0.5s;
+                background-size: 200% auto;
+                color: white;
+                box-shadow: 0 0 20px #eee;
+                border-radius: 10px;
+                display: block;
+            }
+
+            #generateEnemy:hover {
+                background-position: right center;
+                /* change the direction of the change here */
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .actionButton {
+                width: 15rem;
+                height: 3rem;
+                margin: 0.5rem;
+                border-radius: 5px;
+                font-weight: bolder;
+                box-shadow: 1px 1px 3px black;
+                letter-spacing: 5px;
+            }
         }
 
+        #pkmBox {
+            width: 18rem;
+            overflow-y: scroll;
+            text-align: center;
+
+            button {
+                width: 16rem;
+                height: 4rem;
+                margin: 0.5rem;
+                border-radius: 5px;
+                font-weight: bolder;
+                background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+                margin: 10px;
+                text-align: center;
+                text-transform: uppercase;
+                transition: 0.5s;
+                background-size: 200% auto;
+                box-shadow: 0 0 20px #eee;
+                border-radius: 10px;
+                display: block;
+
+                figure {
+                    padding: 0.1rem;
+                    display: flex;
+
+                    img {
+                        width: 3rem;
+                        height: 3rem;
+                    }
+
+                    figcaption {
+                        margin-left: 0.5rem;
+
+                        div {
+                            margin-bottom: 3px;
+                        }
+
+
+                        .okStatusPkm {
+                            border: 1px solid black;
+                            background-color: green;
+                            width: 5rem;
+                            border-radius: 5px;
+                        }
+
+                        .injuredStatusPkm {
+                            border: 1px solid black;
+                            background-color: yellow;
+                            width: 5rem;
+                            border-radius: 5px;
+                        }
+
+                        .koStatusPkm {
+                            border: 1px solid black;
+                            background-color: red;
+                            width: 5rem;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+
+            }
+
+            button:hover {
+                background-position: right center;
+                /* change the direction of the change here */
+                text-decoration: none;
+            }
+        }
+
+        #pkmBox::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        #pkmBox::-webkit-scrollbar-thumb {
+            background-color: gainsboro;
+            border: 1px solid white;
+            border-radius: 10px;
+            margin: 0.5rem;
+        }
+    }
 }

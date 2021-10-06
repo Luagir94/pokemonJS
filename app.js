@@ -751,12 +751,13 @@ let score = 0
                         let chosenEnemy = pkm[Math.floor(Math.random() * pkm.length)]
                         enemybattlinPkm.push(chosenEnemy)
                         let enemyPkm = document.getElementById("enemyPkm")
-                        let enemyChosenPkmn = document.createElement("figure")
-                        let att = document.createAttribute("id")
-                        att.value = `myEnemyPkm`
-                        enemyChosenPkmn.setAttributeNode(att)
-                        enemyChosenPkmn.innerHTML = `<img src="${enemybattlinPkm[0].spriteFront}" alt="">`
-                        enemyPkm.appendChild(enemyChosenPkmn)
+                        enemyPkm.innerHTML = `<figure id="myEnemyPkm"><img src="${enemybattlinPkm[0].spriteFront}" id="enemyPkmSprite" alt=""></figure>
+                        <button id="enemyPkmCard"><figure>
+                                        <img src="${enemybattlinPkm[0].spriteFront}"  id="enemyPkmCardSprite"alt="">
+                                        <figcaption>${enemybattlinPkm[0].name} <div id="" class="${enemybattlinPkm[0].type}Type">${enemybattlinPkm[0].type}</div><div id="statusPkm4" class="${enemybattlinPkm[0].status}StatusPkm">Status</div> </figcaption>
+                                    </figure></button>
+                        
+                        `
                         console.log(enemybattlinPkm[0], enemybattlinPkm[0].type)
                     }
                 }
@@ -808,8 +809,36 @@ let score = 0
                         let liItems = document.getElementById("myEnemyPkm")
                         liItems.parentNode.removeChild(liItems)
                         console.log('ganaste')
+                        let getScore = document.getElementById("score")
+                        if (enemybattlinPkm.length === 0) {
+                            score += 1
+                            console.log(score)
+                            getScore.innerHTML = `<p>SCORE:    ${score} </p>`
+                        }
                     }
                     let koMyPkmByInjuries = () => {
+                        pkmSelected[myBattlinPkm].active = false
+                        pkmSelected[myBattlinPkm].status = "ko"
+                        let myChosedPkm = document.getElementById("myChosenPkm")
+                        myChosedPkm.parentNode.removeChild(myChosedPkm)
+                    }
+                    let koEnemyPkmByInjuries = () => {
+                        if (enemybattlinPkm[0].status === "ok") {
+                            enemybattlinPkm[0].status = "injured"
+                        } else {
+                            enemybattlinPkm[0].status = "ko"
+                            enemybattlinPkm.splice(0, enemybattlinPkm.length)
+                            let liItems = document.getElementById("myEnemyPkm")
+                            liItems.parentNode.removeChild(liItems)
+                            console.log('ganaste')
+                            let getScore = document.getElementById("score")
+                            if (enemybattlinPkm.length === 0) {
+                                score += 1
+                                console.log(score)
+                                getScore.innerHTML = `<p>SCORE:    ${score} </p>`
+                            }
+                        }
+                        koEnemyPkmByInjuries()
                         pkmSelected[myBattlinPkm].active = false
                         pkmSelected[myBattlinPkm].status = "ko"
                         let myChosedPkm = document.getElementById("myChosenPkm")
@@ -838,6 +867,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "dragon") {
@@ -860,6 +890,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "ghost") {
@@ -881,6 +912,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "rock") {
@@ -897,6 +929,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "bug") {
@@ -919,6 +952,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "psychc") {
@@ -935,6 +969,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "flying") {
@@ -951,6 +986,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "ground") {
@@ -967,6 +1003,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "poison") {
@@ -983,6 +1020,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "fight") {
@@ -999,6 +1037,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "ice") {
@@ -1015,6 +1054,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "grass") {
@@ -1031,6 +1071,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "electric") {
@@ -1047,6 +1088,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "water") {
@@ -1063,6 +1105,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "fire") {
@@ -1079,6 +1122,7 @@ let score = 0
 
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         } else if (pkmSelected[myBattlinPkm].type === "normal") {
@@ -1091,15 +1135,11 @@ let score = 0
                                     pkmSelected[myBattlinPkm].active = false
                                 } else if (pkmSelected[myBattlinPkm].status === "injured") {
                                     koMyPkmByInjuries()
+                                    koEnemyPkmByInjuries()
                                 }
                             }
                         }
-                        let getScore = document.getElementById("score")
-                        if (enemybattlinPkm.length === 0) {
-                            score += 1
-                            console.log(score)
-                            getScore.innerHTML = `<p>SCORE:    ${score} </p>`
-                        }
+
                     }
                 }
             }

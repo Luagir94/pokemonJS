@@ -94,16 +94,82 @@ footer {
 #mainGame #monitor #game #battleField #enemyPkm {
   width: 20rem;
   position: absolute;
-  top: 5rem;
+  top: 3rem;
   right: 0;
 }
 
-#mainGame #monitor #game #battleField #enemyPkm img {
+#mainGame #monitor #game #battleField #enemyPkm #enemyPkmSprite {
   width: 13rem;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
 
-#mainGame #monitor #game #display {
+#mainGame #monitor #game #battleField #enemyPkm #enemyPkmCard {
+  position: absolute;
+  width: 16rem;
+  height: 4rem;
+  margin: 0.5rem;
+  border: black solid 1px;
+  border-radius: 5px;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  bottom: -2.5rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm figure {
+  padding: 0.1rem;
+  display: flex;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm figure #enemyPkmCardSprite {
+  width: 3rem;
+  height: 3rem;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm figure figcaption {
+  margin-left: 0.5rem;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm figure figcaption div {
+  margin-bottom: 3px;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm figure figcaption .okStatusPkm {
+  border: 1px solid black;
+  background-color: green;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm figure figcaption .injuredStatusPkm {
+  border: 1px solid black;
+  background-color: yellow;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm figure figcaption .koStatusPkm {
+  border: 1px solid black;
+  background-color: red;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm:hover #enemyPkmCard {
+  visibility: visible;
+  opacity: 1;
+}
+
+#mainGame #display {
   display: flex;
   justify-content: space-around;
   height: 32%;
@@ -114,7 +180,7 @@ footer {
   border-top: 1px solid black;
 }
 
-#mainGame #monitor #game #display #actionButtons {
+#mainGame #display #actionButtons {
   display: flex;
   align-items: center;
   width: 60%;
@@ -123,7 +189,7 @@ footer {
   letter-spacing: 5px;
 }
 
-#mainGame #monitor #game #display #actionButtons #exitBattle {
+#mainGame #display #actionButtons #exitBattle {
   background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
   margin: 10px;
   padding: 15px 45px;
@@ -136,18 +202,18 @@ footer {
   border-radius: 10px;
 }
 
-#mainGame #monitor #game #display #actionButtons #exitBattle:hover {
+#mainGame #display #actionButtons #exitBattle:hover {
   background-position: right center;
   /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
 
-#mainGame #monitor #game #display #actionButtons #pkmFight {
+#mainGame #display #actionButtons #pkmFight {
   background-image: linear-gradient(to right, #093028 0%, #237A57 51%, #093028 100%);
 }
 
-#mainGame #monitor #game #display #actionButtons #pkmFight {
+#mainGame #display #actionButtons #pkmFight {
   margin: 10px;
   padding: 15px 45px;
   text-align: center;
@@ -160,18 +226,18 @@ footer {
   display: block;
 }
 
-#mainGame #monitor #game #display #actionButtons #pkmFight:hover {
+#mainGame #display #actionButtons #pkmFight:hover {
   background-position: right center;
   /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
 
-#mainGame #monitor #game #display #actionButtons #resetBattle {
+#mainGame #display #actionButtons #resetBattle {
   background-image: linear-gradient(to right, #FF8008 0%, #FFC837 51%, #FF8008 100%);
 }
 
-#mainGame #monitor #game #display #actionButtons #resetBattle {
+#mainGame #display #actionButtons #resetBattle {
   margin: 10px;
   padding: 15px 45px;
   text-align: center;
@@ -184,18 +250,18 @@ footer {
   display: block;
 }
 
-#mainGame #monitor #game #display #actionButtons #resetBattle:hover {
+#mainGame #display #actionButtons #resetBattle:hover {
   background-position: right center;
   /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
 
-#mainGame #monitor #game #display #actionButtons #generateEnemy {
+#mainGame #display #actionButtons #generateEnemy {
   background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%);
 }
 
-#mainGame #monitor #game #display #actionButtons #generateEnemy {
+#mainGame #display #actionButtons #generateEnemy {
   font-size: 0.8rem;
   margin: 10px;
   padding: 6px 45px;
@@ -209,14 +275,14 @@ footer {
   display: block;
 }
 
-#mainGame #monitor #game #display #actionButtons #generateEnemy:hover {
+#mainGame #display #actionButtons #generateEnemy:hover {
   background-position: right center;
   /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
 
-#mainGame #monitor #game #display #actionButtons .actionButton {
+#mainGame #display #actionButtons .actionButton {
   width: 15rem;
   height: 3rem;
   margin: 0.5rem;
@@ -226,13 +292,13 @@ footer {
   letter-spacing: 5px;
 }
 
-#mainGame #monitor #game #display #pkmBox {
+#mainGame #display #pkmBox {
   width: 18rem;
   overflow-y: scroll;
   text-align: center;
 }
 
-#mainGame #monitor #game #display #pkmBox button {
+#mainGame #display #pkmBox button {
   width: 16rem;
   height: 4rem;
   margin: 0.5rem;
@@ -249,56 +315,56 @@ footer {
   display: block;
 }
 
-#mainGame #monitor #game #display #pkmBox button figure {
+#mainGame #display #pkmBox button figure {
   padding: 0.1rem;
   display: flex;
 }
 
-#mainGame #monitor #game #display #pkmBox button figure img {
+#mainGame #display #pkmBox button figure img {
   width: 3rem;
   height: 3rem;
 }
 
-#mainGame #monitor #game #display #pkmBox button figure figcaption {
+#mainGame #display #pkmBox button figure figcaption {
   margin-left: 0.5rem;
 }
 
-#mainGame #monitor #game #display #pkmBox button figure figcaption div {
+#mainGame #display #pkmBox button figure figcaption div {
   margin-bottom: 3px;
 }
 
-#mainGame #monitor #game #display #pkmBox button figure figcaption .okStatusPkm {
+#mainGame #display #pkmBox button figure figcaption .okStatusPkm {
   border: 1px solid black;
   background-color: green;
   width: 5rem;
   border-radius: 5px;
 }
 
-#mainGame #monitor #game #display #pkmBox button figure figcaption .injuredStatusPkm {
+#mainGame #display #pkmBox button figure figcaption .injuredStatusPkm {
   border: 1px solid black;
   background-color: yellow;
   width: 5rem;
   border-radius: 5px;
 }
 
-#mainGame #monitor #game #display #pkmBox button figure figcaption .koStatusPkm {
+#mainGame #display #pkmBox button figure figcaption .koStatusPkm {
   border: 1px solid black;
   background-color: red;
   width: 5rem;
   border-radius: 5px;
 }
 
-#mainGame #monitor #game #display #pkmBox button:hover {
+#mainGame #display #pkmBox button:hover {
   background-position: right center;
   /* change the direction of the change here */
   text-decoration: none;
 }
 
-#mainGame #monitor #game #display #pkmBox::-webkit-scrollbar {
+#mainGame #display #pkmBox::-webkit-scrollbar {
   width: 7px;
 }
 
-#mainGame #monitor #game #display #pkmBox::-webkit-scrollbar-thumb {
+#mainGame #display #pkmBox::-webkit-scrollbar-thumb {
   background-color: gainsboro;
   border: 1px solid white;
   border-radius: 10px;
