@@ -18,24 +18,49 @@
     </header>
     <main>
         <section id="mainGame">
-            
+
             <div id="monitor">
                 <div id="volume">
-                    
+
                     <div id="volButton">
-                        <button ><img src="./media/img/volume.png" alt=""></button>
+                        <button><img src="./media/img/volume.png" alt=""></button>
                     </div>
                     <div>
                         <input type="range" class="form-range" id="customRange1">
                     </div>
                 </div>
+                <div id="rules">
+                    <p id="modal-abrir">?</p>
+                </div>
+                <div id="rulesModal" class="modal-container">
+                    <div class="modal">
+                        <p> Bienvenidos a Pokemon Version JavaScript
+                            El juego consiste en armar un equipo de 6 Pokemon y hacerlos batallar
+                            contra Pokemon salvajes.
+                            El juego consiste en hacer batallar a los pokemons segun su tipo:
+                        </p>
+                        <ul>
+                            <li>Si tiene ventaja sobre el otro, gana</li>
+                            <li>Si no tiene ventaja ni desventaja el pokemon pasa a estado "herido" 
+                                dos veces "herido" es un KO</li>
+                            <li>Si tiene desventaja, queda KO.</li>
+                        </ul>
+                        <P>
+                            Si no recuerdas las ventajas que tiene cada tipo sobre el otro
+                            te dejo el siguiente <a href="https://pm1.narvii.com/6305/8b08c0111075c0e0c0a2297f33352dad39ffc2be_hq.jpg" target="_blank">Link</a>
+                        </P>
+                        <button id="modal-cerrar">cerrar</button>
+                    </div>
+                </div>
+
                 <div id="presentation">
                     <button id="runGame">Start Game</button>
-            </div>
+                </div>
             </div>
         </section>
     </main>
     <footer></footer>
     <script src="./app.js"></script>
 </body>>
+
 </html>

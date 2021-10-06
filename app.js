@@ -508,7 +508,30 @@ class Trainer {
     }
 }
 
+// =========== MODAL DE REGLAS===========
+const modalAbrir = document.getElementById('modal-abrir')
+const modalCerrar = document.getElementById('modal-cerrar')
+const modalContainer = document.getElementsByClassName('modal-container')[0]
+const modal = document.getElementsByClassName('modal')[0]
+
+modalAbrir.addEventListener('click', () => {
+    // modalContainer.classList.add('modal-active')
+    modalContainer.classList.toggle('modal-active')
+})
+
+modalCerrar.addEventListener('click', () => {
+    // modalContainer.classList.remove('modal-active')
+    modalContainer.classList.toggle('modal-active')
+})
+
+
+modal.addEventListener('click', (e) => {
+    e.stopPropagation()
+})
+
+
 // =========== INICIALIZA EL JUEGO===========
+//
 // =========== AVANZA A LA SELECCION DE PERSONAJE ===========
 const runGameFunction = () => {
     const pkmSelected = []
@@ -542,7 +565,7 @@ let score = 0
                         </div>
                         <form id="playerNameInput">
                             <Label for="playerName">Selecciona Tu Nombre</Label>
-                            <input type="text" name="playerName" id="playerName" placeholder="Type something here...">
+                            <input type="text" name="playerName" id="playerName" placeholder="M i n i m o   3   l e t r a s . . .">
                             <input type="submit" value="Acept"  id="goToPkmSelection"></input>
                         </form>
                         
