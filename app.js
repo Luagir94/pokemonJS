@@ -650,7 +650,8 @@ let score = 0
                 </button>`
                         pkmListSelection.appendChild(btnPkm)
                         btnPkm.onclick = () => {
-                            if (pkmSelected.length <= 5) {
+                            const pkmEnLista = pkmSelected.find((pkm) => pkm.id === pokemons.id)
+                            if (pkmSelected.length <= 5 && !pkmEnLista) {
                                 pkmSelected.push(pokemons)
                                 console.log(pkmSelected)
                                 addToList(pokemons.name, pokemons.type, pokemons.spriteFront)
@@ -783,9 +784,10 @@ let score = 0
                     let att = document.createAttribute("id")
                     att.value = `myPkm${pokemons.id}`
                     btnPkm.setAttributeNode(att)
+                    let statusPkms = `statusPkm${pokemons.id}`
                     btnPkm.innerHTML = `<figure>
                                         <img src="${pokemons.spriteFront}" alt="">
-                                        <figcaption>${pokemons.name} <div id="" class="${pokemons.type}Type">${pokemons.type}</div><div id="statusPkm${pokemons.id}" class="${pokemons.status}StatusPkm">Status</div> </figcaption>
+                                        <figcaption>${pokemons.name} <div id="" class="${pokemons.type}Type">${pokemons.type}</div><div id="${statusPkms}" class="okStatusPkm">Status</div> </figcaption>
                                     </figure>`
                     pkmBox.appendChild(btnPkm)
                     let myChoose = document.getElementById(`myPkm${pokemons.id}`)
