@@ -495,18 +495,10 @@ const pkm = [{
 
 
 ]
-const pkmSelected = []
-const enemybattlinPkm = []
-let myBattlinPkm = undefined
+
 let runGame = document.getElementById("runGame")
-let characterGender = undefined
-let characterName = undefined
 let getStatus = document.getElementById("okStatusPkm")
 let getScoreText = document.getElementById("scoreText")
-let pokelist = false
-let mainGame = false
-let score = 0
-
 class Trainer {
     constructor(name, gender, team, score) {
         this.name = name;
@@ -516,8 +508,21 @@ class Trainer {
     }
 }
 
+// =========== INICIALIZA EL JUEGO===========
+// =========== AVANZA A LA SELECCION DE PERSONAJE ===========
+const runGameFunction = () => {
+    const pkmSelected = []
+const enemybattlinPkm = []
+let myBattlinPkm = undefined
 
-runGame.onclick = () => {
+let characterGender = undefined
+let characterName = undefined
+
+let pokelist = false
+let mainGame = false
+let score = 0
+
+    // =========== CREACION DE PERSONAJE ===========
     let presentation = document.getElementById("presentation")
     presentation.parentNode.removeChild(presentation)
     let monitor = document.getElementById("monitor")
@@ -529,7 +534,7 @@ runGame.onclick = () => {
     <div id="dataDiv">
                         <h2>Completa los siguientes datos</h2>
                         <div id="genderSelection">
-                            <p>Eres chico o chica?</p>
+                            <p>Elige al entrenador</p>
                             <div id="genderButtons">
                                 <button id="femaleSelection"><img src="./media/img/characterSprites/genderFemale.png" alt=""></button>
                                 <button id="maleSelection"><img src="./media/img/characterSprites/genderMale.png" alt=""></button>
@@ -540,7 +545,6 @@ runGame.onclick = () => {
                             <input type="text" name="playerName" id="playerName" placeholder="Type something here...">
                             <input type="submit" value="Acept"  id="goToPkmSelection"></input>
                         </form>
-
                         
                     </div>
                     <div id="oakDiv">
@@ -558,6 +562,7 @@ runGame.onclick = () => {
     let genderMale = document.getElementById("maleSelection")
     let goToPkmSelection = document.getElementById("goToPkmSelection")
     let playerNameInput = document.getElementById("playerNameInput")
+    // =========== SELECCION DE GENERO ===========
     genderFemale.onclick = () => {
         characterGender = "female"
         console.log(characterGender)
@@ -567,14 +572,17 @@ runGame.onclick = () => {
         characterGender = "male"
         console.log(characterGender)
     }
+    // =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
     playerNameInput.onsubmit = (e) => e.preventDefault()
-
+    // =========== EVENTO PARA PROCEDER A LA SELECCION DE POKEMONS ===========
     goToPkmSelection.onclick = (e) => {
         if (characterGender) {
             e.preventDefault()
+            // =========== SELECCION DE NOMBRE ===========
             characterName = document.getElementById("playerName").value
             console.log(characterName)
             console.log(characterGender)
+            // =========== INICIALIZA LA SELECCION DE POKEMONS ===========
             if (characterName.length > 2) {
                 let characterCreation = document.getElementById("characterCreation")
                 characterCreation.parentNode.removeChild(characterCreation)
@@ -584,25 +592,23 @@ runGame.onclick = () => {
                 att.value = "pkmSelection"
                 createPkmSelection.setAttributeNode(att)
                 createPkmSelection.innerHTML = `
-<p>Select your Pokemon</p>
-<div id="pkmList">
-    <ol id="pkmToChoose">
-        
-    </ol>
-</div>
-<div id="selectedBox">
-    <p>Your Pokemon</p>
-    <div id="selectedPkm">
-    </div>
-    <div id="deleteNext">
-        <button class="actionButton" id="deletePkm">Delete Pokemons</button>
-        <button class="actionButton" id="toGame">Next</button>
-    </div>
-</div>
-<div>
-
-</div>
-`
+                                        <p>Select your Pokemon</p>
+                                        <div id="pkmList">
+                                            <ol id="pkmToChoose">
+                                                
+                                            </ol>
+                                        </div>
+                                        <div id="selectedBox">
+                                            <p>Your Pokemon</p>
+                                            <div id="selectedPkm">
+                                            </div>
+                                            <div id="deleteNext">
+                                                <button class="actionButton" id="deletePkm">Delete Pokemons</button>
+                                                <button class="actionButton" id="toGame">Next</button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                        </div>`
                 monitor.appendChild(createPkmSelection)
                 let generatePkm = () => {
                     for (const pokemons of pkm) {
@@ -622,17 +628,13 @@ runGame.onclick = () => {
                                 addToList(pokemons.name, pokemons.type, pokemons.spriteFront)
                             }
                         }
-
                     }
                 }
                 generatePkm()
             }
-
         }
 
-
-
-
+        // =========== FUNCION QUE AGREGA POKEMONS A LA LISTA ===========
 
         const addToList = function (name, type, spriteFront) {
             let selectedPkm = document.getElementById("selectedPkm")
@@ -662,11 +664,9 @@ runGame.onclick = () => {
             <figcaption>${name} <div id="" class="${type}Type">${type}</div></figcaption>
         </figure>
     </button>`
-
                 pkmListSelected.appendChild(btnPkm)
-
-
             }
+            // =========== EVENTO PARA BORRAR LOS POKEMON DE LA LISTA ===========
             let erasePkm = document.getElementById("deletePkm")
             erasePkm.onclick = () => {
                 pkmSelected.splice(0, pkmSelected.length)
@@ -675,6 +675,8 @@ runGame.onclick = () => {
                 pokelist = false
             }
             let goToGame = document.getElementById("toGame")
+
+            // =========== EVENTO DISPARADOR DEL JUEGO PRINCIPAL ===========
             goToGame.onclick = () => {
                 if (pkmSelected && (pkmSelected.length === 6)) {
                     let selectionStage = document.getElementById("pkmSelection")
@@ -714,6 +716,7 @@ runGame.onclick = () => {
                     monitor.appendChild(mainGame)
                 }
                 let generateEnemy = document.getElementById("generateEnemy")
+                // =========== GENERO ENEMIGO AL AZAR ===========
                 generateEnemy.onclick = () => {
                     if (enemybattlinPkm.length === 0) {
                         let chosenEnemy = pkm[Math.floor(Math.random() * pkm.length)]
@@ -728,6 +731,24 @@ runGame.onclick = () => {
                         console.log(enemybattlinPkm[0], enemybattlinPkm[0].type)
                     }
                 }
+
+                let exitBattle = document.getElementById("exitBattle");
+                exitBattle.onclick = () => {
+
+                    let mainGame = document.getElementById("game")
+                    mainGame.parentNode.removeChild(mainGame)
+                    let monitor = document.getElementById("monitor")
+                    let presentation = document.createElement("div")
+                    let att = document.createAttribute("id")
+                    att.value = "presentation"
+                    presentation.setAttributeNode(att)
+                    presentation.innerHTML = `
+                    <button id="runGame">Start Game</button>
+                    `
+                    monitor.appendChild(presentation)
+                    resetGameFunction()
+
+                }
                 for (const pokemons of pkmSelected) {
                     let pkmBox = document.getElementById("pkmBox")
                     let btnPkm = document.createElement("button")
@@ -740,6 +761,7 @@ runGame.onclick = () => {
                                     </figure>`
                     pkmBox.appendChild(btnPkm)
                     let myChoose = document.getElementById(`myPkm${pokemons.id}`)
+                    // =========== SELECCION DE MIS POKEMON ===========
                     myChoose.onclick = () => {
                         if (pokemons.active === true) {
                             myPkm.innerHTML = `<figure id="myChosenPkm">
@@ -750,6 +772,7 @@ runGame.onclick = () => {
                         }
                     }
                     let pkmFight = document.getElementById("pkmFight")
+                    // =========== VALIDACIONES DE LAS PELEAS ===========
                     let succesBattle = () => {
                         enemybattlinPkm.splice(0, enemybattlinPkm.length)
                         let liItems = document.getElementById("myEnemyPkm")
@@ -769,6 +792,7 @@ runGame.onclick = () => {
                         let myChosedPkm = document.getElementById("myChosenPkm")
                         myChosedPkm.parentNode.removeChild(myChosedPkm)
                     }
+                    // =========== TRIGGER DE LA PELEA ===========
                     pkmFight.onclick = () => {
                         if (pkmSelected[myBattlinPkm].type === "fairy") {
                             if ((enemybattlinPkm[0].type === "dragon") || (enemybattlinPkm[0].type === "fight")) {
@@ -1052,4 +1076,15 @@ runGame.onclick = () => {
         }
     }
 
+}
+
+runGame.onclick = () => {
+    runGameFunction()
+}
+const resetGameFunction = () => {
+    let resetGame = document.getElementById("runGame")
+
+    resetGame.onclick = () => {
+        runGameFunction()
+    }
 }
