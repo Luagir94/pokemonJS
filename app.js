@@ -572,7 +572,9 @@ let score = 0
                     </div>
                     <div id="oakDiv">
                         <p>
-                            Bienvenido, Soy el Profesor Oak, antes de que comience el juego te voy a hacer algunas preguntas:
+                            Bienvenido, Soy el Profesor Oak, 
+                            antes de que comience el juego 
+                            te voy a hacer algunas preguntas:
                         </p>
                         <figure>
                             <img src="./media/img/characterSprites/professorOak.png" alt="">
