@@ -722,6 +722,10 @@ footer {
   height: 100%;
 }
 
+#mainGame #monitor #characterCreation #dataDiv #genderSelection #genderButtons .char-active {
+  background-color: green;
+}
+
 #mainGame #monitor #characterCreation #dataDiv form {
   display: flex;
   flex-direction: column;

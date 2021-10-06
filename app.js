@@ -520,7 +520,6 @@ modalAbrir.addEventListener('click', () => {
 })
 
 modalCerrar.addEventListener('click', () => {
-    // modalContainer.classList.remove('modal-active')
     modalContainer.classList.toggle('modal-active')
 })
 
@@ -591,11 +590,15 @@ let score = 0
     genderFemale.onclick = () => {
         characterGender = "female"
         console.log(characterGender)
+        genderFemale.classList.add('char-active')
+        genderMale.classList.remove('char-active')
     }
 
     genderMale.onclick = () => {
         characterGender = "male"
         console.log(characterGender)
+        genderMale.classList.add('char-active')
+        genderFemale.classList.remove('char-active')
     }
     // =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
     playerNameInput.onsubmit = (e) => e.preventDefault()
