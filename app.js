@@ -528,6 +528,26 @@ modal.addEventListener('click', (e) => {
     e.stopPropagation()
 })
 
+// =========== MODAL DE REDES===========
+const modalRedesAbrir = document.getElementById('modalRedes-abrir')
+const modalRedesCerrar = document.getElementById('modalRedes-cerrar')
+const modalRedesContainer = document.getElementsByClassName('modalRedes-container')[0]
+const modalRedes = document.getElementsByClassName('modalRedes')[0]
+
+modalRedesAbrir.addEventListener('click', () => {
+    modalRedesContainer.classList.toggle('modal-active')
+})
+
+modalRedesCerrar.addEventListener('click', () => {
+    modalRedesContainer.classList.toggle('modal-active')
+})
+
+
+modalRedes.addEventListener('click', (e) => {
+    e.stopPropagation()
+})
+
+
 
 // =========== INICIALIZA EL JUEGO===========
 //

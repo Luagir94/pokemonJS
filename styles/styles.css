@@ -845,7 +845,7 @@ footer {
   position: absolute;
   z-index: 10;
   right: -2rem;
-  top: 3rem;
+  top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -961,7 +961,7 @@ footer {
 }
 
 #rules:hover {
-  transform: scale(2, 2);
+  transform: scale(1.5, 1.5);
 }
 
 .modal-container {
@@ -1047,7 +1047,7 @@ span.injured {
 }
 
 span.ko {
-  color: black;
+  color: blac;
   background-color: red;
   border: white solid 1px;
   border-radius: 5px;
@@ -1056,8 +1056,8 @@ span.ko {
 #redes {
   position: absolute;
   z-index: 11;
-  right: 1rem;
-  top: 1rem;
+  right: 0.5rem;
+  top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1069,11 +1069,15 @@ span.ko {
   font-size: 2rem;
 }
 
-#redes:hover {
-  transform: scale(2, 2);
+#redes img {
+  width: 2rem;
 }
 
-.modal-container {
+#redes:hover {
+  transform: scale(1.5, 1.5);
+}
+
+.modalRedes-container {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.9);
@@ -1083,6 +1087,8 @@ span.ko {
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
+  opacity: 0;
   transition: all 0.3s ease-in;
   z-index: 100000000;
 }
@@ -1092,8 +1098,9 @@ span.ko {
   opacity: 1;
 }
 
-.modal {
+.modalRedes {
   background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
   width: 600px;
   height: 400px;
   border-radius: 5px;
@@ -1101,32 +1108,51 @@ span.ko {
   padding: 22px;
   border: black solid 5px;
   font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
-.modal p {
+.modalRedes ul {
+  list-style: none;
+  display: flex;
+}
+
+.modalRedes ul li {
+  list-style: none;
+}
+
+.modalRedes ul li img {
+  width: 3rem;
+}
+
+.modalRedes p {
   color: white;
 }
 
-.modal p a {
+.modalRedes p a {
   color: yellow;
 }
 
-.modal ul {
+.modalRedes ul {
   color: white;
   list-style-image: url("../media/img/pokeballList.png");
   margin: 0.8rem auto 0.8rem auto;
 }
 
-.modal ul li {
+.modalRedes ul li {
   margin: 5px auto 5px auto;
 }
 
-.modal #modalRedes-cerrar {
+.modalRedes #modalRedes-cerrar {
   background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
 }
 
-.modal #modalRedes-cerrar {
+.modalRedes #modalRedes-cerrar {
   margin: auto;
+  position: absolute;
   padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
@@ -1137,9 +1163,10 @@ span.ko {
   border-radius: 10px;
   display: block;
   margin-top: 1rem;
+  bottom: 2rem;
 }
 
-.modal #modalRedes-cerrar:hover {
+.modalRedes #modalRedes-cerrar:hover {
   background-position: right center;
   /* change the direction of the change here */
   color: #fff;
