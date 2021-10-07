@@ -2,6 +2,23 @@
 <html lang="en">
 
 <head>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWMLFPF');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +26,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-    <link  rel="icon"   href="./media/img/pokeball.png" type="image/png" />
+    <link rel="icon" href="./media/img/pokeball.png" type="image/png" />
     <title>Pokemon - JavaScript Version</title>
 </head>
 
 <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWMLFPF" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header>
 
     </header>
@@ -46,13 +66,16 @@
                         </p>
                         <ul>
                             <li>Si tiene ventaja sobre el otro, gana.</li>
-                            <li>Si no tiene ventaja ni desventaja el pokemon pasa a estado  <span class="injured">HERIDO</span>
+                            <li>Si no tiene ventaja ni desventaja el pokemon pasa a estado <span
+                                    class="injured">HERIDO</span>
                                 dos veces <span class="injured">HERIDO</span> es un <span class="ko">"KO"</span> </li>
                             <li>Si tiene desventaja, queda <span class="ko">"KO"</span>.</li>
                         </ul>
                         <P>
                             Si no recuerdas las ventajas que tiene cada tipo sobre el otro
-                            te dejo el siguiente <a href="https://pm1.narvii.com/6305/8b08c0111075c0e0c0a2297f33352dad39ffc2be_hq.jpg" target="_blank">Link</a>
+                            te dejo el siguiente <a
+                                href="https://pm1.narvii.com/6305/8b08c0111075c0e0c0a2297f33352dad39ffc2be_hq.jpg"
+                                target="_blank">Link</a>
                         </P>
                         <button id="modal-cerrar">cerrar</button>
                     </div>
@@ -63,9 +86,12 @@
                         <div>
                             <p>Los invito a seguirme en las distintas redes! :</p>
                             <ul>
-                                <li><a href="https://github.com/Luagir94" target="_blank"><img src="./media/img/logos/github.png" alt=""></a></li>
-                                <li><a href="https://www.linkedin.com/in/lucianogiraudi/" target="_blank"><img src="./media/img/logos/linkedin.png" alt=""></a></li>
-                                <li><a href="https://twitter.com/LuagirDev" target="_blank"><img src="./media/img/logos/twitter.png" alt=""></a></li>
+                                <li><a href="https://github.com/Luagir94" target="_blank"><img
+                                            src="./media/img/logos/github.png" alt=""></a></li>
+                                <li><a href="https://www.linkedin.com/in/lucianogiraudi/" target="_blank"><img
+                                            src="./media/img/logos/linkedin.png" alt=""></a></li>
+                                <li><a href="https://twitter.com/LuagirDev" target="_blank"><img
+                                            src="./media/img/logos/twitter.png" alt=""></a></li>
                             </ul>
 
                         </div>
