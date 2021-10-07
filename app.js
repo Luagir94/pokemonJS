@@ -516,11 +516,11 @@ const modalContainer = document.getElementsByClassName('modal-container')[0]
 const modal = document.getElementsByClassName('modal')[0]
 
 modalAbrir.addEventListener('click', () => {
-    modalContainer.classList.toggle('modal-active')
+    modalContainer.classList.add('modal-active')
 })
 
 modalCerrar.addEventListener('click', () => {
-    modalContainer.classList.toggle('modal-active')
+    modalContainer.classList.remove('modal-active')
 })
 
 
@@ -535,11 +535,11 @@ const modalRedesContainer = document.getElementsByClassName('modalRedes-containe
 const modalRedes = document.getElementsByClassName('modalRedes')[0]
 
 modalRedesAbrir.addEventListener('click', () => {
-    modalRedesContainer.classList.toggle('modal-active')
+    modalRedesContainer.classList.add('modal-active')
 })
 
 modalRedesCerrar.addEventListener('click', () => {
-    modalRedesContainer.classList.toggle('modal-active')
+    modalRedesContainer.classList.remove('modal-active')
 })
 
 
