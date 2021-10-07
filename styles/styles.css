@@ -1128,6 +1128,10 @@ span.ko {
   width: 3rem;
 }
 
+.modalRedes ul li img:hover {
+  transform: scale(1.5, 1.5);
+}
+
 .modalRedes p {
   color: white;
 }
