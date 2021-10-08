@@ -1,5 +1,4 @@
 // =========== VARIABLES Y GETS GLOBALES ===========
-
 let runGame = document.getElementById("runGame")
 let getStatus = document.getElementById("okStatusPkm")
 let getScoreText = document.getElementById("scoreText")
@@ -7,7 +6,6 @@ const pkmSelected = []
 const topTen = []
 let trainer = undefined
 let pkmBackup = []
-
 // =========== FUNCION PARA SETEAR EL SCORE ===========
 const setScore = (name, team, totalScore)=>{
     trainer ={
@@ -22,7 +20,6 @@ const setScore = (name, team, totalScore)=>{
     const guardarTopTen = (key,value) => {localStorage.setItem(key,value)}
     guardarTopTen("Top Ten", JSON.stringify(topTen))
 }
-
 // =========== MODAL DE REGLAS===========
 const modalAbrir = document.getElementById('modal-abrir')
 const modalCerrar = document.getElementById('modal-cerrar')
@@ -37,7 +34,6 @@ modalCerrar.onclick = () => {
 modal.onclick = (e) => {
     e.stopPropagation()
 }
-
 // =========== MODAL DE REDES===========
 const modalRedesAbrir = document.getElementById('modalRedes-abrir')
 const modalRedesCerrar = document.getElementById('modalRedes-cerrar')
@@ -52,7 +48,6 @@ modalRedesCerrar.onclick = () => {
 modalRedes.onclick = (e) => {
     e.stopPropagation()
 }
-
 // =========== APP ===========
 const runGameFunction = () => {
 // =========== SE ELIMINA QUIEN QUEDO FUERA DEL TOP10 ===========
@@ -360,10 +355,16 @@ const runGameFunction = () => {
 // =========== CAMBIOS DE STATUS ===========
                 let koMyPkmByInjuries = () => {
                     if (pkmSelected[myBattlinPkm].status === "ok") {
-                        pkmSelected[myBattlinPkm].status = "ko"
+                        pkmSelected[myBattlinPkm].status = "injured"
+                        let statusChange = document.getElementById(`statusPkm${pkmSelected[myBattlinPkm].id}`)
+                        statusChange.classList.remove("okStatusPkm")
+                        statusChange.classList.add("injuredStatusPkm")
                     } else {
                         pkmSelected[myBattlinPkm].active = false
                         pkmSelected[myBattlinPkm].status = "ko"
+                        let statusChange = document.getElementById(`statusPkm${pkmSelected[myBattlinPkm].id}`)
+                        statusChange.classList.remove("injuredStatusPkm")
+                        statusChange.classList.add("koStatusPkm")
                         let myChosedPkm = document.getElementById("myChosenPkm")
                         myChosedPkm.parentNode.removeChild(myChosedPkm)
                         pkmSelected.splice(myBattlinPkm, 1)
@@ -390,6 +391,9 @@ const runGameFunction = () => {
                     pkmSelected[myBattlinPkm].active = false
                     let myChosedPkm = document.getElementById("myChosenPkm")
                     myChosedPkm.parentNode.removeChild(myChosedPkm)
+                    let statusChange = document.getElementById(`statusPkm${pkmSelected[myBattlinPkm].id}`)
+                    statusChange.classList.add("koStatusPkm")
+                    statusChange.classList.remove("okStatusPkm")
                     pkmSelected.splice(myBattlinPkm, 1)
                 }
 // =========== CHECKEO DEL TEAM ===========
@@ -573,19 +577,16 @@ const runGameFunction = () => {
                         }
                     }
                     teamCheck()
-
                 }
             }
         }
     }
 }
-
 // =========== INICIALIZA EL JUEGO===========
 // =========== AVANZA A LA SELECCION DE PERSONAJE ===========
 runGame.onclick = () => {
     runGameFunction()
 }
-
 // =========== RESET DEL JUEGO ===========
 const resetGameFunction = () => {
     let resetGame = document.getElementById("runGame")
