@@ -16,6 +16,7 @@ const setScore = (name, team, totalScore)=>{
         score: totalScore,
     }
     localStorage.clear()
+    topTen.push(trainer)
     topTen.sort((a, b) => (a.score) - (b.score))
     console.log(topTen)
     const guardarTopTen = (key,value) => {localStorage.setItem(key,value)}
@@ -54,27 +55,22 @@ modalRedes.onclick = (e) => {
 
 // =========== APP ===========
 const runGameFunction = () => {
-    // =========== SE ELIMINA QUIEN QUEDO FUERA DEL TOP10 ===========
+// =========== SE ELIMINA QUIEN QUEDO FUERA DEL TOP10 ===========
     if (topTen.length >= 11 ) {
         topTen.splice(10, 1)
     }
-    // =========== RESETEOS DE VARIABLES Y ARRAYS===========
+// =========== RESETEOS DE VARIABLES Y ARRAYS===========
     pkmSelected.splice(0, pkmSelected.length)
     pkmBackup.splice(0, pkmSelected.length)
     trainer = undefined
-    console.log(trainer)
-
     const enemybattlinPkm = []
     let myBattlinPkm = undefined
-
     let characterGender = undefined
     let characterName = undefined
-
     let pokelist = false
     let mainGame = false
     let score = 0
-
-    // =========== CREACION DE PERSONAJE ===========
+// =========== CREACION DE PERSONAJE ===========
     let presentation = document.getElementById("presentation")
     presentation.parentNode.removeChild(presentation)
     let monitor = document.getElementById("monitor")
@@ -111,35 +107,30 @@ const runGameFunction = () => {
                     </div>
     `
     monitor.appendChild(characterCreation)
-
     let genderFemale = document.getElementById("femaleSelection")
     let genderMale = document.getElementById("maleSelection")
     let goToPkmSelection = document.getElementById("goToPkmSelection")
     let playerNameInput = document.getElementById("playerNameInput")
-    // =========== SELECCION DE GENERO ===========
+// =========== SELECCION DE GENERO ===========
     genderFemale.onclick = () => {
         characterGender = "female"
-
         genderFemale.classList.add('char-active')
         genderMale.classList.remove('char-active')
     }
-
     genderMale.onclick = () => {
         characterGender = "male"
-
         genderMale.classList.add('char-active')
         genderFemale.classList.remove('char-active')
     }
-    // =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
+// =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
     playerNameInput.onsubmit = (e) => e.preventDefault()
-    // =========== EVENTO PARA PROCEDER A LA SELECCION DE POKEMONS ===========
+// =========== EVENTO PARA PROCEDER A LA SELECCION DE POKEMONS ===========
     goToPkmSelection.onclick = (e) => {
         if (characterGender) {
             e.preventDefault()
-            // =========== SELECCION DE NOMBRE ===========
+// =========== SELECCION DE NOMBRE ===========
             characterName = document.getElementById("playerName").value
-
-            // =========== INICIALIZA LA SELECCION DE POKEMONS ===========
+// =========== INICIALIZA LA SELECCION DE POKEMONS ===========
             if (characterName.length > 2) {
                 let characterCreation = document.getElementById("characterCreation")
                 characterCreation.parentNode.removeChild(characterCreation)
@@ -153,7 +144,7 @@ const runGameFunction = () => {
                                         <div id="pkmList">
                                         <form id="pokeSearch">
                                                 <label for="fname">Buscador:</label><br>
-                                                    <input type="text" id="pokeSearchInput" name="fname" placeholder="Nombre,Tipo,Nro Pokedex..."><br>
+                                                    <input type="text" id="pokeSearchInput" name="fname" placeholder="Nombre, Tipo,Nro Pokedex..."><br>
                                         </form>
                                             <ol id="pkmToChoose">
                                                 
@@ -198,7 +189,7 @@ const runGameFunction = () => {
                                 addToList(pokemons.name, pokemons.type, pokemons.spriteFront)
                             }
                         }
-                        // =========== BUSCADOR DE POKEMON ===========
+// =========== BUSCADOR DE POKEMON ===========
                         let pokeSearchInput = document.getElementById("pokeSearchInput")
                         let buscarName = (search) => pkm.filter((pokemon) => pokemon.name.toLowerCase().includes(search))
                         let buscarType = (search) => pkm.filter((pokemon) => pokemon.type.toLowerCase().includes(search))
@@ -219,7 +210,7 @@ const runGameFunction = () => {
             }
         }
     }
-    // =========== FUNCION QUE AGREGA POKEMONS A LA LISTA ===========
+// =========== FUNCION QUE AGREGA POKEMONS A LA LISTA ===========
     const addToList = function (name, type, spriteFront) {
         let selectedPkm = document.getElementById("selectedPkm")
         if (!pokelist) {
@@ -248,7 +239,7 @@ const runGameFunction = () => {
     </button>`
             pkmListSelected.appendChild(btnPkm)
         }
-        // =========== EVENTO PARA BORRAR LOS POKEMON DE LA LISTA ===========
+// =========== EVENTO PARA BORRAR LOS POKEMON DE LA LISTA ===========
         let erasePkm = document.getElementById("deletePkm")
         erasePkm.onclick = () => {
             pkmSelected.splice(0, pkmSelected.length)
@@ -257,7 +248,7 @@ const runGameFunction = () => {
             pokelist = false
         }
         let goToGame = document.getElementById("toGame")
-        // =========== EVENTO DISPARADOR DEL JUEGO PRINCIPAL ===========
+// =========== EVENTO DISPARADOR DEL JUEGO PRINCIPAL ===========
         goToGame.onclick = () => {
             if (pkmSelected && (pkmSelected.length === 6)) {
                 for (let i = 0; i < pkmSelected.length; i++) {
@@ -294,12 +285,11 @@ const runGameFunction = () => {
                             <div id="pkmBox">
                             </div>
                         </div>
-                    </div>
-            `
+                    </div>`
                 monitor.appendChild(mainGame)
             }
             let generateEnemy = document.getElementById("generateEnemy")
-            // =========== GENERO ENEMIGO AL AZAR ===========
+// =========== GENERO ENEMIGO AL AZAR ===========
             generateEnemy.onclick = () => {
                 if (enemybattlinPkm.length === 0) {
                     let chosenEnemy = pkm[Math.floor(Math.random() * pkm.length)]
@@ -315,9 +305,7 @@ const runGameFunction = () => {
                 }
             }
             let exitBattle = document.getElementById("exitBattle");
-
-
-            // =========== RESET DEL JUEGO===========
+// =========== RESET DEL JUEGO===========
             exitBattle.onclick = () => {
                 setScore(characterName,pkmBackup,score)
                 let mainGame = document.getElementById("game")
@@ -332,7 +320,6 @@ const runGameFunction = () => {
                     `
                 monitor.appendChild(presentation)
                 resetGameFunction()
-
             }
             for (const pokemons of pkmSelected) {
                 let pkmBox = document.getElementById("pkmBox")
@@ -347,32 +334,30 @@ const runGameFunction = () => {
                                     </figure>`
                 pkmBox.appendChild(btnPkm)
                 let myChoose = document.getElementById(`myPkm${pokemons.id}`)
-                // =========== SELECCION DE MIS POKEMON ===========
+// =========== SELECCION DE MIS POKEMON ===========
                 myChoose.onclick = () => {
                     if (pokemons.active === true) {
                         myPkm.innerHTML = `<figure id="myChosenPkm">
                 <img src="${pokemons.spriteBack}" alt="">
                 </figure>`
                         myBattlinPkm = pkmSelected.findIndex((pkm) => pkm === pokemons);
-
                     }
                 }
                 let pkmFight = document.getElementById("pkmFight")
                 pkmBackup = [...pkmSelected]
-                // =========== VALIDACIONES DE LAS PELEAS ===========
-                // =========== PELEA GANADA ===========
+// =========== VALIDACIONES DE LAS PELEAS ===========
+// =========== PELEA GANADA ===========
                 let succesBattle = () => {
                     enemybattlinPkm.splice(0, enemybattlinPkm.length)
                     let liItems = document.getElementById("myEnemyPkm")
                     liItems.parentNode.removeChild(liItems)
-
                     let getScore = document.getElementById("score")
                     if (enemybattlinPkm.length === 0) {
                         score += 1
                         getScore.innerHTML = `<p>SCORE:    ${score} </p>`
                     }
                 }
-                // =========== CAMBIOS DE STATUS ===========
+// =========== CAMBIOS DE STATUS ===========
                 let koMyPkmByInjuries = () => {
                     if (pkmSelected[myBattlinPkm].status === "ok") {
                         pkmSelected[myBattlinPkm].status = "ko"
@@ -382,10 +367,7 @@ const runGameFunction = () => {
                         let myChosedPkm = document.getElementById("myChosenPkm")
                         myChosedPkm.parentNode.removeChild(myChosedPkm)
                         pkmSelected.splice(myBattlinPkm, 1)
-                        console.log(pkmSelected)
-
                     }
-
                 }
                 let koEnemyPkmByInjuries = () => {
                     if (enemybattlinPkm[0].status === "ok") {
@@ -393,7 +375,6 @@ const runGameFunction = () => {
                         let statusEnemyColor = document.getElementById("statusEnemy")
                         statusEnemyColor.classList.remove('okStatusPkm')
                         statusEnemyColor.classList.add('injuredStatusPkm')
-
                     } else {
                         enemybattlinPkm.splice(0, enemybattlinPkm.length)
                         let liItems = document.getElementById("myEnemyPkm")
@@ -401,37 +382,31 @@ const runGameFunction = () => {
                         let getScore = document.getElementById("score")
                         score += 1
                         getScore.innerHTML = `<p>SCORE:    ${score} </p>`
-
                     }
-
                 }
-                // =========== PELEA PERDIDA ===========
+// =========== PELEA PERDIDA ===========
                 let failedBattle = () => {
                     pkmSelected[myBattlinPkm].status = "ko"
                     pkmSelected[myBattlinPkm].active = false
-
                     let myChosedPkm = document.getElementById("myChosenPkm")
                     myChosedPkm.parentNode.removeChild(myChosedPkm)
                     pkmSelected.splice(myBattlinPkm, 1)
-                        console.log(pkmSelected)
                 }
+// =========== CHECKEO DEL TEAM ===========
                 let teamCheck = () => {
                     console.log(pkmBackup)
                     if (pkmSelected.length === 0) {
                         alert('perdiste')
                         setScore(characterName,pkmBackup,score)
-
                     }
                 }
-                // =========== TRIGGER DE LA PELEA ===========
+// =========== TRIGGER DE LA PELEA ===========
                 pkmFight.onclick = () => {
-
                     if (pkmSelected[myBattlinPkm].type === "fairy") {
                         if ((enemybattlinPkm[0].type === "dragon") || (enemybattlinPkm[0].type === "fight")) {
                             succesBattle()
                         } else if ((enemybattlinPkm[0].type === "poison")) {
                             failedBattle()
-
                         } else {
                             koMyPkmByInjuries()
                             koEnemyPkmByInjuries()
@@ -441,13 +416,10 @@ const runGameFunction = () => {
                             succesBattle()
                             pkmSelected[myBattlinPkm].status === "ko"
                             pkmSelected[myBattlinPkm].active = false
-
                             let myChosedPkm = document.getElementById("myChosenPkm")
                             myChosedPkm.parentNode.removeChild(myChosedPkm)
-
                         } else if ((enemybattlinPkm[0].type === "ice") || (enemybattlinPkm[0].type === "fairy")) {
                             failedBattle()
-
                         } else {
                             koMyPkmByInjuries()
                             koEnemyPkmByInjuries()
@@ -457,10 +429,8 @@ const runGameFunction = () => {
                             succesBattle()
                             pkmSelected[myBattlinPkm].status === "ko"
                             pkmSelected[myBattlinPkm].active = false
-
                             let myChosedPkm = document.getElementById("myChosenPkm")
                             myChosedPkm.parentNode.removeChild(myChosedPkm)
-
                         } else if ((enemybattlinPkm[0].type === "psychc")) {
                             succesBattle()
                         } else if ((enemybattlinPkm[0].type === "normal")) {} else {
@@ -472,7 +442,6 @@ const runGameFunction = () => {
                             succesBattle()
                         } else if ((enemybattlinPkm[0].type === "water") || (enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "fight") || (enemybattlinPkm[0].type === "ground")) {
                             failedBattle()
-
                         } else {
                             koMyPkmByInjuries()
                             koEnemyPkmByInjuries()
@@ -483,12 +452,8 @@ const runGameFunction = () => {
                         } else if ((enemybattlinPkm[0].type === "fire") || (enemybattlinPkm[0].type === "flying") || (enemybattlinPkm[0].type === "rock")) {
                             pkmSelected[myBattlinPkm].status = "ko"
                             pkmSelected[myBattlinPkm].active = false
-
-
-
                             let myChosedPkm = document.getElementById("myChosenPkm")
                             myChosedPkm.parentNode.removeChild(myChosedPkm)
-
                         } else {
                             koMyPkmByInjuries()
                             koEnemyPkmByInjuries()
