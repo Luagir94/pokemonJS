@@ -260,7 +260,7 @@ const runGameFunction = () => {
                 mainGame.innerHTML = `
             <div id="battleField">
                             <div id="myPokeballs">
-                                <img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt=""><img src="./media/img/pokeball.png" alt="">
+                                
                             </div>
                             <div id="score">
                             <p>SCORE:    ${score} </p>
@@ -328,6 +328,16 @@ const runGameFunction = () => {
                                         <figcaption>${pokemons.name} <div id="" class="${pokemons.type}Type">${pokemons.type}</div><div id="${statusPkms}" class="okStatusPkm">Status</div> </figcaption>
                                     </figure>`
                 pkmBox.appendChild(btnPkm)
+                let myPokeballs = document.getElementById("myPokeballs")
+                let pokeball = document.createElement("img")
+                let attBallID = document.createAttribute("id")
+                attBallID.value = `pokeball${pokemons.id}`
+                pokeball.setAttributeNode(attBallID)
+                let attBallSrc = document.createAttribute("src")
+                attBallSrc.value = `./media/img/pokeball.png`
+                pokeball.setAttributeNode(attBallSrc)
+                myPokeballs.appendChild(pokeball)
+
                 let myChoose = document.getElementById(`myPkm${pokemons.id}`)
 // =========== SELECCION DE MIS POKEMON ===========
                 myChoose.onclick = () => {
@@ -362,6 +372,8 @@ const runGameFunction = () => {
                     } else {
                         pkmSelected[myBattlinPkm].active = false
                         pkmSelected[myBattlinPkm].status = "ko"
+                        let koPokeball = document.getElementById(`pokeball${pkmSelected[myBattlinPkm].id}`)
+                        koPokeball.classList.add("koPokeball")
                         let statusChange = document.getElementById(`statusPkm${pkmSelected[myBattlinPkm].id}`)
                         statusChange.classList.remove("injuredStatusPkm")
                         statusChange.classList.add("koStatusPkm")
@@ -394,6 +406,8 @@ const runGameFunction = () => {
                     let statusChange = document.getElementById(`statusPkm${pkmSelected[myBattlinPkm].id}`)
                     statusChange.classList.add("koStatusPkm")
                     statusChange.classList.remove("okStatusPkm")
+                    let koPokeball = document.getElementById(`pokeball${pkmSelected[myBattlinPkm].id}`)
+                    koPokeball.classList.add("koPokeball")
                     pkmSelected.splice(myBattlinPkm, 1)
                 }
 // =========== CHECKEO DEL TEAM ===========

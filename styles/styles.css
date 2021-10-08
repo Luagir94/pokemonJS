@@ -54,7 +54,7 @@ footer {
   background-image: url(../media/img/fieldBackground.png);
   height: 68%;
   width: 100%;
-  background-size: contain;
+  background-size: cover;
   position: relative;
 }
 
@@ -65,6 +65,10 @@ footer {
 
 #mainGame #monitor #game #battleField #myPokeballs img {
   width: 2rem;
+}
+
+#mainGame #monitor #game #battleField .koPokeball {
+  filter: grayscale(100%);
 }
 
 #mainGame #monitor #game #battleField #score {

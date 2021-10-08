@@ -30,7 +30,7 @@
                 background-image: url(../media/img/fieldBackground.png);
                 height: 68%;
                 width: 100%;
-                background-size: contain;
+                background-size: cover;
                 position: relative;
 
                 #myPokeballs {
@@ -43,7 +43,9 @@
                     left: 1rem;
 
                 }
-
+                .koPokeball{
+                    filter: grayscale(100%)
+                }
                 #score {
                     p {
                         font-size: 1.5rem;
