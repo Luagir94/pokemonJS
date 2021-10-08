@@ -1,34 +1,196 @@
-#mainGame{
-        #monitor{
-            #pkmSelection{
-                display: flex;
-                width: 100%;
-                height: 100%;
-                background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
-                flex-wrap: wrap;
-                p{
-                    width: 100%;
-                    height: 10%;
-                    text-align: center;
-                    font-size: 2rem;
+#mainGame {
+    #monitor {
+        #pkmSelection {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+            flex-wrap: wrap;
 
-                }
-                #pkmList{
-                    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
-                    width: 50%;
-                    height: 90%;
+            p {
+                width: 100%;
+                height: 10%;
+                text-align: center;
+                font-size: 2rem;
+
+            }
+
+            #pkmList {
+                background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+                width: 50%;
+                height: 90%;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 2rem;
+
+                #pkmToChoose {
+                    list-style: none;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: flex-start;
+                    justify-content: flex-start;
                     overflow-y: scroll;
-                    display: grid;
+                    width: 100%;
+
+                    li {
+                        .selectionButton {
+                            width: 11rem;
+                            height: 4rem;
+                            margin: 0.5rem;
+                            border-radius: 5px;
+                            font-weight: bolder;
+                            background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+                            margin: 10px;
+                            text-align: center;
+                            text-transform: uppercase;
+                            transition: 0.5s;
+                            background-size: 200% auto;
+                            box-shadow: 0 0 20px #eee;
+                            border-radius: 10px;
+                            display: block;
+                            position: relative;
+
+                            figure {
+                                padding: 0.5rem;
+                                display: flex;
+
+                                img {
+                                    width: 3rem;
+                                    height: 3rem;
+                                }
+
+                                figcaption {
+                                    margin-left: 0.1rem;
+                                    font-size: 0.8rem;
+                                    text-align: left;
+
+                                    div {
+                                        text-align: center;
+                                        font-weight: 1000;
+                                    }
+
+                                    span {
+                                        position: absolute;
+                                        bottom: 0.2rem;
+                                        right: 1rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        .selectionButton:hover {
+                            background-position: right center;
+                            /* change the direction of the change here */
+                            text-decoration: none;
+                        }
+
+                    }
+                }
+
+            }
+
+            #pkmToChoose::-webkit-scrollbar {
+                width: 7px;
+            }
+
+            #pkmToChoose::-webkit-scrollbar-thumb {
+                background-color: gainsboro;
+                border: 1px solid white;
+                border-radius: 10px;
+                margin: 0.5rem;
+            }
+
+            #selectedBox {
+                width: 50%;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                height: auto;
+                position: relative;
+                background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 33%);
+
+                #deleteNext {
+                    display: flex;
                     align-items: center;
                     justify-content: center;
-                    padding: 2rem;
-                    ol{list-style: none;
+
+                    .actionButton {
+                        width: 10rem;
+                        height: 3rem;
+                        margin: 0.5rem;
+                        border-radius: 5px;
+                        font-weight: bolder;
+                        box-shadow: 1px 1px 3px black;
+                        letter-spacing: 5px;
+                    }
+
+                    #deletePkm {
+                        background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+                        margin: 10px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        transition: 0.5s;
+                        background-size: 200% auto;
+                        color: white;
+                        box-shadow: 0 0 20px #eee;
+                        border-radius: 10px;
+
+                    }
+
+                    #deletePkm:hover {
+                        background-position: right center;
+                        /* change the direction of the change here */
+                        color: #fff;
+                        text-decoration: none;
+                    }
+
+                    #toGame {
+                        background-image: linear-gradient(to right, #3de527 0%, #2db312 51%, #27e527 100%);
+                        margin: 10px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        transition: 0.5s;
+                        background-size: 200% auto;
+                        color: white;
+                        box-shadow: 0 0 20px #eee;
+                        border-radius: 10px;
+
+                    }
+
+                    #toGame:hover {
+                        background-position: right center;
+                        /* change the direction of the change here */
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+
+                p {}
+
+                #selectedPkm {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    top: 3rem;
+                    left: 2rem;
+                    width: 25rem;
+                    height: 16rem;
+                    background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+                    border-radius: 10px;
+                    border: 1px solid black;
+
+                    ol {
+                        list-style: none;
                         display: flex;
                         flex-wrap: wrap;
                         align-items: center;
                         justify-content: center;
-                        li{ 
-                            .selectionButton{
+
+                        li {
+                            .desSelectionButton {
                                 width: 11rem;
                                 height: 4rem;
                                 margin: 0.5rem;
@@ -44,175 +206,38 @@
                                 border-radius: 10px;
                                 display: block;
                                 position: relative;
+
                                 figure {
                                     padding: 0.5rem;
                                     display: flex;
-            
+
                                     img {
                                         width: 3rem;
                                         height: 3rem;
                                     }
-            
+
                                     figcaption {
                                         margin-left: 0.1rem;
                                         font-size: 0.8rem;
                                         text-align: left;
-                                        div{
+
+                                        div {
                                             text-align: center;
                                             font-weight: 1000;
                                         }
-                                        span{
-                                            position: absolute;
-                                            bottom: 0.2rem;
-                                            right: 1rem;
-                                        }
                                     }
                                 }
                             }
-                            .selectionButton:hover {
+
+                            .desSelectionButton:hover {
                                 background-position: right center;
                                 /* change the direction of the change here */
                                 text-decoration: none;
-                            }
-
-                        }
-                    }
-                    
-                }
-                #pkmList::-webkit-scrollbar {
-                    width: 7px;
-                }
-    
-                #pkmList::-webkit-scrollbar-thumb {
-                    background-color: gainsboro;
-                    border: 1px solid white;
-                    border-radius: 10px;
-                    margin: 0.5rem;
-                }
-                #selectedBox{
-                    width: 50%;
-                    display: grid;
-                    align-items: center;
-                    justify-content: center;
-                    height:auto;
-                    position: relative;
-                    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 33%);
-                    #deleteNext{
-                        display: flex;
-                        align-items: center;
-                    justify-content: center;
-                        .actionButton {
-                            width: 10rem;
-                            height: 3rem;
-                            margin: 0.5rem;
-                            border-radius: 5px;
-                            font-weight: bolder;
-                            box-shadow: 1px 1px 3px black;
-                            letter-spacing: 5px;
-                        }
-                        #deletePkm {
-                            background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
-                            margin: 10px;
-                            text-align: center;
-                            text-transform: uppercase;
-                            transition: 0.5s;
-                            background-size: 200% auto;
-                            color: white;
-                            box-shadow: 0 0 20px #eee;
-                            border-radius: 10px;
-        
-                        }
-        
-                        #deletePkm:hover {
-                            background-position: right center;
-                            /* change the direction of the change here */
-                            color: #fff;
-                            text-decoration: none;
-                        }
-                        #toGame {
-                            background-image: linear-gradient(to right, #3de527 0%, #2db312 51%, #27e527 100%);
-                            margin: 10px;
-                            text-align: center;
-                            text-transform: uppercase;
-                            transition: 0.5s;
-                            background-size: 200% auto;
-                            color: white;
-                            box-shadow: 0 0 20px #eee;
-                            border-radius: 10px;
-        
-                        }
-        
-                        #toGame:hover {
-                            background-position: right center;
-                            /* change the direction of the change here */
-                            color: #fff;
-                            text-decoration: none;
-                        }
-                    }
-                    p{
-                    }
-                    #selectedPkm{
-                        display: flex;
-                        flex-direction: column;
-                        align-items: start;
-                        top: 3rem;
-                        left: 2rem;
-                        width:25rem;
-                        height: 16rem;
-                        background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
-                        border-radius: 10px;
-                        border: 1px solid black;
-                        ol{list-style: none;
-                            display: flex;
-                            flex-wrap: wrap;
-                            align-items: center;
-                            justify-content: center;
-                            li{ 
-                                .desSelectionButton{
-                                    width: 11rem;
-                                    height: 4rem;
-                                    margin: 0.5rem;
-                                    border-radius: 5px;
-                                    font-weight: bolder;
-                                    background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
-                                    margin: 10px;
-                                    text-align: center;
-                                    text-transform: uppercase;
-                                    transition: 0.5s;
-                                    background-size: 200% auto;
-                                    box-shadow: 0 0 20px #eee;
-                                    border-radius: 10px;
-                                    display: block;
-                                    position: relative;
-                                    figure {
-                                        padding: 0.5rem;
-                                        display: flex;
-                
-                                        img {
-                                            width: 3rem;
-                                            height: 3rem;
-                                        }
-                
-                                        figcaption {
-                                            margin-left: 0.1rem;
-                                            font-size: 0.8rem;
-                                            text-align: left;
-                                            div{
-                                                text-align: center;
-                                                font-weight: 1000;
-                                            }
-                                        }
-                                    }
-                                }
-                                .desSelectionButton:hover {
-                                    background-position: right center;
-                                    /* change the direction of the change here */
-                                    text-decoration: none;
-                                }
                             }
                         }
                     }
                 }
             }
         }
+    }
 }

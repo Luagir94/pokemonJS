@@ -390,22 +390,24 @@ footer {
   background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
   width: 50%;
   height: 90%;
-  overflow-y: scroll;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 2rem;
 }
 
-#mainGame #monitor #pkmSelection #pkmList ol {
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  width: 100%;
 }
 
-#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton {
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton {
   width: 11rem;
   height: 4rem;
   margin: 0.5rem;
@@ -423,44 +425,44 @@ footer {
   position: relative;
 }
 
-#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure {
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure {
   padding: 0.5rem;
   display: flex;
 }
 
-#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure img {
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure img {
   width: 3rem;
   height: 3rem;
 }
 
-#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure figcaption {
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure figcaption {
   margin-left: 0.1rem;
   font-size: 0.8rem;
   text-align: left;
 }
 
-#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure figcaption div {
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure figcaption div {
   text-align: center;
   font-weight: 1000;
 }
 
-#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton figure figcaption span {
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure figcaption span {
   position: absolute;
   bottom: 0.2rem;
   right: 1rem;
 }
 
-#mainGame #monitor #pkmSelection #pkmList ol li .selectionButton:hover {
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton:hover {
   background-position: right center;
   /* change the direction of the change here */
   text-decoration: none;
 }
 
-#mainGame #monitor #pkmSelection #pkmList::-webkit-scrollbar {
+#mainGame #monitor #pkmSelection #pkmToChoose::-webkit-scrollbar {
   width: 7px;
 }
 
-#mainGame #monitor #pkmSelection #pkmList::-webkit-scrollbar-thumb {
+#mainGame #monitor #pkmSelection #pkmToChoose::-webkit-scrollbar-thumb {
   background-color: gainsboro;
   border: 1px solid white;
   border-radius: 10px;
