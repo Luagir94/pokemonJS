@@ -1,14 +1,25 @@
+// =========== VARIABLES Y GETS GLOBALES ===========
+
 let runGame = document.getElementById("runGame")
 let getStatus = document.getElementById("okStatusPkm")
 let getScoreText = document.getElementById("scoreText")
 const pkmSelected = []
-class Trainer {
-    constructor(name, gender, team, score) {
-        this.name = name;
-        this.gender = gender;
-        this.team = team
-        this.score = score
+const topTen = []
+let trainer = undefined
+let pkmBackup = []
+
+// =========== FUNCION PARA SETEAR EL SCORE ===========
+const setScore = (name, team, totalScore)=>{
+    trainer ={
+        name: name,
+        team: team,
+        score: totalScore,
     }
+    localStorage.clear()
+    topTen.sort((a, b) => (a.score) - (b.score))
+    console.log(topTen)
+    const guardarTopTen = (key,value) => {localStorage.setItem(key,value)}
+    guardarTopTen("Top Ten", JSON.stringify(topTen))
 }
 
 // =========== MODAL DE REGLAS===========
@@ -16,52 +27,42 @@ const modalAbrir = document.getElementById('modal-abrir')
 const modalCerrar = document.getElementById('modal-cerrar')
 const modalContainer = document.getElementsByClassName('modal-container')[0]
 const modal = document.getElementsByClassName('modal')[0]
-
-modalAbrir.addEventListener('click', () => {
+modalAbrir.onclick = () => {
     modalContainer.classList.add('modal-active')
-})
-
-modalCerrar.addEventListener('click', () => {
+}
+modalCerrar.onclick = () => {
     modalContainer.classList.remove('modal-active')
-})
-
-
-modal.addEventListener('click', (e) => {
+}
+modal.onclick = (e) => {
     e.stopPropagation()
-})
+}
 
 // =========== MODAL DE REDES===========
 const modalRedesAbrir = document.getElementById('modalRedes-abrir')
 const modalRedesCerrar = document.getElementById('modalRedes-cerrar')
 const modalRedesContainer = document.getElementsByClassName('modalRedes-container')[0]
 const modalRedes = document.getElementsByClassName('modalRedes')[0]
-
-modalRedesAbrir.addEventListener('click', () => {
+modalRedesAbrir.onclick = () => {
     modalRedesContainer.classList.add('modal-active')
-})
-
-modalRedesCerrar.addEventListener('click', () => {
+}
+modalRedesCerrar.onclick = () => {
     modalRedesContainer.classList.remove('modal-active')
-})
-
-
-modalRedes.addEventListener('click', (e) => {
+}
+modalRedes.onclick = (e) => {
     e.stopPropagation()
-})
+}
 
-
-
-// =========== INICIALIZA EL JUEGO===========
-//
-// =========== AVANZA A LA SELECCION DE PERSONAJE ===========
+// =========== APP ===========
 const runGameFunction = () => {
-    console.log(pkmSelected)
-
-    console.log(pkmSelected)
+    // =========== SE ELIMINA QUIEN QUEDO FUERA DEL TOP10 ===========
+    if (topTen.length >= 11 ) {
+        topTen.splice(10, 1)
+    }
+    // =========== RESETEOS DE VARIABLES Y ARRAYS===========
     pkmSelected.splice(0, pkmSelected.length)
-    console.log(pkmSelected)
-
-
+    pkmBackup.splice(0, pkmSelected.length)
+    trainer = undefined
+    console.log(trainer)
 
     const enemybattlinPkm = []
     let myBattlinPkm = undefined
@@ -152,8 +153,7 @@ const runGameFunction = () => {
                                         <div id="pkmList">
                                         <form id="pokeSearch">
                                                 <label for="fname">Buscador:</label><br>
-                                                    <input type="text" id="pokeSearchInput" name="fname"><br>
- 
+                                                    <input type="text" id="pokeSearchInput" name="fname" placeholder="Nombre,Tipo,Nro Pokedex..."><br>
                                         </form>
                                             <ol id="pkmToChoose">
                                                 
@@ -190,8 +190,6 @@ const runGameFunction = () => {
                         let pokeSearch = document.getElementById("pokeSearch")
                         // =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
                         pokeSearch.onsubmit = (e) => e.preventDefault()
-
-
                         btnPkm.onclick = () => {
                             const pkmEnLista = pkmSelected.find((pkm) => pkm.id === pokemons.id)
                             if (pkmSelected.length <= 5 && !pkmEnLista) {
@@ -200,34 +198,28 @@ const runGameFunction = () => {
                                 addToList(pokemons.name, pokemons.type, pokemons.spriteFront)
                             }
                         }
-                        
                         // =========== BUSCADOR DE POKEMON ===========
                         let pokeSearchInput = document.getElementById("pokeSearchInput")
                         let buscarName = (search) => pkm.filter((pokemon) => pokemon.name.toLowerCase().includes(search))
                         let buscarType = (search) => pkm.filter((pokemon) => pokemon.type.toLowerCase().includes(search))
-                        let buscarId = (search) => pkm.filter((pokemon) => pokemon.id == search)  
+                        let buscarId = (search) => pkm.filter((pokemon) => pokemon.id == search)
                         pokeSearchInput.oninput = () => {
                             const search = pokeSearchInput.value.trim().toLowerCase()
                             const searchId = pokeSearchInput.value
-                            const nameSearch =buscarName(search)
+                            const nameSearch = buscarName(search)
                             const typeSearch = buscarType(search)
                             const idSearch = buscarId(searchId)
-                            const generalSearch = [...nameSearch,...typeSearch,...idSearch]
+                            const generalSearch = [...nameSearch, ...typeSearch, ...idSearch]
                             generatePkm(generalSearch)
-                            console.log(generalSearch)
+                            
                         }
                     });
-
-
                 }
                 generatePkm(pkm)
             }
-
         }
     }
-
     // =========== FUNCION QUE AGREGA POKEMONS A LA LISTA ===========
-
     const addToList = function (name, type, spriteFront) {
         let selectedPkm = document.getElementById("selectedPkm")
         if (!pokelist) {
@@ -244,12 +236,10 @@ const runGameFunction = () => {
             <figcaption>${name} <div id="" class="${type}Type">${type}</div></figcaption>
         </figure>
     </button>`
-
             pkmListSelected.appendChild(btnPkm)
         } else {
             let pkmListSelected = document.getElementById("pkmChosen")
             let btnPkm = document.createElement("li")
-
             btnPkm.innerHTML = `<button class="desSelectionButton">
         <figure>
             <img src="${spriteFront}" alt="boton${name}">
@@ -267,7 +257,6 @@ const runGameFunction = () => {
             pokelist = false
         }
         let goToGame = document.getElementById("toGame")
-
         // =========== EVENTO DISPARADOR DEL JUEGO PRINCIPAL ===========
         goToGame.onclick = () => {
             if (pkmSelected && (pkmSelected.length === 6)) {
@@ -275,7 +264,6 @@ const runGameFunction = () => {
                     pkmSelected[i].status = "ok"
                     pkmSelected[i].active = true
                 }
-                console.log(pkmSelected)
                 let selectionStage = document.getElementById("pkmSelection")
                 selectionStage.parentNode.removeChild(selectionStage)
                 let monitor = document.getElementById("monitor")
@@ -300,15 +288,13 @@ const runGameFunction = () => {
                             <div id="actionButtons">
                                 <button class="actionButton" id="pkmFight">Pelear</button>
                                 <button class="actionButton" id="generateEnemy">Generar Enemigo</button>
-                                <button class="actionButton" id="resetBattle">Reiniciar</button>
-                                <button class="actionButton" id="exitBattle">Salir</button>
+                                <button class="actionButton" id="resetBattle">?</button>
+                                <button class="actionButton" id="exitBattle">Reiniciar</button>
                             </div>
                             <div id="pkmBox">
                             </div>
                         </div>
                     </div>
-            
-            
             `
                 monitor.appendChild(mainGame)
             }
@@ -326,13 +312,14 @@ const runGameFunction = () => {
                                     </figure></button>
                         
                         `
-
                 }
             }
-
             let exitBattle = document.getElementById("exitBattle");
-            exitBattle.onclick = () => {
 
+
+            // =========== RESET DEL JUEGO===========
+            exitBattle.onclick = () => {
+                setScore(characterName,pkmBackup,score)
                 let mainGame = document.getElementById("game")
                 mainGame.parentNode.removeChild(mainGame)
                 let monitor = document.getElementById("monitor")
@@ -371,6 +358,7 @@ const runGameFunction = () => {
                     }
                 }
                 let pkmFight = document.getElementById("pkmFight")
+                pkmBackup = [...pkmSelected]
                 // =========== VALIDACIONES DE LAS PELEAS ===========
                 // =========== PELEA GANADA ===========
                 let succesBattle = () => {
@@ -393,6 +381,9 @@ const runGameFunction = () => {
                         pkmSelected[myBattlinPkm].status = "ko"
                         let myChosedPkm = document.getElementById("myChosenPkm")
                         myChosedPkm.parentNode.removeChild(myChosedPkm)
+                        pkmSelected.splice(myBattlinPkm, 1)
+                        console.log(pkmSelected)
+
                     }
 
                 }
@@ -421,9 +412,17 @@ const runGameFunction = () => {
 
                     let myChosedPkm = document.getElementById("myChosenPkm")
                     myChosedPkm.parentNode.removeChild(myChosedPkm)
+                    pkmSelected.splice(myBattlinPkm, 1)
+                        console.log(pkmSelected)
                 }
+                let teamCheck = () => {
+                    console.log(pkmBackup)
+                    if (pkmSelected.length === 0) {
+                        alert('perdiste')
+                        setScore(characterName,pkmBackup,score)
 
-
+                    }
+                }
                 // =========== TRIGGER DE LA PELEA ===========
                 pkmFight.onclick = () => {
 
@@ -608,6 +607,7 @@ const runGameFunction = () => {
                             }
                         }
                     }
+                    teamCheck()
 
                 }
             }
@@ -615,14 +615,15 @@ const runGameFunction = () => {
     }
 }
 
-
-
+// =========== INICIALIZA EL JUEGO===========
+// =========== AVANZA A LA SELECCION DE PERSONAJE ===========
 runGame.onclick = () => {
     runGameFunction()
 }
+
+// =========== RESET DEL JUEGO ===========
 const resetGameFunction = () => {
     let resetGame = document.getElementById("runGame")
-    console.log(pkmSelected)
     resetGame.onclick = () => {
 
 
