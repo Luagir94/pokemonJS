@@ -6,6 +6,7 @@ const pkmSelected = []
 const topTen = []
 let trainer = undefined
 let pkmBackup = []
+let ableToFight = true
 // =========== FUNCION PARA SETEAR EL SCORE ===========
 const setScore = (name, team, totalScore)=>{
     trainer ={
@@ -342,6 +343,7 @@ const runGameFunction = () => {
 // =========== SELECCION DE MIS POKEMON ===========
                 myChoose.onclick = () => {
                     if (pokemons.active === true) {
+                        ableToFight =true
                         myPkm.innerHTML = `<figure id="myChosenPkm">
                 <img src="${pokemons.spriteBack}" alt="">
                 </figure>`
@@ -379,6 +381,7 @@ const runGameFunction = () => {
                         statusChange.classList.add("koStatusPkm")
                         let myChosedPkm = document.getElementById("myChosenPkm")
                         myChosedPkm.parentNode.removeChild(myChosedPkm)
+                        ableToFight = false
                         pkmSelected.splice(myBattlinPkm, 1)
                     }
                 }
@@ -409,6 +412,7 @@ const runGameFunction = () => {
                     let koPokeball = document.getElementById(`pokeball${pkmSelected[myBattlinPkm].id}`)
                     koPokeball.classList.add("koPokeball")
                     pkmSelected.splice(myBattlinPkm, 1)
+                    ableToFight = false
                 }
 // =========== CHECKEO DEL TEAM ===========
                 let teamCheck = () => {
@@ -420,6 +424,8 @@ const runGameFunction = () => {
                 }
 // =========== TRIGGER DE LA PELEA ===========
                 pkmFight.onclick = () => {
+                    if (ableToFight) {
+                        
                     if (pkmSelected[myBattlinPkm].type === "fairy") {
                         if ((enemybattlinPkm[0].type === "dragon") || (enemybattlinPkm[0].type === "fight")) {
                             succesBattle()
@@ -591,6 +597,11 @@ const runGameFunction = () => {
                         }
                     }
                     teamCheck()
+                        
+                    }
+
+
+
                 }
             }
         }
