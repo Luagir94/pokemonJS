@@ -662,7 +662,7 @@ footer {
 
 .fairyType {
   border: 1px solid black;
-  background-color: #fb7eff;
+  background-color: #f68ffa;
   width: 5rem;
   border-radius: 5px;
 }
@@ -677,6 +677,41 @@ footer {
 .flyingType {
   border: 1px solid black;
   background-color: #c6a8f7;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.psychcType {
+  border: 1px solid black;
+  background-color: #fa3efa;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.dragonType {
+  border: 1px solid black;
+  background-color: #673efa;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.rockType {
+  border: 1px solid black;
+  background-color: #914f04;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.fightType {
+  border: 1px solid black;
+  background-color: #ff1717;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.ghostType {
+  border: 1px solid black;
+  background-color: #6e678a;
   width: 5rem;
   border-radius: 5px;
 }
