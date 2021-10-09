@@ -34,9 +34,10 @@
                 position: relative;
 
                 #myPokeballs {
-
+                    
                     img {
                         width: 2rem;
+
                     }
 
                     position: absolute;
@@ -49,6 +50,7 @@
                 #score {
                     p {
                         font-size: 1.5rem;
+                        font-weight: 1000;
                     }
 
                     position: absolute;
@@ -113,6 +115,7 @@
                         #enemyPkmCardSprite {
                             width: 3rem;
                             height: 3rem;
+                            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7))
                         }
 
                         figcaption {
@@ -223,11 +226,11 @@
             }
 
 
-            #resetBattle {
+            #rulesButton {
                 background-image: linear-gradient(to right, #FF8008 0%, #FFC837 51%, #FF8008 100%)
             }
 
-            #resetBattle {
+            #rulesButton {
                 margin: 10px;
                 padding: 15px 45px;
                 text-align: center;
@@ -240,7 +243,7 @@
                 display: block;
             }
 
-            #resetBattle:hover {
+            #rulesButton:hover {
                 background-position: right center;
                 /* change the direction of the change here */
                 color: #fff;
@@ -311,6 +314,7 @@
                     img {
                         width: 3rem;
                         height: 3rem;
+                        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7))
                     }
 
                     figcaption {

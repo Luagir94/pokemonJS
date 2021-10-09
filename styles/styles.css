@@ -79,6 +79,7 @@ footer {
 
 #mainGame #monitor #game #battleField #score p {
   font-size: 1.5rem;
+  font-weight: 1000;
 }
 
 #mainGame #monitor #game #battleField #myPkm {
@@ -137,6 +138,7 @@ footer {
 #mainGame #monitor #game #battleField #enemyPkm figure #enemyPkmCardSprite {
   width: 3rem;
   height: 3rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
 
 #mainGame #monitor #game #battleField #enemyPkm figure figcaption {
@@ -237,11 +239,11 @@ footer {
   text-decoration: none;
 }
 
-#mainGame #display #actionButtons #resetBattle {
+#mainGame #display #actionButtons #rulesButton {
   background-image: linear-gradient(to right, #FF8008 0%, #FFC837 51%, #FF8008 100%);
 }
 
-#mainGame #display #actionButtons #resetBattle {
+#mainGame #display #actionButtons #rulesButton {
   margin: 10px;
   padding: 15px 45px;
   text-align: center;
@@ -254,7 +256,7 @@ footer {
   display: block;
 }
 
-#mainGame #display #actionButtons #resetBattle:hover {
+#mainGame #display #actionButtons #rulesButton:hover {
   background-position: right center;
   /* change the direction of the change here */
   color: #fff;
@@ -327,6 +329,7 @@ footer {
 #mainGame #display #pkmBox button figure img {
   width: 3rem;
   height: 3rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
 
 #mainGame #display #pkmBox button figure figcaption {
@@ -437,6 +440,7 @@ footer {
 #mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure img {
   width: 3rem;
   height: 3rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
 
 #mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure figcaption {
@@ -584,6 +588,7 @@ footer {
 #mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton figure img {
   width: 3rem;
   height: 3rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
 
 #mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton figure figcaption {
@@ -827,6 +832,7 @@ footer {
 #mainGame #monitor #characterCreation #dataDiv #genderSelection #genderButtons button img {
   width: 100%;
   height: 100%;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
 
 #mainGame #monitor #characterCreation #dataDiv #genderSelection #genderButtons .char-active {
@@ -880,6 +886,7 @@ footer {
   height: 40rem;
   right: 0;
   bottom: -25rem;
+  filter: drop-shadow(3px 5px 20px rgba(0, 0, 0, 0.7));
 }
 
 #monitor #volume {
@@ -999,6 +1006,7 @@ footer {
   color: yellow;
   -webkit-text-stroke: 0.1px #3e3ead;
   font-size: 2rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
 
 #rules:hover {
@@ -1112,6 +1120,7 @@ span.ko {
 
 #redes img {
   width: 2rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
 
 #redes:hover {
@@ -1230,4 +1239,67 @@ span.ko {
   background-color: red;
   border: white solid 1px;
   border-radius: 5px;
+}
+
+.modalPerdiste-container {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  z-index: 10000000;
+}
+
+.modal-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modalPerdiste {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 600px;
+  text-align: center;
+  border-radius: 5px;
+  text-align: left;
+  padding: 22px;
+  border: black solid 5px;
+  font-size: 1.2rem;
+}
+
+.modalPerdiste p {
+  color: red;
+  font-weight: 1000;
+  font-size: 3rem;
+}
+
+#modalPerdiste-cerrar {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+}
+
+#modalPerdiste-cerrar {
+  margin: auto;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 10px #eee;
+  border-radius: 10px;
+  display: block;
+  margin-top: 1rem;
+}
+
+#modalPerdiste-cerrar:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
