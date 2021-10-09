@@ -294,8 +294,15 @@ const runGameFunction = () => {
                         </div>
                         <div id="perdisteModal" class="modalPerdiste-container">
                         <div class="modalPerdiste">
+                            <div id="perdisteTexto">
                             <div>
-                                <p>PERDISTE!</p>
+                            <p>PERDISTE!</p>
+                            </div>
+                            <div>
+                            <p id="finalScore">Score</p>
+                            </div>
+                                
+                            
                             </div>
                             <button id="modalPerdiste-cerrar">cerrar</button>
                         </div>
@@ -440,13 +447,18 @@ const runGameFunction = () => {
                 }
                 const modalPerdisteCerrar = document.getElementById('modalPerdiste-cerrar')
                 const modalPerdisteContainer = document.getElementById("perdisteModal")
+                const finalScore = document.getElementById("finalScore")
                 modalPerdisteCerrar.onclick = () => {
+                    
                     modalPerdisteContainer.classList.remove('modal-active')
                 }
-                const perdiste = () => modalPerdisteContainer.classList.add('modal-active')
+                const perdiste = () => {
+                    finalScore.innerHTML=`Tu Score: ${score}`
+                    modalPerdisteContainer.classList.add('modal-active')}
                 // =========== CHECKEO DEL TEAM ===========
                 let teamCheck = () => {
                     if (pkmSelected.length === 0) {
+                        
                         perdiste()
                         setScore(characterName, pkmBackup, score)
                     }

@@ -1037,7 +1037,6 @@ footer {
 .modal {
   background-color: rgba(0, 0, 0, 0.8);
   width: 600px;
-  height: 400px;
   border-radius: 5px;
   text-align: left;
   padding: 22px;
@@ -1152,7 +1151,6 @@ span.ko {
   background-color: rgba(0, 0, 0, 0.8);
   position: relative;
   width: 600px;
-  height: 400px;
   border-radius: 5px;
   text-align: left;
   padding: 22px;
@@ -1206,7 +1204,6 @@ span.ko {
 
 .modalRedes #modalRedes-cerrar {
   margin: auto;
-  position: absolute;
   padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
@@ -1265,18 +1262,34 @@ span.ko {
 .modalPerdiste {
   background-color: rgba(0, 0, 0, 0.8);
   width: 600px;
-  text-align: center;
   border-radius: 5px;
   text-align: left;
   padding: 22px;
   border: black solid 5px;
   font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.modalPerdiste #perdisteTexto {
+  display: flex;
+  flex-direction: column;
 }
 
 .modalPerdiste p {
   color: red;
   font-weight: 1000;
   font-size: 3rem;
+  text-align: center;
+}
+
+.modalPerdiste #finalScore {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  font-weight: 700;
 }
 
 #modalPerdiste-cerrar {
