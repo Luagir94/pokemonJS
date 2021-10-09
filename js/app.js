@@ -2,6 +2,7 @@
 let runGame = document.getElementById("runGame")
 let getStatus = document.getElementById("okStatusPkm")
 let getScoreText = document.getElementById("scoreText")
+
 const pkmSelected = []
 const topTen = []
 let trainer = undefined
@@ -51,6 +52,22 @@ modalRedesCerrar.onclick = () => {
 modalRedes.onclick = (e) => {
     e.stopPropagation()
 }
+// =========== MODAL DE ALERTA===========
+const modalAlertCerrar = document.getElementById('modalAlert-cerrar')
+const modalAlertContainer = document.getElementById("alertModal")
+const alertText = document.getElementById("alertText")
+
+const selectionAlert = () => {
+    alertText.innerHTML = `Debes elegir 6 Pokemon.`
+    modalAlertContainer.classList.add('modal-active')
+}
+
+modalAlertCerrar.onclick = () => {
+
+    modalAlertContainer.classList.remove('modal-active')
+}
+
+
 // =========== APP ===========
 const runGameFunction = () => {
     // =========== SE ELIMINA QUIEN QUEDO FUERA DEL TOP10 ===========
@@ -163,7 +180,8 @@ const runGameFunction = () => {
                                             </div>
                                         </div>
                                         <div>
-                                        </div>`
+                                        </div>
+                                        `
                 monitor.appendChild(createPkmSelection)
                 const generatePkm = (array) => {
                     let pkmListSelection = document.getElementById("pkmToChoose")
@@ -309,6 +327,8 @@ const runGameFunction = () => {
                     </div>
                     </div>`
                 monitor.appendChild(mainGame)
+            } else if(pkmSelected && (pkmSelected.length <6)){
+                selectionAlert()
             }
             let rulesButton = document.getElementById("rulesButton")
             rulesButton.onclick = () => {
@@ -369,7 +389,6 @@ const runGameFunction = () => {
                 attBallSrc.value = `./media/img/pokeball.png`
                 pokeball.setAttributeNode(attBallSrc)
                 myPokeballs.appendChild(pokeball)
-
                 let myChoose = document.getElementById(`myPkm${pokemons.id}`)
                 // =========== SELECCION DE MIS POKEMON ===========
                 myChoose.onclick = () => {
@@ -448,17 +467,20 @@ const runGameFunction = () => {
                 const modalPerdisteCerrar = document.getElementById('modalPerdiste-cerrar')
                 const modalPerdisteContainer = document.getElementById("perdisteModal")
                 const finalScore = document.getElementById("finalScore")
+
+
                 modalPerdisteCerrar.onclick = () => {
-                    
-                    modalPerdisteContainer.classList.remove('modal-active')
+
+                    modalAlertContainer.classList.remove('modal-active')
                 }
                 const perdiste = () => {
-                    finalScore.innerHTML=`Tu Score: ${score}`
-                    modalPerdisteContainer.classList.add('modal-active')}
+                    finalScore.innerHTML = `Tu Score: ${score}`
+                    modalPerdisteContainer.classList.add('modal-active')
+                }
                 // =========== CHECKEO DEL TEAM ===========
                 let teamCheck = () => {
                     if (pkmSelected.length === 0) {
-                        
+
                         perdiste()
                         setScore(characterName, pkmBackup, score)
                     }
