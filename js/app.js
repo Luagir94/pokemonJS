@@ -471,7 +471,7 @@ const runGameFunction = () => {
 
                 modalPerdisteCerrar.onclick = () => {
 
-                    modalAlertContainer.classList.remove('modal-active')
+                    modalPerdisteContainer.classList.remove('modal-active')
                 }
                 const perdiste = () => {
                     finalScore.innerHTML = `Tu Score: ${score}`
