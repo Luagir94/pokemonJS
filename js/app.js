@@ -2,13 +2,12 @@
 let runGame = document.getElementById("runGame")
 let getStatus = document.getElementById("okStatusPkm")
 let getScoreText = document.getElementById("scoreText")
-
 const pkmSelected = []
 const topTen = []
 let trainer = undefined
 let pkmBackup = []
 let ableToFight = true
-// =========== AUDIO CON JQUERY===========
+// =========== OST ===========
 const audio = new Audio("./media/audio/mainAudio.mp3" );
 audio.volume =0.2
 const audio2 = new Audio("./media/audio/battleMusic.mp3" );
@@ -22,6 +21,7 @@ const perdisteAudio = new Audio("./media/audio/perdiste.mp3")
 const whosh = new Audio("./media/audio/whosh.mp3")
 whosh.duration = 1
 whosh.playbackRate =2
+// =========== AUDIO CON JQUERY ===========
 const volumButton = $("#volButton");
 const volumeInput =$("#volumeInput")
 const musica = $("#musica");
@@ -329,7 +329,6 @@ const runGameFunction = () => {
                     pkmSelected[i].status = "ok"
                     pkmSelected[i].active = true
                 }
-
                 audio.pause()
                 audio.currentTime = 0
                 audio2.play();
