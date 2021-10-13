@@ -908,7 +908,7 @@ footer {
 }
 
 #monitor #volume input {
-  transform: rotate(90deg);
+  transform: rotate(270deg);
   opacity: 0.3;
 }
 
@@ -975,20 +975,25 @@ footer {
   background-color: black;
 }
 
-#monitor #volume #volButton {
+#monitor #volume #volButtonDiv {
   opacity: 0.3;
 }
 
-#monitor #volume #volButton button {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
+#monitor #volume #volButtonDiv .mute {
+  filter: none;
 }
 
-#monitor #volume #volButton button img {
+#monitor #volume #volButtonDiv button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  filter: grayscale(100%);
+}
+
+#monitor #volume #volButtonDiv button img {
   width: 1rem;
 }
 
-#monitor #volume #volButton:hover {
+#monitor #volume #volButtonDiv:hover {
   opacity: 1;
 }
 
@@ -1355,7 +1360,7 @@ span.ko {
 .modalAlert p {
   color: white;
   font-weight: 1000;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 
@@ -1378,6 +1383,62 @@ span.ko {
 }
 
 .modalAlert #modalAlert-cerrar:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#divButt {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#divButt .actionButton {
+  width: 10rem;
+  height: 3rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-weight: bolder;
+  box-shadow: 1px 1px 3px black;
+  letter-spacing: 5px;
+}
+
+#divButt #modalReset-cerrar {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+
+#divButt #modalReset-cerrar:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#divButt #resetGame {
+  background-image: linear-gradient(to right, #3de527 0%, #2db312 51%, #27e527 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+
+#divButt #resetGame:hover {
   background-position: right center;
   /* change the direction of the change here */
   color: #fff;

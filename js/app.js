@@ -8,6 +8,31 @@ const topTen = []
 let trainer = undefined
 let pkmBackup = []
 let ableToFight = true
+// =========== AUDIO CON JQUERY===========
+let audio = new Audio("./media/audio/mainAudio.mp3" );
+audio.loop=true
+const audio2 = new Audio("./media/audio/battleMusic.mp3" );
+audio2.loop=true
+const volumButton = $("#volButton");
+const volumeInput =$("#volumeInput")
+const musica = $("#musica");
+volumButton.on('click', ()=>{
+    volumButton.toggleClass('mute')
+    if (audio.muted === false || audio2.muted === false) {    
+        audio.muted = true;
+        audio2.muted = true;
+ }
+
+ else {
+    audio.muted = false;
+    audio2.muted = false;
+ }
+});
+$('#volume').on('change', function() {
+    let volValue = volumeInput.val()/100
+
+    audio.volume= volValue;
+    audio2.volume= volValue;})
 // =========== FUNCION PARA SETEAR EL SCORE ===========
 const setScore = (name, team, totalScore) => {
     trainer = {
@@ -57,6 +82,7 @@ const modalAlertCerrar = document.getElementById('modalAlert-cerrar')
 const modalAlertContainer = document.getElementById("alertModal")
 const alertText = document.getElementById("alertText")
 
+
 const selectionAlert = () => {
     alertText.innerHTML = `Debes elegir 6 Pokemon.`
     modalAlertContainer.classList.add('modal-active')
@@ -70,6 +96,9 @@ modalAlertCerrar.onclick = () => {
 
 // =========== APP ===========
 const runGameFunction = () => {
+
+    audio.play();
+    audio2.pause()
     // =========== SE ELIMINA QUIEN QUEDO FUERA DEL TOP10 ===========
     if (topTen.length >= 11) {
         topTen.splice(10, 1)
@@ -280,6 +309,10 @@ const runGameFunction = () => {
                     pkmSelected[i].status = "ok"
                     pkmSelected[i].active = true
                 }
+
+                audio.pause()
+                audio.currentTime = 0
+                audio2.play();
                 let selectionStage = document.getElementById("pkmSelection")
                 selectionStage.parentNode.removeChild(selectionStage)
                 let monitor = document.getElementById("monitor")
@@ -327,20 +360,32 @@ const runGameFunction = () => {
                     </div>
                     </div>`
                 monitor.appendChild(mainGame)
-            } else if(pkmSelected && (pkmSelected.length <6)){
+            } else if (pkmSelected && (pkmSelected.length < 6)) {
                 selectionAlert()
             }
             let rulesButton = document.getElementById("rulesButton")
             rulesButton.onclick = () => {
                 modalContainer.classList.add('modal-active')
             }
-
+            generateEnemyF()
             let generateEnemy = document.getElementById("generateEnemy")
             // =========== GENERO ENEMIGO AL AZAR ===========
             generateEnemy.onclick = () => {
+                generateEnemyF()
+            }
+            let exitBattle = document.getElementById("exitBattle");
+            // =========== RESET DEL JUEGO===========
+            exitBattle.onclick = () => {
+
+                resetGameConfirmationFunction()
+            }
+
+
+            function generateEnemyF(){
                 if (enemybattlinPkm.length === 0) {
                     let chosenEnemy = pkm[Math.floor(Math.random() * pkm.length)]
                     enemybattlinPkm.push(chosenEnemy)
+                    enemybattlinPkm[0].status = "ok"
                     let enemyPkm = document.getElementById("enemyPkm")
                     enemyPkm.innerHTML = `<figure id="myEnemyPkm"><img src="${enemybattlinPkm[0].spriteFront}" id="enemyPkmSprite" alt=""></figure>
                         <button id="enemyPkmCard"><figure>
@@ -350,23 +395,6 @@ const runGameFunction = () => {
                         
                         `
                 }
-            }
-            let exitBattle = document.getElementById("exitBattle");
-            // =========== RESET DEL JUEGO===========
-            exitBattle.onclick = () => {
-                setScore(characterName, pkmBackup, score)
-                let mainGame = document.getElementById("game")
-                mainGame.parentNode.removeChild(mainGame)
-                let monitor = document.getElementById("monitor")
-                let presentation = document.createElement("div")
-                let att = document.createAttribute("id")
-                att.value = "presentation"
-                presentation.setAttributeNode(att)
-                presentation.innerHTML = `
-                    <button id="runGame">Start Game</button>
-                    `
-                monitor.appendChild(presentation)
-                resetGameFunction()
             }
             for (const pokemons of pkmSelected) {
                 let pkmBox = document.getElementById("pkmBox")
@@ -676,11 +704,62 @@ runGame.onclick = () => {
     runGameFunction()
 }
 // =========== RESET DEL JUEGO ===========
+const resetGameConfirmationFunction = () => {
+    
+        const modalAlert =document.querySelector(".modalAlert")
+        modalAlertContainer.classList.add('modal-active')
+        modalAlert.innerHTML = `
+        <p id="alertText">
+        Estas seguro que deseas reiniciar el juego?
+        No se guardara el progreso realizado
+        hasta terminar el juego.
+        
+        </p>
+        <div id="divButt">
+        <button id="resetGame" class="actionButton">Si</button>
+        <button id="modalReset-cerrar" class="actionButton">No</button>
+        <div>
+        `
+        let resetGame = document.getElementById("resetGame")
+        let modalResetCerrar = document.getElementById("modalReset-cerrar")
+        modalResetCerrar.onclick = () => {
+
+            modalAlertContainer.classList.remove('modal-active')
+        }
+        
+        resetGame.onclick = () => {
+            audio.play();
+            audio2.pause()
+            audio2.currentTime = 0
+            let mainGame = document.getElementById("game")
+            mainGame.parentNode.removeChild(mainGame)
+            let monitor = document.getElementById("monitor")
+            let presentation = document.createElement("div")
+            let att = document.createAttribute("id")
+            att.value = "presentation"
+            presentation.setAttributeNode(att)
+            presentation.innerHTML = `
+                <button id="runGame">Start Game</button>
+                `
+            monitor.appendChild(presentation)
+            modalAlertContainer.classList.remove('modal-active')
+            resetGameFunction()
+            
+}
+    
+}
+
+
+
 const resetGameFunction = () => {
     let resetGame = document.getElementById("runGame")
     resetGame.onclick = () => {
 
 
         runGameFunction()
+
     }
-}
+}   
+
+
+

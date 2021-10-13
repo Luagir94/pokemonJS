@@ -43,11 +43,11 @@
             <div id="monitor">
                 <div id="volume">
 
-                    <div id="volButton">
-                        <button><img src="./media/img/volume.png" alt=""></button>
+                    <div id="volButtonDiv">
+                        <button id="volButton"><img src="./media/img/volume.png" alt=""></button>
                     </div>
                     <div>
-                        <input type="range" class="form-range" id="customRange1">
+                        <input type="range" class="form-range" id="volumeInput" min="0" max="100">
                     </div>
                 </div>
                 <div id="rules">
@@ -111,10 +111,14 @@
                 </div>
             </div>
         </section>
+        <audio src="./media/audio/silence.mp3"  autoplay muted></audio>
     </main>
     <footer></footer>
     
-    
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
     <script src="./js/pokemons.js"></script>
     <script src="./js/app.js"></script>
 </body>

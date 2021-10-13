@@ -18,7 +18,7 @@
         }
     
         input {
-            transform: rotate(90deg);
+            transform: rotate(270deg);
             opacity: 0.3;
         }
     
@@ -91,12 +91,15 @@
         }
     
     
-        #volButton {
+        #volButtonDiv {
             opacity: 0.3;
-    
+            .mute{
+                filter: none;
+            }
             button {
                 background-color: rgba(0, 0, 0, 0.0);
                 border: none;
+                filter: grayscale(100%);
     
                 img {
                     width: 1rem;
@@ -106,7 +109,7 @@
     
         }
     
-        #volButton:hover {
+        #volButtonDiv:hover {
             opacity: 1;
         }
     }

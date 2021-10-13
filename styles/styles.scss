@@ -24,6 +24,8 @@ footer {
     width: 100%;
     height: 10vh;
 }
+#musica{
+}
 
 @import 'mainGame';
 @import 'pkmSelection';
@@ -35,3 +37,4 @@ footer {
 @import 'redes';
 @import 'perdisteModal';
 @import 'modalAlert';
+@import 'resetAlert';
