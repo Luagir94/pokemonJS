@@ -21,7 +21,7 @@ const perdisteAudio = new Audio("./media/audio/perdiste.mp3")
 const whosh = new Audio("./media/audio/whosh.mp3")
 whosh.duration = 1
 whosh.playbackRate =2
-// =========== AUDIO CON JQUERY ===========
+// =========== AUDIO CON JQUERY GIT===========
 const volumButton = $("#volButton");
 const volumeInput =$("#volumeInput")
 const musica = $("#musica");
@@ -528,9 +528,46 @@ const runGameFunction = () => {
                 const perdiste = () => {
                     audio2.pause()
                     perdisteAudio.play()
-                    finalScore.innerHTML = `Tu Score: ${score}`
-                    modalPerdisteContainer.classList.add('modal-active')
-                }
+                    audio2.pause()
+                    perdisteAudio.play()
+                    const modalAlert =document.querySelector(".modalAlert")
+                    modalAlertContainer.classList.add('modal-active')
+                    modalAlert.innerHTML = `
+                    <p id="alertText">
+                    Tu Score: ${score}
+                    <br>
+                    Desea reiniciar el juego?
+                    </p>
+                    <div id="divButt">
+                    <button id="resetGame" class="actionButton">Si</button>
+                    <button id="modalReset-cerrar" class="actionButton">No</button>
+                    <div>
+                    `
+                    let resetGame = document.getElementById("resetGame")
+                    let modalResetCerrar = document.getElementById("modalReset-cerrar")
+                    modalResetCerrar.onclick = () => {
+            
+                        modalAlertContainer.classList.remove('modal-active')
+                    }
+                    
+                    resetGame.onclick = () => {
+                        audio.play();
+                        audio2.pause()
+                        audio2.currentTime = 0
+                        let mainGame = document.getElementById("game")
+                        mainGame.parentNode.removeChild(mainGame)
+                        let monitor = document.getElementById("monitor")
+                        let presentation = document.createElement("div")
+                        let att = document.createAttribute("id")
+                        att.value = "presentation"
+                        presentation.setAttributeNode(att)
+                        presentation.innerHTML = `
+                            <button id="runGame">Start Game</button>
+                            `
+                        monitor.appendChild(presentation)
+                        modalAlertContainer.classList.remove('modal-active')
+                        resetGameFunction()
+                }}
                 // =========== CHECKEO DEL TEAM ===========
                 let teamCheck = () => {
                     if (pkmSelected.length === 0) {

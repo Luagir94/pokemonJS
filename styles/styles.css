@@ -986,7 +986,7 @@ footer {
 #monitor #volume #volButtonDiv button {
   background-color: rgba(0, 0, 0, 0);
   border: none;
-  filter: grayscale(100%);
+  filter: brightness(0);
 }
 
 #monitor #volume #volButtonDiv button img {
