@@ -9,10 +9,19 @@ let trainer = undefined
 let pkmBackup = []
 let ableToFight = true
 // =========== AUDIO CON JQUERY===========
-let audio = new Audio("./media/audio/mainAudio.mp3" );
-audio.loop=true
+const audio = new Audio("./media/audio/mainAudio.mp3" );
+audio.volume =0.2
 const audio2 = new Audio("./media/audio/battleMusic.mp3" );
-audio2.loop=true
+audio2.volume = 0.2
+const audioAccept = new Audio("./media/audio/accept.mp3")
+audioAccept.volume = 0.2
+audioAccept.playbackRate = 1.5
+const koAudio = new Audio("./media/audio/ko.mp3")
+koAudio.volume =0.5
+const perdisteAudio = new Audio("./media/audio/perdiste.mp3")
+const whosh = new Audio("./media/audio/whosh.mp3")
+whosh.duration = 1
+whosh.playbackRate =2
 const volumButton = $("#volButton");
 const volumeInput =$("#volumeInput")
 const musica = $("#musica");
@@ -30,7 +39,9 @@ volumButton.on('click', ()=>{
 });
 $('#volume').on('change', function() {
     let volValue = volumeInput.val()/100
-
+    perdisteAudio.volume = volValue*5
+    whosh.volume = volValue*5
+    audioAccept.volume = volValue
     audio.volume= volValue;
     audio2.volume= volValue;})
 // =========== FUNCION PARA SETEAR EL SCORE ===========
@@ -56,9 +67,11 @@ const modalContainer = document.getElementsByClassName('modal-container')[0]
 const modal = document.getElementsByClassName('modal')[0]
 modalAbrir.onclick = () => {
     modalContainer.classList.add('modal-active')
+    audioAccept.play()
 }
 modalCerrar.onclick = () => {
     modalContainer.classList.remove('modal-active')
+    audioAccept.play()
 }
 modal.onclick = (e) => {
     e.stopPropagation()
@@ -70,9 +83,11 @@ const modalRedesContainer = document.getElementsByClassName('modalRedes-containe
 const modalRedes = document.getElementsByClassName('modalRedes')[0]
 modalRedesAbrir.onclick = () => {
     modalRedesContainer.classList.add('modal-active')
+    audioAccept.play()
 }
 modalRedesCerrar.onclick = () => {
     modalRedesContainer.classList.remove('modal-active')
+    audioAccept.play()
 }
 modalRedes.onclick = (e) => {
     e.stopPropagation()
@@ -86,10 +101,11 @@ const alertText = document.getElementById("alertText")
 const selectionAlert = () => {
     alertText.innerHTML = `Debes elegir 6 Pokemon.`
     modalAlertContainer.classList.add('modal-active')
+    audioAccept.play()
 }
 
 modalAlertCerrar.onclick = () => {
-
+    audioAccept.play()
     modalAlertContainer.classList.remove('modal-active')
 }
 
@@ -160,11 +176,13 @@ const runGameFunction = () => {
         characterGender = "female"
         genderFemale.classList.add('char-active')
         genderMale.classList.remove('char-active')
+        whosh.play()
     }
     genderMale.onclick = () => {
         characterGender = "male"
         genderMale.classList.add('char-active')
         genderFemale.classList.remove('char-active')
+        whosh.play()
     }
     // =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
     playerNameInput.onsubmit = (e) => e.preventDefault()
@@ -181,6 +199,7 @@ const runGameFunction = () => {
 
             // =========== INICIALIZA LA SELECCION DE POKEMONS ===========
             if (characterName.length > 2) {
+                audioAccept.play()
                 let characterCreation = document.getElementById("characterCreation")
                 characterCreation.parentNode.removeChild(characterCreation)
                 let monitor = document.getElementById("monitor")
@@ -234,6 +253,7 @@ const runGameFunction = () => {
                         btnPkm.onclick = () => {
                             const pkmEnLista = pkmSelected.find((pkm) => pkm.id === pokemons.id)
                             if (pkmSelected.length <= 5 && !pkmEnLista) {
+                                whosh.play()
                                 pkmSelected.push(pokemons)
 
                                 addToList(pokemons.name, pokemons.type, pokemons.spriteFront)
@@ -421,6 +441,7 @@ const runGameFunction = () => {
                 // =========== SELECCION DE MIS POKEMON ===========
                 myChoose.onclick = () => {
                     if (pokemons.active === true) {
+                        whosh.play()
                         ableToFight = true
                         myPkm.innerHTML = `<figure id="myChosenPkm">
                 <img src="${pokemons.spriteBack}" alt="">
@@ -440,6 +461,7 @@ const runGameFunction = () => {
                     if (enemybattlinPkm.length === 0) {
                         score += 1
                         getScore.innerHTML = `<p>SCORE:    ${score} </p>`
+                        koAudio.play()
                     }
                 }
                 // =========== CAMBIOS DE STATUS ===========
@@ -461,6 +483,7 @@ const runGameFunction = () => {
                         myChosedPkm.parentNode.removeChild(myChosedPkm)
                         ableToFight = false
                         pkmSelected.splice(myBattlinPkm, 1)
+                        koAudio.play()
                     }
                 }
                 let koEnemyPkmByInjuries = () => {
@@ -476,6 +499,7 @@ const runGameFunction = () => {
                         let getScore = document.getElementById("score")
                         score += 1
                         getScore.innerHTML = `<p>SCORE:    ${score} </p>`
+                        koAudio.play()
                     }
                 }
                 // =========== PELEA PERDIDA ===========
@@ -491,6 +515,7 @@ const runGameFunction = () => {
                     koPokeball.classList.add("koPokeball")
                     pkmSelected.splice(myBattlinPkm, 1)
                     ableToFight = false
+                    koAudio.play()
                 }
                 const modalPerdisteCerrar = document.getElementById('modalPerdiste-cerrar')
                 const modalPerdisteContainer = document.getElementById("perdisteModal")
@@ -502,6 +527,8 @@ const runGameFunction = () => {
                     modalPerdisteContainer.classList.remove('modal-active')
                 }
                 const perdiste = () => {
+                    audio2.pause()
+                    perdisteAudio.play()
                     finalScore.innerHTML = `Tu Score: ${score}`
                     modalPerdisteContainer.classList.add('modal-active')
                 }
