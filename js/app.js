@@ -528,8 +528,6 @@ const runGameFunction = () => {
                 const perdiste = () => {
                     audio2.pause()
                     perdisteAudio.play()
-                    audio2.pause()
-                    perdisteAudio.play()
                     const modalAlert =document.querySelector(".modalAlert")
                     modalAlertContainer.classList.add('modal-active')
                     modalAlert.innerHTML = `
@@ -791,7 +789,7 @@ const resetGameConfirmationFunction = () => {
         }
         
         resetGame.onclick = () => {
-            audio.play();
+
             audio2.pause()
             audio2.currentTime = 0
             let mainGame = document.getElementById("game")
@@ -818,7 +816,7 @@ const resetGameFunction = () => {
     let resetGame = document.getElementById("runGame")
     resetGame.onclick = () => {
 
-
+        audio.play();
         runGameFunction()
 
     }
