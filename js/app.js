@@ -7,6 +7,7 @@ const topTen = []
 let trainer = undefined
 let pkmBackup = []
 let ableToFight = true
+const loadersGifs = ["loading", "loading2", "loading3"]
 // =========== OST ===========
 const audio = new Audio("./media/audio/mainAudio.mp3");
 audio.volume = 0.2
@@ -332,8 +333,10 @@ const runGameFunction = () => {
                 let att = document.createAttribute("id")
                 att.value = "loading"
                 loading.setAttributeNode(att)
+                const randomLoader = ()=>  loadersGifs[Math.floor(Math.random() * loadersGifs.length)]
+                let loaders=randomLoader()
                 loading.innerHTML = `
-                <img src="./media/img/loading.gif" alt="">
+                <img src="./media/img/${loaders}.gif" alt="">
                 <p id="loadingText" class="animate__animated animate__flash animate__infinite">Loading...</p>
                 `
                 monitor.appendChild(loading)
@@ -762,7 +765,7 @@ const runGameFunction = () => {
 
             function generateEnemyF() {
                 if (enemybattlinPkm.length === 0) {
-                    let chosenEnemy = pkm[Math.floor(Math.random() * pkm.length)]
+                    let chosenEnemy = pkm[Math.round(Math.random() * pkm.length)]
                     enemybattlinPkm.push(chosenEnemy)
                     enemybattlinPkm[0].status = "ok"
                     let enemyPkm = document.getElementById("enemyPkm")
@@ -837,7 +840,6 @@ const resetGameFunction = () => {
     let resetGame = document.getElementById("runGame")
     resetGame.onclick = () => {
 
-        audio.play();
         runGameFunction()
         audioAccept.play()
     }
