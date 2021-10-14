@@ -451,7 +451,7 @@ footer {
 
 .animation {
   transform: translate(15rem);
-  transition: 0.5s;
+  transition: 1s;
 }
 
 #mainGame #monitor #pkmSelection {
