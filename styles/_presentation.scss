@@ -27,19 +27,35 @@
             background-position: center;
             height: 100%;
         }
-        #runGame{
+        #runGame {
+            background-image: linear-gradient(to right, #3de527 0%, #2db312 51%, #27e527 100%);
             position: absolute;
-            bottom: 1rem;
-            right: 40%;
-            width: 10rem;
+            bottom: 0;
+            right: 33%;
+            margin: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 20px;                        width: 10rem;
             height: 3rem;
+            width: 16rem;
+            margin: 0.5rem;
             border-radius: 5px;
-            box-shadow: black 1px 1px;
-            background:  linear-gradient(to right, #56ab2f, #a8e063);
-            font-weight: 1000;
-            letter-spacing:3px;
+            font-weight: bolder;
+            box-shadow: 1px 1px 3px black;
+            letter-spacing: 5px;
+        
         }
-            
+        
+        #runGame:hover {
+            background-position: right center;
+            /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
         }
 
 }
