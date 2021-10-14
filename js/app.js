@@ -280,6 +280,7 @@ const runGameFunction = () => {
                                 const deleteIndex = pkmSelected.findIndex((pkm) => pkm === pokemons)
                                 pkmSelected.splice(pkmSelected[deleteIndex], 1)
                                 eraseFromList.parentNode.removeChild(eraseFromList)
+                                whosh.play()
                             }
                         }
 // =========== BUSCADOR DE POKEMON ===========
