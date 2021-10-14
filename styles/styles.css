@@ -93,7 +93,53 @@ footer {
   width: 12rem;
   height: 12rem;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-  margin: -1rem;
+}
+
+#mainGame #monitor #game #battleField #myPkm #myPkmCard {
+  position: absolute;
+  width: 16rem;
+  height: 4rem;
+  margin: 0.5rem;
+  border: black solid 1px;
+  border-radius: 5px;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  bottom: 12rem;
+  left: -8rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#mainGame #monitor #game #battleField #myPkm figure {
+  padding: 0.1rem;
+  display: flex;
+}
+
+#mainGame #monitor #game #battleField #myPkm figure #myPkmCardSprite {
+  width: 3rem;
+  height: 3rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+#mainGame #monitor #game #battleField #myPkm figure figcaption {
+  margin-left: 0.5rem;
+}
+
+#mainGame #monitor #game #battleField #myPkm figure figcaption div {
+  margin-bottom: 3px;
+}
+
+#mainGame #monitor #game #battleField #myPkm:hover #myPkmCard {
+  visibility: visible;
+  opacity: 1;
 }
 
 #mainGame #monitor #game #battleField #enemyPkm {
@@ -376,6 +422,31 @@ footer {
   border: 1px solid white;
   border-radius: 10px;
   margin: 0.5rem;
+}
+
+#myChosenPkm {
+  margin: -1rem;
+}
+
+.okStatusPkm {
+  border: 1px solid black;
+  background-color: green;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.injuredStatusPkm {
+  border: 1px solid black;
+  background-color: yellow;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.koStatusPkm {
+  border: 1px solid black;
+  background-color: red;
+  width: 5rem;
+  border-radius: 5px;
 }
 
 #mainGame #monitor #pkmSelection {

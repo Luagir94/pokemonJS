@@ -22,7 +22,7 @@ const perdisteAudio = new Audio("./media/audio/perdiste.mp3")
 const whosh = new Audio("./media/audio/whosh.mp3")
 whosh.duration = 1
 whosh.playbackRate = 2
-// =========== AUDIO CON JQUERY GIT===========
+// =========== AUDIO CON JQUERY ===========
 const volumButton = $("#volButton");
 const volumeInput = $("#volumeInput")
 const musica = $("#musica");
@@ -182,7 +182,7 @@ const runGameFunction = () => {
     let genderMale = document.getElementById("maleSelection")
     let goToPkmSelection = document.getElementById("goToPkmSelection")
     let playerNameInput = document.getElementById("playerNameInput")
-    // =========== SELECCION DE ENTRENADOR ===========
+// =========== SELECCION DE ENTRENADOR ===========
     genderFemale.onclick = () => {
         characterGender = "female"
         genderFemale.classList.add('char-active')
@@ -195,9 +195,9 @@ const runGameFunction = () => {
         genderFemale.classList.remove('char-active')
         whosh.play()
     }
-    // =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
+// =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
     playerNameInput.onsubmit = (e) => e.preventDefault()
-    // =========== EVENTO PARA PROCEDER A LA SELECCION DE POKEMONS ===========
+// =========== EVENTO PARA PROCEDER A LA SELECCION DE POKEMONS ===========
     goToPkmSelection.onclick = (e) => {
         let oakText = document.getElementById("oakText")
         if (!characterGender && !characterName) {
@@ -205,10 +205,9 @@ const runGameFunction = () => {
         }
         if (characterGender) {
             e.preventDefault()
-            // =========== SELECCION DE NOMBRE ===========
+// =========== SELECCION DE NOMBRE ===========
             characterName = document.getElementById("playerName").value
-
-            // =========== INICIALIZA LA SELECCION DE POKEMONS ===========
+// =========== INICIALIZA LA SELECCION DE POKEMONS ===========
             if (characterName.length > 2) {
                 audioAccept.play()
                 let characterCreation = document.getElementById("characterCreation")
@@ -259,8 +258,9 @@ const runGameFunction = () => {
             </button>`
                         pkmListSelection.appendChild(btnPkm)
                         let pokeSearch = document.getElementById("pokeSearch")
-                        // =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
+// =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
                         pokeSearch.onsubmit = (e) => e.preventDefault()
+// =========== ELIMINAR POKEMON ===========
                         btnPkm.onclick = () => {
                             const pkmEnLista = pkmSelected.find((pkm) => pkm.id === pokemons.id)
                             if (pkmSelected.length <= 5 && !pkmEnLista) {
@@ -269,13 +269,13 @@ const runGameFunction = () => {
                                 addToList(pokemons.name, pokemons.type, pokemons.spriteFront, pokemons.id)
                             }
                             let eraseFromList = document.getElementById(`pkmChosen${pokemons.id}`)
-                            eraseFromList.onclick =()=>{
+                            eraseFromList.onclick = () => {
                                 const deleteIndex = pkmSelected.findIndex((pkm) => pkm === pokemons)
-                                pkmSelected.splice( pkmSelected[deleteIndex], 1)
+                                pkmSelected.splice(pkmSelected[deleteIndex], 1)
                                 eraseFromList.parentNode.removeChild(eraseFromList)
                             }
                         }
-                        // =========== BUSCADOR DE POKEMON ===========
+// =========== BUSCADOR DE POKEMON ===========
                         let pokeSearchInput = document.getElementById("pokeSearchInput")
                         let buscarName = (search) => pkm.filter((pokemon) => pokemon.name.toLowerCase().includes(search))
                         let buscarType = (search) => pkm.filter((pokemon) => pokemon.type.toLowerCase().includes(search))
@@ -300,8 +300,8 @@ const runGameFunction = () => {
             }
         }
     }
-    // =========== FUNCION QUE AGREGA POKEMONS A LA LISTA ===========
-    const addToList = function (name, type, spriteFront,id) {
+// =========== FUNCION QUE AGREGA POKEMONS A LA LISTA ===========
+    const addToList = function (name, type, spriteFront, id) {
         let selectedPkm = document.getElementById("selectedPkm")
         if (!pokelist) {
             pokelist = document.createElement("ol")
@@ -337,7 +337,7 @@ const runGameFunction = () => {
 
 
         }
-        // =========== EVENTO PARA BORRAR LOS POKEMON DE LA LISTA ===========
+// =========== EVENTO PARA BORRAR LOS POKEMON DE LA LISTA ===========
         let erasePkm = document.getElementById("deletePkm")
         erasePkm.onclick = () => {
             pkmSelected.splice(0, pkmSelected.length)
@@ -346,9 +346,10 @@ const runGameFunction = () => {
             pokelist = false
         }
         let goToGame = document.getElementById("toGame")
-        // =========== EVENTO DISPARADOR DEL JUEGO PRINCIPAL ===========
+// =========== EVENTO DISPARADOR DEL JUEGO PRINCIPAL ===========
         goToGame.onclick = () => {
             if (pkmSelected && (pkmSelected.length === 6)) {
+                // =========== LOADER ===========
                 audioAccept.play()
                 let selectionStage = document.getElementById("pkmSelection")
                 selectionStage.parentNode.removeChild(selectionStage)
@@ -357,15 +358,15 @@ const runGameFunction = () => {
                 let att = document.createAttribute("id")
                 att.value = "loading"
                 loading.setAttributeNode(att)
-                const randomLoader = ()=>  loadersGifs[Math.floor(Math.random() * loadersGifs.length)]
-                let loaders=randomLoader()
+                const randomLoader = () => loadersGifs[Math.floor(Math.random() * loadersGifs.length)]
+                let loaders = randomLoader()
                 loading.innerHTML = `
                 <img src="./media/img/${loaders}.gif" alt="">
                 <p id="loadingText" class="animate__animated animate__flash animate__infinite">Loading...</p>
                 `
                 monitor.appendChild(loading)
+// =========== INICIALIZACION PANTALLA PRINCIPAL ===========
                 setTimeout(() => {
-
                     for (let i = 0; i < pkmSelected.length; i++) {
                         pkmSelected[i].status = "ok"
                         pkmSelected[i].active = true
@@ -373,7 +374,6 @@ const runGameFunction = () => {
                     audio.pause()
                     audio.currentTime = 0
                     audio2.play();
-
                     loading.parentNode.removeChild(loading)
                     mainGame = document.createElement("div")
                     let att = document.createAttribute("id")
@@ -441,12 +441,17 @@ const runGameFunction = () => {
                         pokeball.setAttributeNode(attBallSrc)
                         myPokeballs.appendChild(pokeball)
                         let myChoose = document.getElementById(`myPkm${pokemons.id}`)
-                        // =========== SELECCION DE MIS POKEMON ===========
+// =========== SELECCION DE MIS POKEMON ===========
                         myChoose.onclick = () => {
                             if (pokemons.active === true) {
                                 whosh.play()
                                 ableToFight = true
-                                myPkm.innerHTML = `<figure id="myChosenPkm">
+                                myPkm.innerHTML = `
+                                <button id="myPkmCard"><figure>
+                                <img src="${pokemons.spriteFront}"  id="myPkmCardSprite"alt="">
+                                <figcaption>${pokemons.name} <div id="" class="${pokemons.type}Type">${pokemons.type}</div><div id="cardStatusPkm${pokemons.id}" class="${pokemons.status}StatusPkm">Status</div> </figcaption>
+                            </figure></button>
+                                <figure id="myChosenPkm">
                     <img src="${pokemons.spriteBack}" alt="">
                     </figure>`
                                 myBattlinPkm = pkmSelected.findIndex((pkm) => pkm === pokemons);
@@ -458,24 +463,26 @@ const runGameFunction = () => {
 
                         let rulesButton = document.getElementById("rulesButton")
                         rulesButton.onclick = () => {
+                            audioAccept.play()
                             modalContainer.classList.add('modal-active')
                         }
                         generateEnemyF()
                         let generateEnemy = document.getElementById("generateEnemy")
-                        // =========== GENERO ENEMIGO AL AZAR ===========
+// =========== GENERO ENEMIGO AL AZAR ===========
                         generateEnemy.onclick = () => {
+                            audioAccept.play()
                             generateEnemyF()
                         }
                         let exitBattle = document.getElementById("exitBattle");
-                        // =========== RESET DEL JUEGO===========
+// =========== RESET DEL JUEGO===========
                         exitBattle.onclick = () => {
-
+                            audioAccept.play()
                             resetGameConfirmationFunction()
                         }
 
 
-                        // =========== VALIDACIONES DE LAS PELEAS ===========
-                        // =========== PELEA GANADA ===========
+// =========== VALIDACIONES DE LAS PELEAS ===========
+// =========== PELEA GANADA ===========
                         let succesBattle = () => {
                             enemybattlinPkm.splice(0, enemybattlinPkm.length)
                             let liItems = document.getElementById("myEnemyPkm")
@@ -487,13 +494,16 @@ const runGameFunction = () => {
                                 koAudio.play()
                             }
                         }
-                        // =========== CAMBIOS DE STATUS ===========
+// =========== CAMBIOS DE STATUS ===========
                         let koMyPkmByInjuries = () => {
                             if (pkmSelected[myBattlinPkm].status === "ok") {
                                 pkmSelected[myBattlinPkm].status = "injured"
                                 let statusChange = document.getElementById(`statusPkm${pkmSelected[myBattlinPkm].id}`)
+                                let cardStatusChange = document.getElementById(`cardStatusPkm${pkmSelected[myBattlinPkm].id}`)
                                 statusChange.classList.remove("okStatusPkm")
                                 statusChange.classList.add("injuredStatusPkm")
+                                cardStatusChange.classList.remove("okStatusPkm")
+                                cardStatusChange.classList.add("injuredStatusPkm")
                             } else {
                                 pkmSelected[myBattlinPkm].active = false
                                 pkmSelected[myBattlinPkm].status = "ko"
@@ -525,7 +535,7 @@ const runGameFunction = () => {
                                 koAudio.play()
                             }
                         }
-                        // =========== PELEA PERDIDA ===========
+// =========== PELEA PERDIDA ===========
                         let failedBattle = () => {
                             pkmSelected[myBattlinPkm].status = "ko"
                             pkmSelected[myBattlinPkm].active = false
@@ -540,6 +550,7 @@ const runGameFunction = () => {
                             ableToFight = false
                             koAudio.play()
                         }
+// =========== ALERTA DE PERDISTE===========
                         const modalPerdisteCerrar = document.getElementById('modalPerdiste-cerrar')
                         const modalPerdisteContainer = document.getElementById("perdisteModal")
                         const finalScore = document.getElementById("finalScore")
@@ -549,6 +560,7 @@ const runGameFunction = () => {
 
                             modalPerdisteContainer.classList.remove('modal-active')
                         }
+// =========== FUNCION DE CHECKEO ===========
                         const perdiste = () => {
                             audio2.pause()
                             perdisteAudio.play()
@@ -591,7 +603,7 @@ const runGameFunction = () => {
                                 resetGameFunction()
                             }
                         }
-                        // =========== CHECKEO DEL TEAM ===========
+// =========== CHECKEO DEL TEAM ===========
                         let teamCheck = () => {
                             if (pkmSelected.length === 0) {
 
@@ -599,8 +611,9 @@ const runGameFunction = () => {
                                 setScore(characterName, pkmBackup, score)
                             }
                         }
-                        // =========== TRIGGER DE LA PELEA ===========
+// =========== TRIGGER DE LA PELEA ===========
                         pkmFight.onclick = () => {
+                            audioAccept.play()
                             if (ableToFight) {
 
                                 if (pkmSelected[myBattlinPkm].type === "fairy") {
@@ -774,19 +787,13 @@ const runGameFunction = () => {
                                     }
                                 }
                                 teamCheck()
-
                             }
-
-
-
                         }
                     }
-
                 }, 3000);
             } else if (pkmSelected && (pkmSelected.length < 6)) {
                 selectionAlert()
             }
-
             function generateEnemyF() {
                 if (enemybattlinPkm.length === 0) {
                     let chosenEnemy = pkm[Math.round(Math.random() * pkm.length)]
@@ -859,7 +866,7 @@ const resetGameConfirmationFunction = () => {
 }
 
 
-
+ // =========== FUNCION RESETEO ===========
 const resetGameFunction = () => {
     let resetGame = document.getElementById("runGame")
     resetGame.onclick = () => {
