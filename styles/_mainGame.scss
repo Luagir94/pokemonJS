@@ -433,3 +433,8 @@
     width: 5rem;
     border-radius: 5px;
 }
+
+.animation{
+    transform: translate(15rem);
+    transition: 0.5s;
+}
