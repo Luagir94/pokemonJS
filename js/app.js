@@ -17,7 +17,7 @@ const audioAccept = new Audio("./media/audio/accept.mp3")
 audioAccept.volume = 0.2
 audioAccept.playbackRate = 1.5
 const koAudio = new Audio("./media/audio/ko.mp3")
-koAudio.volume = 0.5
+koAudio.volume = 0.2
 const perdisteAudio = new Audio("./media/audio/perdiste.mp3")
 const whosh = new Audio("./media/audio/whosh.mp3")
 whosh.duration = 1
@@ -28,18 +28,29 @@ const volumeInput = $("#volumeInput")
 const musica = $("#musica");
 volumButton.on('click', () => {
     volumButton.toggleClass('mute')
-    if (audio.muted === false || audio2.muted === false) {
+    if (audio.muted === false) {
         audio.muted = true;
         audio2.muted = true;
+        audioAccept.muted = true;
+        koAudio.muted = true;
+        perdisteAudio.muted = true;
+        whosh.muted = true;
     } else {
         audio.muted = false;
         audio2.muted = false;
+        audio.muted = false;
+        audio2.muted = false;
+        audioAccept.muted = false;
+        koAudio.muted = false;
+        perdisteAudio.muted = false;
+        whosh.muted = false;
     }
 });
 $('#volume').on('change', function () {
     let volValue = volumeInput.val() / 100
     perdisteAudio.volume = volValue * 5
     whosh.volume = volValue * 5
+    koAudio.volume = volValue * 5
     audioAccept.volume = volValue
     audio.volume = volValue;
     audio2.volume = volValue;
@@ -255,8 +266,13 @@ const runGameFunction = () => {
                             if (pkmSelected.length <= 5 && !pkmEnLista) {
                                 whosh.play()
                                 pkmSelected.push(pokemons)
-
-                                addToList(pokemons.name, pokemons.type, pokemons.spriteFront)
+                                addToList(pokemons.name, pokemons.type, pokemons.spriteFront, pokemons.id)
+                            }
+                            let eraseFromList = document.getElementById(`pkmChosen${pokemons.id}`)
+                            eraseFromList.onclick =()=>{
+                                const deleteIndex = pkmSelected.findIndex((pkm) => pkm === pokemons)
+                                pkmSelected.splice( pkmSelected[deleteIndex], 1)
+                                eraseFromList.parentNode.removeChild(eraseFromList)
                             }
                         }
                         // =========== BUSCADOR DE POKEMON ===========
@@ -285,7 +301,7 @@ const runGameFunction = () => {
         }
     }
     // =========== FUNCION QUE AGREGA POKEMONS A LA LISTA ===========
-    const addToList = function (name, type, spriteFront) {
+    const addToList = function (name, type, spriteFront,id) {
         let selectedPkm = document.getElementById("selectedPkm")
         if (!pokelist) {
             pokelist = document.createElement("ol")
@@ -295,6 +311,9 @@ const runGameFunction = () => {
             selectedPkm.appendChild(pokelist)
             let pkmListSelected = document.getElementById("pkmChosen")
             let btnPkm = document.createElement("li")
+            let attTwo = document.createAttribute("id")
+            attTwo.value = `pkmChosen${id}`
+            btnPkm.setAttributeNode(attTwo)
             btnPkm.innerHTML = `<button class="desSelectionButton">
         <figure>
             <img src="${spriteFront}" alt="boton${name}">
@@ -305,6 +324,9 @@ const runGameFunction = () => {
         } else {
             let pkmListSelected = document.getElementById("pkmChosen")
             let btnPkm = document.createElement("li")
+            let att = document.createAttribute("id")
+            att.value = `pkmChosen${id}`
+            btnPkm.setAttributeNode(att)
             btnPkm.innerHTML = `<button class="desSelectionButton">
         <figure>
             <img src="${spriteFront}" alt="boton${name}">
@@ -312,6 +334,8 @@ const runGameFunction = () => {
         </figure>
     </button>`
             pkmListSelected.appendChild(btnPkm)
+
+
         }
         // =========== EVENTO PARA BORRAR LOS POKEMON DE LA LISTA ===========
         let erasePkm = document.getElementById("deletePkm")
