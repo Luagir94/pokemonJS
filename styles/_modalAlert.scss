@@ -1,0 +1,68 @@
+.modalAlert-container {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+
+    transition: all 0.3s ease-in;
+    z-index: 10000000;
+}
+
+.modal-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modalAlert {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 600px;
+    border-radius: 5px; 
+    text-align: left;
+    padding: 22px;
+    border: black solid 5px;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    p {
+        color: white;
+        font-weight: 1000;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    #modalAlert-cerrar {
+        background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%)
+    }
+
+    #modalAlert-cerrar {
+        margin: auto;
+        padding: 15px 45px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        box-shadow: 0 0 10px #eee;
+        border-radius: 10px;
+        display: block;
+        margin-top: 1rem;
+    }
+
+    #modalAlert-cerrar:hover {
+        background-position: right center;
+        /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+    }
+
+}

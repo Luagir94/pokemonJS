@@ -2,6 +2,36 @@
 <html lang="en">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P39CZT5');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-26FZXZGXFF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-26FZXZGXFF');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,26 +39,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="icon" href="./media/img/pokeball.png" type="image/png" />
+    <title>Pokemon - JavaScript Version</title>
 </head>
+<div></div>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P39CZT5" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header>
 
     </header>
     <main>
         <section id="mainGame">
-            
+
             <div id="monitor">
                 <div id="volume">
-                    
-                    <div id="volButton">
-                        <button ><img src="./media/img/volume.png" alt=""></button>
+
+                    <div id="volButtonDiv">
+                        <button id="volButton"><img src="./media/img/volume.png" alt=""></button>
                     </div>
                     <div>
-                        <input type="range" class="form-range" id="customRange1">
+                        <input type="range" class="form-range" id="volumeInput" min="0" max="20">
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div id="characterCreation">
                     <div id="dataDiv">
                         <h2>Completa los siguientes datos</h2>
@@ -53,12 +91,76 @@
                         <figure>
                             <img src="./media/img/oakProfessor.png" alt="">
                         </figure>
+=======
+                <div id="rules">
+                    <p id="modal-abrir">?</p>
+                </div>
+
+                <div id="redes">
+                    <img id="modalRedes-abrir" src="./media/img/logos/redes.png">
+                </div>
+                <div id="rulesModal" class="modal-container">
+                    <div class="modal">
+                        <p> Bienvenidos a Pokemon Version JavaScript
+                            El juego consiste en armar un equipo de 6 Pokemon sin repetir
+                            y hacerlos batallar contra Pokemon salvajes.
+                            El juego consiste en hacer batallar a los pokemons segun su tipo:
+                        </p>
+                        <ul>
+                            <li>Si tiene ventaja sobre el otro, gana.</li>
+                            <li>Si no tiene ventaja ni desventaja el pokemon pasa a estado <span
+                                    class="injured">HERIDO</span>
+                                dos veces <span class="injured">HERIDO</span> es un <span class="ko">"KO"</span> </li>
+                            <li>Si tiene desventaja, queda <span class="ko">"KO"</span>.</li>
+                        </ul>
+                        <P>
+                            Si no recuerdas las ventajas que tiene cada tipo sobre el otro
+                            te dejo el siguiente <a
+                                href="https://pm1.narvii.com/6305/8b08c0111075c0e0c0a2297f33352dad39ffc2be_hq.jpg"
+                                target="_blank">Link</a>
+                        </P>
+                        <button id="modal-cerrar">cerrar</button>
                     </div>
                 </div>
 
+
+                <div id="redesModal" class="modalRedes-container">
+                    <div class="modalRedes">
+                        <div>
+                            <p>Los invito a seguirme en las distintas redes! :</p>
+                            <ul>
+                                <li><a href="https://github.com/Luagir94" target="_blank"><img
+                                            src="./media/img/logos/github.png" alt=""></a></li>
+                                <li><a href="https://www.linkedin.com/in/lucianogiraudi/" target="_blank"><img
+                                            src="./media/img/logos/linkedin.png" alt=""></a></li>
+                                <li><a href="https://twitter.com/LuagirDev" target="_blank"><img
+                                            src="./media/img/logos/twitter.png" alt=""></a></li>
+                            </ul>
+
+                        </div>
+                        <button id="modalRedes-cerrar">cerrar</button>
+                    </div>
+                </div>
+                <div id="alertModal" class="modalAlert-container">
+                    <div class="modalAlert">
+                        <p id="alertText"></p>
+                        <button id="modalAlert-cerrar">cerrar</button>
+>>>>>>> selectionStage
+                    </div>
+                </div>
+
+                <div id="presentation">
+                    <button id="runGame">Start Game</button>
+                </div>
             </div>
         </section>
     </main>
     <footer></footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="./js/pokemons.js"></script>
+    <script src="./js/app.js"></script>
+</body>
 
 </html>

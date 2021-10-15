@@ -1,0 +1,61 @@
+#mainGame {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60vh;
+    position: relative;
+
+    #monitor {
+        position: relative;
+        background-size: contain;
+        border: 1px solid black;
+        width: 50vw;
+        height: 50vh;
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px black;
+        overflow: hidden;
+
+
+
+
+
+        #presentation{
+            background-image: url(../media/img/presentationBackground.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+        }
+        #runGame {
+            background-image: linear-gradient(to right, #3de527 0%, #2db312 51%, #27e527 100%);
+            position: absolute;
+            bottom: 0;
+            right: 33%;
+            margin: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 20px;                        width: 10rem;
+            height: 3rem;
+            width: 16rem;
+            margin: 0.5rem;
+            border-radius: 5px;
+            font-weight: bolder;
+            box-shadow: 1px 1px 3px black;
+            letter-spacing: 5px;
+        
+        }
+        
+        #runGame:hover {
+            background-position: right center;
+            /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+        }
+
+}

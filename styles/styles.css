@@ -41,111 +41,108 @@ footer {
   border-radius: 15px;
   box-shadow: 5px 5px 10px black;
   overflow: hidden;
-}
-
-#mainGame #monitor #volume {
-  position: absolute;
-  z-index: 10;
-  right: -2rem;
-  top: 3rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 6rem;
-  height: 15rem;
 }
 
-#mainGame #monitor #volume div {
+#mainGame #monitor #game {
+  width: 100%;
+  height: 100%;
+}
+
+#mainGame #monitor #game #battleField {
+  background-image: url(../media/img/fieldBackground.png);
+  height: 68%;
+  width: 100%;
+  background-size: cover;
+  position: relative;
+}
+
+#mainGame #monitor #game #battleField #myPokeballs {
+  position: absolute;
+  left: 1rem;
+}
+
+#mainGame #monitor #game #battleField #myPokeballs img {
+  width: 2rem;
+}
+
+#mainGame #monitor #game #battleField .koPokeball {
+  filter: grayscale(100%);
+}
+
+#mainGame #monitor #game #battleField #score {
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+#mainGame #monitor #game #battleField #score p {
+  font-size: 1.5rem;
+  font-weight: 1000;
+}
+
+#mainGame #monitor #game #battleField #myPkm {
+  width: 20rem;
+  position: absolute;
+  bottom: -2rem;
+  left: 10rem;
+}
+
+#mainGame #monitor #game #battleField #myPkm img {
+  width: 12rem;
+  height: 12rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+#mainGame #monitor #game #battleField #myPkm #myPkmCard {
+  position: absolute;
+  width: 16rem;
+  height: 4rem;
   margin: 0.5rem;
-  margin: 1.5rem;
-}
-
-#mainGame #monitor #volume input {
-  transform: rotate(90deg);
-  opacity: 0.3;
-}
-
-#mainGame #monitor #volume input:hover {
-  opacity: 1;
-}
-
-#mainGame #monitor #volume input[type='range'] {
+  border: black solid 1px;
+  border-radius: 5px;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
   display: block;
-  width: 5rem;
+  bottom: 12rem;
+  left: -8rem;
+  visibility: hidden;
+  opacity: 0;
 }
 
-#mainGame #monitor #volume input[type='range']:focus {
-  outline: none;
+#mainGame #monitor #game #battleField #myPkm figure {
+  padding: 0.1rem;
+  display: flex;
 }
 
-#mainGame #monitor #volume input[type='range'],
-#mainGame #monitor #volume input[type='range']::-webkit-slider-runnable-track,
-#mainGame #monitor #volume input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none;
+#mainGame #monitor #game #battleField #myPkm figure #myPkmCardSprite {
+  width: 3rem;
+  height: 3rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
 
-#mainGame #monitor #volume input[type=range]::-webkit-slider-thumb {
-  background-color: white;
-  width: 15px;
-  height: 15px;
-  border: 3px solid black;
-  border-radius: 50%;
-  margin-top: -5px;
+#mainGame #monitor #game #battleField #myPkm figure figcaption {
+  margin-left: 0.5rem;
 }
 
-#mainGame #monitor #volume input[type=range]::-ms-thumb {
-  background-color: #777;
-  width: 20px;
-  height: 20px;
-  border: 3px solid #333;
-  border-radius: 50%;
-  rotate: 180deg;
+#mainGame #monitor #game #battleField #myPkm figure figcaption div {
+  margin-bottom: 3px;
 }
 
-#mainGame #monitor #volume input[type=range]::-webkit-slider-runnable-track {
-  background-color: black;
-  height: 3px;
-  rotate: 180deg;
-}
-
-#mainGame #monitor #volume input[type=range]::-moz-range-track {
-  background-color: #777;
-  height: 3px;
-  rotate: 180deg;
-}
-
-#mainGame #monitor #volume input[type=range]::-ms-track {
-  background-color: #777;
-  height: 3px;
-  rotate: 180deg;
-}
-
-#mainGame #monitor #volume input[type=range]::-ms-fill-lower {
-  background-color: HotPink;
-}
-
-#mainGame #monitor #volume input[type=range]::-ms-fill-upper {
-  background-color: black;
-}
-
-#mainGame #monitor #volume #volButton {
-  opacity: 0.3;
-}
-
-#mainGame #monitor #volume #volButton button {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-}
-
-#mainGame #monitor #volume #volButton button img {
-  width: 1rem;
-}
-
-#mainGame #monitor #volume #volButton:hover {
+#mainGame #monitor #game #battleField #myPkm:hover #myPkmCard {
+  visibility: visible;
   opacity: 1;
 }
 
+<<<<<<< HEAD
 #mainGame #monitor #characterCreation {
   display: flex;
   width: 100%;
@@ -158,17 +155,104 @@ footer {
 
 #mainGame #monitor #characterCreation #dataDiv {
   width: 50%;
+=======
+#mainGame #monitor #game #battleField #enemyPkm {
+  width: 20rem;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm #enemyPkmSprite {
+  width: 13rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+#mainGame #monitor #game #battleField #enemyPkm #enemyPkmCard {
+  position: absolute;
+  width: 16rem;
+  height: 4rem;
+  margin: 0.5rem;
+  border: black solid 1px;
+  border-radius: 5px;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  bottom: -2.5rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm figure {
+  padding: 0.1rem;
+  display: flex;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm figure #enemyPkmCardSprite {
+  width: 3rem;
+  height: 3rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+#mainGame #monitor #game #battleField #enemyPkm figure figcaption {
+  margin-left: 0.5rem;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm figure figcaption div {
+  margin-bottom: 3px;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm figure figcaption .okStatusPkm {
+  border: 1px solid black;
+  background-color: green;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm figure figcaption .injuredStatusPkm {
+  border: 1px solid black;
+  background-color: yellow;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm figure figcaption .koStatusPkm {
+  border: 1px solid black;
+  background-color: red;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame #monitor #game #battleField #enemyPkm:hover #enemyPkmCard {
+  visibility: visible;
+  opacity: 1;
+}
+
+#mainGame #display {
+>>>>>>> selectionStage
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+<<<<<<< HEAD
 #mainGame #monitor #characterCreation #dataDiv #genderSelection {
+=======
+#mainGame #display #actionButtons {
+>>>>>>> selectionStage
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
 }
 
 #mainGame #monitor #characterCreation #dataDiv #genderSelection #genderButtons {
@@ -202,6 +286,12 @@ footer {
 }
 
 #mainGame #monitor #characterCreation #dataDiv #goToPkmSelection {
+=======
+  letter-spacing: 5px;
+}
+
+#mainGame #display #actionButtons #exitBattle {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
   margin: 10px;
   padding: 15px 45px;
   text-align: center;
@@ -210,6 +300,730 @@ footer {
   background-size: 200% auto;
   color: white;
   box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+
+#mainGame #display #actionButtons #exitBattle:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#mainGame #display #actionButtons #pkmFight {
+  background-image: linear-gradient(to right, #093028 0%, #237A57 51%, #093028 100%);
+}
+
+#mainGame #display #actionButtons #pkmFight {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+#mainGame #display #actionButtons #pkmFight:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#mainGame #display #actionButtons #rulesButton {
+  background-image: linear-gradient(to right, #FF8008 0%, #FFC837 51%, #FF8008 100%);
+}
+
+#mainGame #display #actionButtons #rulesButton {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+#mainGame #display #actionButtons #rulesButton:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#mainGame #display #actionButtons #generateEnemy {
+  background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%);
+}
+
+#mainGame #display #actionButtons #generateEnemy {
+  font-size: 0.8rem;
+>>>>>>> selectionStage
+  margin: 10px;
+  padding: 6px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+<<<<<<< HEAD
+#mainGame #monitor #characterCreation #dataDiv #goToPkmSelection:hover {
+=======
+#mainGame #display #actionButtons #generateEnemy:hover {
+>>>>>>> selectionStage
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+<<<<<<< HEAD
+#mainGame #monitor #characterCreation #oakDiv {
+  width: 50%;
+}
+
+#mainGame #monitor #characterCreation #oakDiv p {
+  padding: 1rem;
+}
+
+#mainGame #monitor #characterCreation #oakDiv img {
+  position: relative;
+  height: 40rem;
+  left: 5rem;
+  top: 2rem;
+=======
+#mainGame #display #actionButtons .actionButton {
+  width: 15rem;
+  height: 3rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-weight: bolder;
+  box-shadow: 1px 1px 3px black;
+  letter-spacing: 5px;
+}
+
+#mainGame #display #pkmBox {
+  width: 18rem;
+  overflow-y: scroll;
+  text-align: center;
+}
+
+#mainGame #display #pkmBox button {
+  width: 16rem;
+  height: 4rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+#mainGame #display #pkmBox button figure {
+  padding: 0.1rem;
+  display: flex;
+}
+
+#mainGame #display #pkmBox button figure img {
+  width: 3rem;
+  height: 3rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+#mainGame #display #pkmBox button figure figcaption {
+  margin-left: 0.5rem;
+}
+
+#mainGame #display #pkmBox button figure figcaption div {
+  margin-bottom: 3px;
+}
+
+#mainGame #display #pkmBox button figure figcaption .okStatusPkm {
+  border: 1px solid black;
+  background-color: green;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame #display #pkmBox button figure figcaption .injuredStatusPkm {
+  border: 1px solid black;
+  background-color: yellow;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame #display #pkmBox button figure figcaption .koStatusPkm {
+  border: 1px solid black;
+  background-color: red;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame #display #pkmBox button:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  text-decoration: none;
+}
+
+#mainGame #display #pkmBox::-webkit-scrollbar {
+  width: 7px;
+}
+
+#mainGame #display #pkmBox::-webkit-scrollbar-thumb {
+  background-color: gainsboro;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 0.5rem;
+>>>>>>> selectionStage
+}
+
+#myChosenPkm {
+  margin: -1rem;
+}
+
+.okStatusPkm {
+  border: 1px solid black;
+  background-color: green;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.injuredStatusPkm {
+  border: 1px solid black;
+  background-color: yellow;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.koStatusPkm {
+  border: 1px solid black;
+  background-color: red;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.animation {
+  transform: translate(15rem);
+  transition: 1s;
+}
+
+#mainGame #monitor #pkmSelection {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+  flex-wrap: wrap;
+}
+
+#mainGame #monitor #pkmSelection p {
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#mainGame #monitor #pkmSelection #pkmList {
+  background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+  width: 50%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton {
+  width: 11rem;
+  height: 4rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  position: relative;
+}
+
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure {
+  padding: 0.5rem;
+  display: flex;
+}
+
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure img {
+  width: 3rem;
+  height: 3rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure figcaption {
+  margin-left: 0.1rem;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure figcaption div {
+  text-align: center;
+  font-weight: 1000;
+}
+
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure figcaption span {
+  position: absolute;
+  bottom: 0.2rem;
+  right: 1rem;
+}
+
+#mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  text-decoration: none;
+}
+
+#mainGame #monitor #pkmSelection #pkmToChoose::-webkit-scrollbar {
+  width: 7px;
+}
+
+#mainGame #monitor #pkmSelection #pkmToChoose::-webkit-scrollbar-thumb {
+  background-color: gainsboro;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 0.5rem;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox {
+  width: 50%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  position: relative;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 33%);
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #deleteNext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #deleteNext .actionButton {
+  width: 10rem;
+  height: 3rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-weight: bolder;
+  box-shadow: 1px 1px 3px black;
+  letter-spacing: 5px;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #deleteNext #deletePkm {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #deleteNext #deletePkm:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #deleteNext #toGame {
+  background-image: linear-gradient(to right, #3de527 0%, #2db312 51%, #27e527 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #deleteNext #toGame:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  top: 3rem;
+  left: 2rem;
+  width: 25rem;
+  height: 16rem;
+  background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton {
+  width: 11rem;
+  height: 4rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  position: relative;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton figure {
+  padding: 0.5rem;
+  display: flex;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton figure img {
+  width: 3rem;
+  height: 3rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton figure figcaption {
+  margin-left: 0.1rem;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton figure figcaption div {
+  text-align: center;
+  font-weight: 1000;
+}
+
+#mainGame #monitor #pkmSelection #selectedBox #selectedPkm ol li .desSelectionButton:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  text-decoration: none;
+}
+
+.fireType {
+  border: 1px solid black;
+  background-color: #df5900;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.grassType {
+  border: 1px solid black;
+  background-color: #27df27;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.iceType {
+  border: 1px solid black;
+  background-color: #79fff4;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.waterType {
+  border: 1px solid black;
+  background-color: #00aeff;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.bugType {
+  border: 1px solid black;
+  background-color: #bbff1b;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.poisonType {
+  border: 1px solid black;
+  background-color: #cc5df8;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.electricType {
+  border: 1px solid black;
+  background-color: #ffe600;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.groundType {
+  border: 1px solid black;
+  background-color: #ad8d47;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.rockType {
+  border: 1px solid black;
+  background-color: #663f20;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.fairyType {
+  border: 1px solid black;
+  background-color: #f68ffa;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.normalType {
+  border: 1px solid black;
+  background-color: #b3a8a8;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.flyingType {
+  border: 1px solid black;
+  background-color: #c6a8f7;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.psychcType {
+  border: 1px solid black;
+  background-color: #fa3efa;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.dragonType {
+  border: 1px solid black;
+  background-color: #673efa;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.rockType {
+  border: 1px solid black;
+  background-color: #914f04;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.fightType {
+  border: 1px solid black;
+  background-color: #ff1717;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.ghostType {
+  border: 1px solid black;
+  background-color: #6e678a;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+#mainGame {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60vh;
+  position: relative;
+}
+
+#mainGame #monitor {
+  position: relative;
+  background-size: contain;
+  border: 1px solid black;
+  width: 50vw;
+  height: 50vh;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px black;
+  overflow: hidden;
+}
+
+#mainGame #monitor #presentation {
+  background-image: url(../media/img/presentationBackground.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+}
+
+#mainGame #monitor #runGame {
+  background-image: linear-gradient(to right, #3de527 0%, #2db312 51%, #27e527 100%);
+  position: absolute;
+  bottom: 0;
+  right: 33%;
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+  width: 10rem;
+  height: 3rem;
+  width: 16rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-weight: bolder;
+  box-shadow: 1px 1px 3px black;
+  letter-spacing: 5px;
+}
+
+#mainGame #monitor #runGame:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#mainGame {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60vh;
+  position: relative;
+}
+
+#mainGame #monitor {
+  position: relative;
+  background-size: contain;
+  border: 1px solid black;
+  width: 50vw;
+  height: 50vh;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px black;
+  overflow: hidden;
+}
+
+#mainGame #monitor #characterCreation {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #093028, #237a57);
+  font-size: 1.5rem;
+  font-weight: 1000;
+  text-align: center;
+  color: whitesmoke;
+}
+
+#mainGame #monitor #characterCreation #dataDiv {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#mainGame #monitor #characterCreation #dataDiv #genderSelection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#mainGame #monitor #characterCreation #dataDiv #genderSelection #genderButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+}
+
+#mainGame #monitor #characterCreation #dataDiv #genderSelection #genderButtons button {
+  height: 12rem;
+  width: 6rem;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: black solid 1px;
+  margin: 5px auto 5px auto;
+}
+
+#mainGame #monitor #characterCreation #dataDiv #genderSelection #genderButtons button img {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+#mainGame #monitor #characterCreation #dataDiv #genderSelection #genderButtons .char-active {
+  background-color: green;
+}
+
+#mainGame #monitor #characterCreation #dataDiv form {
+  display: flex;
+  flex-direction: column;
+}
+
+#mainGame #monitor #characterCreation #dataDiv form input {
+  height: 3rem;
+}
+
+#mainGame #monitor #characterCreation #dataDiv #goToPkmSelection {
+  background-image: linear-gradient(to right, #52c234 0%, #061700 51%, #52c234 100%);
+}
+
+#mainGame #monitor #characterCreation #dataDiv #goToPkmSelection {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 10px #eee;
   border-radius: 10px;
   display: block;
 }
@@ -226,12 +1040,589 @@ footer {
 }
 
 #mainGame #monitor #characterCreation #oakDiv p {
-  padding: 1rem;
+  padding: 3rem;
+  font-size: 1.8rem;
 }
 
 #mainGame #monitor #characterCreation #oakDiv img {
-  position: relative;
+  position: absolute;
   height: 40rem;
-  left: 5rem;
-  top: 2rem;
+  right: 0;
+  bottom: -25rem;
+  filter: drop-shadow(3px 5px 20px rgba(0, 0, 0, 0.7));
+}
+
+#monitor #volume {
+  position: absolute;
+  z-index: 10;
+  right: -2rem;
+  top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 15rem;
+}
+
+#monitor #volume div {
+  margin: 0.5rem;
+  margin: 1.5rem;
+}
+
+#monitor #volume input {
+  transform: rotate(270deg);
+  opacity: 0.5;
+}
+
+#monitor #volume input:hover {
+  opacity: 1;
+}
+
+#monitor #volume input[type='range'] {
+  display: block;
+  width: 5rem;
+}
+
+#monitor #volume input[type='range']:focus {
+  outline: none;
+}
+
+#monitor #volume input[type='range'],
+#monitor #volume input[type='range']::-webkit-slider-runnable-track,
+#monitor #volume input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+#monitor #volume input[type=range]::-webkit-slider-thumb {
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border: 3px solid black;
+  border-radius: 50%;
+  margin-top: -5px;
+}
+
+#monitor #volume input[type=range]::-ms-thumb {
+  background-color: #777;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #333;
+  border-radius: 50%;
+  rotate: 180deg;
+}
+
+#monitor #volume input[type=range]::-webkit-slider-runnable-track {
+  background-color: black;
+  height: 3px;
+  rotate: 180deg;
+}
+
+#monitor #volume input[type=range]::-moz-range-track {
+  background-color: #777;
+  height: 3px;
+  rotate: 180deg;
+}
+
+#monitor #volume input[type=range]::-ms-track {
+  background-color: #777;
+  height: 3px;
+  rotate: 180deg;
+}
+
+#monitor #volume input[type=range]::-ms-fill-lower {
+  background-color: HotPink;
+}
+
+#monitor #volume input[type=range]::-ms-fill-upper {
+  background-color: black;
+}
+
+#monitor #volume #volButtonDiv {
+  opacity: 0.5;
+}
+
+#monitor #volume #volButtonDiv .mute {
+  filter: none;
+}
+
+#monitor #volume #volButtonDiv button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  filter: brightness(0);
+}
+
+#monitor #volume #volButtonDiv button img {
+  width: 1rem;
+}
+
+#monitor #volume #volButtonDiv:hover {
+  opacity: 1;
+}
+
+#rules {
+  position: absolute;
+  z-index: 11;
+  right: 1rem;
+  top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: 1000;
+  color: yellow;
+  -webkit-text-stroke: 0.1px #3e3ead;
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+#rules:hover {
+  transform: scale(1.5, 1.5);
+}
+
+.modal-container {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  z-index: 10000000;
+}
+
+.modal-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 600px;
+  border-radius: 5px;
+  text-align: left;
+  padding: 22px;
+  border: black solid 5px;
+  font-size: 1.2rem;
+}
+
+.modal p {
+  color: white;
+}
+
+.modal p a {
+  color: yellow;
+}
+
+.modal ul {
+  color: white;
+  list-style-image: url("../media/img/pokeballList.png");
+  margin: 0.8rem auto 0.8rem auto;
+}
+
+.modal ul li {
+  margin: 5px auto 5px auto;
+}
+
+.modal #modal-cerrar {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+}
+
+.modal #modal-cerrar {
+  margin: auto;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 10px #eee;
+  border-radius: 10px;
+  display: block;
+  margin-top: 1rem;
+}
+
+.modal #modal-cerrar:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+span.injured {
+  color: black;
+  background-color: yellow;
+  border: white solid 1px;
+  border-radius: 5px;
+}
+
+span.ko {
+  color: blac;
+  background-color: red;
+  border: white solid 1px;
+  border-radius: 5px;
+}
+
+#redes {
+  position: absolute;
+  z-index: 11;
+  right: 0.5rem;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: 1000;
+  color: yellow;
+  -webkit-text-stroke: 0.1px #3e3ead;
+  font-size: 2rem;
+}
+
+#redes img {
+  width: 2rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+#redes:hover {
+  transform: scale(1.5, 1.5);
+}
+
+.modalRedes-container {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  z-index: 100000000;
+}
+
+.modal-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modalRedes {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  width: 600px;
+  border-radius: 5px;
+  text-align: left;
+  padding: 22px;
+  border: black solid 5px;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.modalRedes ul {
+  list-style: none;
+  display: flex;
+}
+
+.modalRedes ul li {
+  list-style: none;
+}
+
+.modalRedes ul li img {
+  width: 3rem;
+}
+
+.modalRedes ul li img:hover {
+  transform: scale(1.5, 1.5);
+}
+
+.modalRedes p {
+  color: white;
+}
+
+.modalRedes p a {
+  color: yellow;
+}
+
+.modalRedes ul {
+  color: white;
+  list-style-image: url("../media/img/pokeballList.png");
+  margin: 0.8rem auto 0.8rem auto;
+}
+
+.modalRedes ul li {
+  margin: 5px auto 5px auto;
+}
+
+.modalRedes #modalRedes-cerrar {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+}
+
+.modalRedes #modalRedes-cerrar {
+  margin: auto;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 10px #eee;
+  border-radius: 10px;
+  display: block;
+  margin-top: 1rem;
+  bottom: 2rem;
+}
+
+.modalRedes #modalRedes-cerrar:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+span.injured {
+  color: black;
+  background-color: yellow;
+  border: white solid 1px;
+  border-radius: 5px;
+}
+
+span.ko {
+  color: black;
+  background-color: red;
+  border: white solid 1px;
+  border-radius: 5px;
+}
+
+.modalPerdiste-container {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  z-index: 10000000;
+}
+
+.modal-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modalPerdiste {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 600px;
+  border-radius: 5px;
+  text-align: left;
+  padding: 22px;
+  border: black solid 5px;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.modalPerdiste #perdisteTexto {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalPerdiste p {
+  color: red;
+  font-weight: 1000;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.modalPerdiste #finalScore {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+}
+
+#modalPerdiste-cerrar {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+}
+
+#modalPerdiste-cerrar {
+  margin: auto;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 10px #eee;
+  border-radius: 10px;
+  display: block;
+  margin-top: 1rem;
+}
+
+#modalPerdiste-cerrar:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.modalAlert-container {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  z-index: 10000000;
+}
+
+.modal-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modalAlert {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 600px;
+  border-radius: 5px;
+  text-align: left;
+  padding: 22px;
+  border: black solid 5px;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.modalAlert p {
+  color: white;
+  font-weight: 1000;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modalAlert #modalAlert-cerrar {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+}
+
+.modalAlert #modalAlert-cerrar {
+  margin: auto;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 10px #eee;
+  border-radius: 10px;
+  display: block;
+  margin-top: 1rem;
+}
+
+.modalAlert #modalAlert-cerrar:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#divButt {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#divButt .actionButton {
+  width: 10rem;
+  height: 3rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-weight: bolder;
+  box-shadow: 1px 1px 3px black;
+  letter-spacing: 5px;
+}
+
+#divButt #modalReset-cerrar {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+
+#divButt #modalReset-cerrar:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#divButt #resetGame {
+  background-image: linear-gradient(to right, #3de527 0%, #2db312 51%, #27e527 100%);
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+
+#divButt #resetGame:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+#loading #preloader {
+  width: 10rem;
+}
+
+#loading p {
+  font-size: 2rem;
 }

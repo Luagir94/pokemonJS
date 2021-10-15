@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Orbitron', sans-serif;
-
+    
 }
 
 body {
@@ -25,4 +25,16 @@ footer {
     height: 10vh;
 }
 
+
 @import 'mainGame';
+@import 'pkmSelection';
+@import 'types';
+@import 'presentation';
+@import 'characterSelection';
+@import 'volume';
+@import 'rules';
+@import 'redes';
+@import 'perdisteModal';
+@import 'modalAlert';
+@import 'resetAlert';
+@import 'loader';
