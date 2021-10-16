@@ -142,20 +142,6 @@ footer {
   opacity: 1;
 }
 
-<<<<<<< HEAD
-#mainGame #monitor #characterCreation {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, #4ecdc4, #556270);
-  font-size: 1.5rem;
-  font-weight: 1000;
-  text-align: center;
-}
-
-#mainGame #monitor #characterCreation #dataDiv {
-  width: 50%;
-=======
 #mainGame #monitor #game #battleField #enemyPkm {
   width: 20rem;
   position: absolute;
@@ -236,57 +222,22 @@ footer {
 }
 
 #mainGame #display {
->>>>>>> selectionStage
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-<<<<<<< HEAD
-#mainGame #monitor #characterCreation #dataDiv #genderSelection {
-=======
-#mainGame #display #actionButtons {
->>>>>>> selectionStage
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-<<<<<<< HEAD
-}
-
-#mainGame #monitor #characterCreation #dataDiv #genderSelection #genderButtons {
-  display: flex;
-  flex-direction: row;
-  gap: 4rem;
-}
-
-#mainGame #monitor #characterCreation #dataDiv #genderSelection #genderButtons button {
-  height: 12rem;
-  width: 6rem;
-  border-radius: 5px;
-}
-
-#mainGame #monitor #characterCreation #dataDiv #genderSelection #genderButtons button img {
+  justify-content: space-around;
+  height: 32%;
   width: 100%;
-  height: 100%;
+  background: linear-gradient(to right, #6190e8, #a7bfe8);
+  bottom: 10;
+  position: absolute;
+  border-top: 1px solid black;
 }
 
-#mainGame #monitor #characterCreation #dataDiv form {
+#mainGame #display #actionButtons {
   display: flex;
-  flex-direction: column;
-}
-
-#mainGame #monitor #characterCreation #dataDiv form input {
-  height: 2rem;
-}
-
-#mainGame #monitor #characterCreation #dataDiv #goToPkmSelection {
-  background-image: linear-gradient(to right, #52c234 0%, #061700 51%, #52c234 100%);
-}
-
-#mainGame #monitor #characterCreation #dataDiv #goToPkmSelection {
-=======
+  align-items: center;
+  width: 60%;
+  flex-wrap: wrap;
+  justify-content: center;
   letter-spacing: 5px;
 }
 
@@ -364,7 +315,6 @@ footer {
 
 #mainGame #display #actionButtons #generateEnemy {
   font-size: 0.8rem;
->>>>>>> selectionStage
   margin: 10px;
   padding: 6px 45px;
   text-align: center;
@@ -377,32 +327,13 @@ footer {
   display: block;
 }
 
-<<<<<<< HEAD
-#mainGame #monitor #characterCreation #dataDiv #goToPkmSelection:hover {
-=======
 #mainGame #display #actionButtons #generateEnemy:hover {
->>>>>>> selectionStage
   background-position: right center;
   /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
 
-<<<<<<< HEAD
-#mainGame #monitor #characterCreation #oakDiv {
-  width: 50%;
-}
-
-#mainGame #monitor #characterCreation #oakDiv p {
-  padding: 1rem;
-}
-
-#mainGame #monitor #characterCreation #oakDiv img {
-  position: relative;
-  height: 40rem;
-  left: 5rem;
-  top: 2rem;
-=======
 #mainGame #display #actionButtons .actionButton {
   width: 15rem;
   height: 3rem;
@@ -491,7 +422,6 @@ footer {
   border: 1px solid white;
   border-radius: 10px;
   margin: 0.5rem;
->>>>>>> selectionStage
 }
 
 #myChosenPkm {
