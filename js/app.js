@@ -503,6 +503,9 @@ const runGameFunction = () => {
                                 score += 1
                                 getScore.innerHTML = `<p>SCORE:    ${score} </p>`
                                 koAudio.play()
+                                dataLayer.push({
+                                    'win': 1,
+                                  })
                             }
                             ableToPick = true   }
 // =========== CAMBIOS DE STATUS ===========
@@ -548,6 +551,9 @@ const runGameFunction = () => {
                                 score += 1
                                 getScore.innerHTML = `<p>SCORE:    ${score} </p>`
                                 koAudio.play()
+                                dataLayer.push({
+                                    'win': 1,
+                                  })
                                 ableToPick = true  
                             }
                         }
