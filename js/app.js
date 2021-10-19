@@ -289,12 +289,16 @@ const runGameFunction = () => {
                                 whosh.play()
                                 pkmSelected.push(pokemons)
                                 addToList(pokemons.name, pokemons.types[0].type.name, pokemons.sprites.front_default, pokemons.id)
+                                let addFilter = document.getElementById(`pokemon${pokemons.id}`)
+                                addFilter.classList.add("koPokeball")
                             }
                             let eraseFromList = document.getElementById(`pkmChosen${pokemons.id}`)
                             eraseFromList.onclick = () => {
                                 const deleteIndex = pkmSelected.findIndex((pkm) => pkm === pokemons)
                                 pkmSelected.splice(pkmSelected[deleteIndex], 1)
                                 eraseFromList.parentNode.removeChild(eraseFromList)
+                                let removeFilter = document.getElementById(`pokemon${pokemons.id}`)
+                                removeFilter.classList.remove("koPokeball")
                                 whosh.play()
                             }
                         }
@@ -367,6 +371,7 @@ const runGameFunction = () => {
             let liItems = document.getElementById("pkmChosen")
             liItems.parentNode.removeChild(liItems)
             pokelist = false
+            
         }
         let goToGame = document.getElementById("toGame")
         // =========== EVENTO DISPARADOR DEL JUEGO PRINCIPAL ===========

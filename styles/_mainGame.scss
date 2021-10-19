@@ -44,9 +44,7 @@
                     left: 1rem;
 
                 }
-                .koPokeball{
-                    filter: grayscale(100%)
-                }
+
                 #score {
                     p {
                         font-size: 1.5rem;
@@ -441,4 +439,7 @@
 .myPkmSprite{
     position: absolute;
     bottom: -6rem
+}
+.koPokeball{
+    filter: grayscale(100%)
 }

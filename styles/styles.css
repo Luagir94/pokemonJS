@@ -67,10 +67,6 @@ footer {
   width: 2rem;
 }
 
-#mainGame #monitor #game #battleField .koPokeball {
-  filter: grayscale(100%);
-}
-
 #mainGame #monitor #game #battleField #score {
   position: absolute;
   top: 0;
@@ -457,6 +453,10 @@ footer {
 .myPkmSprite {
   position: absolute;
   bottom: -6rem;
+}
+
+.koPokeball {
+  filter: grayscale(100%);
 }
 
 #mainGame #monitor #pkmSelection {
