@@ -10,6 +10,7 @@ let ableToFight = true
 let ableToPick = true
 const loadersGifs = ["loading", "loading2", "loading3"]
 const pkm = []
+// =========== LLAMADA A LA API ===========
 const getPkm = async(id) =>{
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const data = await response.json(); 
@@ -18,7 +19,7 @@ const getPkm = async(id) =>{
   for (let i = 1; i <= 898; i++) {
     getPkm(i)     
   }
-
+ 
 // =========== OST ===========
 const audio = new Audio("./media/audio/mainAudio.mp3");
 audio.volume = 0.2
@@ -264,6 +265,7 @@ const runGameFunction = () => {
                 const generatePkm = (array) => {
                     let pkmListSelection = document.getElementById("pkmToChoose")
                     pkmListSelection.innerHTML = ''
+                    pkm.sort((a, b) => (a.id) - (b.id))
                     array.forEach((pokemons) => {
                         pkmListSelection = document.getElementById("pkmToChoose")
                         let btnPkm = document.createElement("li")
