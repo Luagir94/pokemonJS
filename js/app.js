@@ -841,14 +841,8 @@ const runGameFunction = () => {
                                             if ((enemybattlinPkm[0].types[0].type.name === "fighting")) {
                                                 failedBattle()
                                             } else if ((enemybattlinPkm[0].types[0].type.name === "ghost")) {} else {
-                                                if (pkmSelected[myBattlinPkm].status === "ok") {
-                                                    pkmSelected[myBattlinPkm].status = "injured"
-                                                } else if (pkmSelected[myBattlinPkm].status === "ko") {
-                                                    pkmSelected[myBattlinPkm].active = false
-                                                } else if (pkmSelected[myBattlinPkm].status === "injured") {
-                                                    koMyPkmByInjuries()
-                                                    koEnemyPkmByInjuries()
-                                                }
+                                                koMyPkmByInjuries()
+                                                koEnemyPkmByInjuries()
                                             }
                                         }else if (pkmSelected[myBattlinPkm].types[0].type.name === "steel") {
                                             if ((enemybattlinPkm[0].types[0].type.name === "ice") || (enemybattlinPkm[0].types[0].type.name === "rock") || (enemybattlinPkm[0].types[0].type.name === "fairy")) {
