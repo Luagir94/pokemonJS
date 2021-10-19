@@ -496,8 +496,8 @@ footer {
 }
 
 #mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton {
-  width: 20rem;
-  height: 6rem;
+  width: 11rem;
+  height: 5rem;
   margin: 0.5rem;
   border-radius: 5px;
   font-weight: bolder;
@@ -519,20 +519,20 @@ footer {
 }
 
 #mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure img {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
 
 #mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure figcaption {
   margin-left: 0.1rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-align: left;
 }
 
 #mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure figcaption div {
   text-align: center;
-  width: 6rem;
+  width: 5rem;
   font-weight: 1000;
 }
 
