@@ -90,8 +90,8 @@ footer {
 }
 
 #mainGame #monitor #game #battleField #myPkm img {
-  width: 12rem;
-  height: 12rem;
+  width: 20rem;
+  height: 20rem;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
 
@@ -454,6 +454,11 @@ footer {
   transition: 1s;
 }
 
+.myPkmSprite {
+  position: absolute;
+  bottom: -6rem;
+}
+
 #mainGame #monitor #pkmSelection {
   display: flex;
   width: 100%;
@@ -484,15 +489,15 @@ footer {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   overflow-y: scroll;
   width: 100%;
 }
 
 #mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton {
-  width: 11rem;
-  height: 4rem;
+  width: 20rem;
+  height: 6rem;
   margin: 0.5rem;
   border-radius: 5px;
   font-weight: bolder;
@@ -509,24 +514,25 @@ footer {
 }
 
 #mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure {
-  padding: 0.5rem;
+  padding: 0;
   display: flex;
 }
 
 #mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure img {
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
 
 #mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure figcaption {
   margin-left: 0.1rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-align: left;
 }
 
 #mainGame #monitor #pkmSelection #pkmList #pkmToChoose li .selectionButton figure figcaption div {
   text-align: center;
+  width: 6rem;
   font-weight: 1000;
 }
 
@@ -700,7 +706,7 @@ footer {
 
 .iceType {
   border: 1px solid black;
-  background-color: #79fff4;
+  background-color: #96d8d6;
   width: 5rem;
   border-radius: 5px;
 }
@@ -714,14 +720,14 @@ footer {
 
 .bugType {
   border: 1px solid black;
-  background-color: #bbff1b;
+  background-color: #a7b723;
   width: 5rem;
   border-radius: 5px;
 }
 
 .poisonType {
   border: 1px solid black;
-  background-color: #cc5df8;
+  background-color: #ad39a6;
   width: 5rem;
   border-radius: 5px;
 }
@@ -735,7 +741,7 @@ footer {
 
 .groundType {
   border: 1px solid black;
-  background-color: #ad8d47;
+  background-color: #715746;
   width: 5rem;
   border-radius: 5px;
 }
@@ -756,7 +762,7 @@ footer {
 
 .normalType {
   border: 1px solid black;
-  background-color: #b3a8a8;
+  background-color: #a5aa74;
   width: 5rem;
   border-radius: 5px;
 }
@@ -768,7 +774,7 @@ footer {
   border-radius: 5px;
 }
 
-.psychcType {
+.psychicType {
   border: 1px solid black;
   background-color: #fa3efa;
   width: 5rem;
@@ -777,21 +783,21 @@ footer {
 
 .dragonType {
   border: 1px solid black;
-  background-color: #673efa;
+  background-color: #7737fd;
   width: 5rem;
   border-radius: 5px;
 }
 
 .rockType {
   border: 1px solid black;
-  background-color: #914f04;
+  background-color: #715746;
   width: 5rem;
   border-radius: 5px;
 }
 
-.fightType {
+.fightingType {
   border: 1px solid black;
-  background-color: #ff1717;
+  background-color: #bc3225;
   width: 5rem;
   border-radius: 5px;
 }
@@ -799,6 +805,20 @@ footer {
 .ghostType {
   border: 1px solid black;
   background-color: #6e678a;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.steelType {
+  border: 1px solid black;
+  background-color: gray;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.darkType {
+  border: 1px solid black;
+  background-color: #715746;
   width: 5rem;
   border-radius: 5px;
 }

@@ -9,6 +9,16 @@ let pkmBackup = []
 let ableToFight = true
 let ableToPick = true
 const loadersGifs = ["loading", "loading2", "loading3"]
+const pkm = []
+const getPkm = async(id) =>{
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const data = await response.json(); 
+    pkm.push(data)
+  };
+  for (let i = 1; i <= 898; i++) {
+    getPkm(i)     
+  }
+
 // =========== OST ===========
 const audio = new Audio("./media/audio/mainAudio.mp3");
 audio.volume = 0.2
@@ -189,7 +199,7 @@ const runGameFunction = () => {
     let genderMale = document.getElementById("maleSelection")
     let goToPkmSelection = document.getElementById("goToPkmSelection")
     let playerNameInput = document.getElementById("playerNameInput")
-// =========== SELECCION DE ENTRENADOR ===========
+    // =========== SELECCION DE ENTRENADOR ===========
     genderFemale.onclick = () => {
         characterGender = "female"
         genderFemale.classList.add('char-active')
@@ -202,9 +212,9 @@ const runGameFunction = () => {
         genderFemale.classList.remove('char-active')
         whosh.play()
     }
-// =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
+    // =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
     playerNameInput.onsubmit = (e) => e.preventDefault()
-// =========== EVENTO PARA PROCEDER A LA SELECCION DE POKEMONS ===========
+    // =========== EVENTO PARA PROCEDER A LA SELECCION DE POKEMONS ===========
     goToPkmSelection.onclick = (e) => {
         let oakText = document.getElementById("oakText")
         if (!characterGender && !characterName) {
@@ -212,9 +222,9 @@ const runGameFunction = () => {
         }
         if (characterGender) {
             e.preventDefault()
-// =========== SELECCION DE NOMBRE ===========
+            // =========== SELECCION DE NOMBRE ===========
             characterName = document.getElementById("playerName").value
-// =========== INICIALIZA LA SELECCION DE POKEMONS ===========
+            // =========== INICIALIZA LA SELECCION DE POKEMONS ===========
             if (characterName.length > 2) {
                 audioAccept.play()
                 let characterCreation = document.getElementById("characterCreation")
@@ -248,6 +258,9 @@ const runGameFunction = () => {
                                         </div>
                                         `
                 monitor.appendChild(createPkmSelection)
+
+
+                  
                 const generatePkm = (array) => {
                     let pkmListSelection = document.getElementById("pkmToChoose")
                     pkmListSelection.innerHTML = ''
@@ -259,21 +272,21 @@ const runGameFunction = () => {
                         btnPkm.setAttributeNode(att)
                         btnPkm.innerHTML = `<button class="selectionButton" id="selectionButton${pokemons.id}">
                 <figure>
-                    <img src="${pokemons.spriteFront}" alt="boton${pokemons.name}">
-                    <figcaption>${pokemons.name} <div id="" class="${pokemons.type}Type">${pokemons.type}</div> <span>${pokemons.id}</span></figcaption>
+                    <img src="${pokemons.sprites.front_default}" alt="boton${pokemons.name}">
+                    <figcaption>${pokemons.name} <div id="" class="${pokemons.types[0].type.name}Type">${pokemons.types[0].type.name}</div> <span>${pokemons.id}</span></figcaption>
                 </figure>
             </button>`
                         pkmListSelection.appendChild(btnPkm)
                         let pokeSearch = document.getElementById("pokeSearch")
-// =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
+                        // =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
                         pokeSearch.onsubmit = (e) => e.preventDefault()
-// =========== ELIMINAR POKEMON ===========
+                        // =========== ELIMINAR POKEMON ===========
                         btnPkm.onclick = () => {
                             const pkmEnLista = pkmSelected.find((pkm) => pkm.id === pokemons.id)
                             if (pkmSelected.length <= 5 && !pkmEnLista) {
                                 whosh.play()
                                 pkmSelected.push(pokemons)
-                                addToList(pokemons.name, pokemons.type, pokemons.spriteFront, pokemons.id)
+                                addToList(pokemons.name, pokemons.types[0].type.name, pokemons.sprites.front_default, pokemons.id)
                             }
                             let eraseFromList = document.getElementById(`pkmChosen${pokemons.id}`)
                             eraseFromList.onclick = () => {
@@ -283,10 +296,10 @@ const runGameFunction = () => {
                                 whosh.play()
                             }
                         }
-// =========== BUSCADOR DE POKEMON ===========
+                        // =========== BUSCADOR DE POKEMON ===========
                         let pokeSearchInput = document.getElementById("pokeSearchInput")
                         let buscarName = (search) => pkm.filter((pokemon) => pokemon.name.toLowerCase().includes(search))
-                        let buscarType = (search) => pkm.filter((pokemon) => pokemon.type.toLowerCase().includes(search))
+                        let buscarType = (search) => pkm.filter((pokemon) => pokemon.types[0].type.name.toLowerCase().includes(search))
                         let buscarId = (search) => pkm.filter((pokemon) => pokemon.id == search)
                         pokeSearchInput.oninput = () => {
                             const search = pokeSearchInput.value.trim().toLowerCase()
@@ -308,7 +321,7 @@ const runGameFunction = () => {
             }
         }
     }
-// =========== FUNCION QUE AGREGA POKEMONS A LA LISTA ===========
+    // =========== FUNCION QUE AGREGA POKEMONS A LA LISTA ===========
     const addToList = function (name, type, spriteFront, id) {
         let selectedPkm = document.getElementById("selectedPkm")
         if (!pokelist) {
@@ -345,7 +358,7 @@ const runGameFunction = () => {
 
 
         }
-// =========== EVENTO PARA BORRAR LOS POKEMON DE LA LISTA ===========
+        // =========== EVENTO PARA BORRAR LOS POKEMON DE LA LISTA ===========
         let erasePkm = document.getElementById("deletePkm")
         erasePkm.onclick = () => {
             pkmSelected.splice(0, pkmSelected.length)
@@ -354,9 +367,20 @@ const runGameFunction = () => {
             pokelist = false
         }
         let goToGame = document.getElementById("toGame")
-// =========== EVENTO DISPARADOR DEL JUEGO PRINCIPAL ===========
+        // =========== EVENTO DISPARADOR DEL JUEGO PRINCIPAL ===========
         goToGame.onclick = () => {
             if (pkmSelected && (pkmSelected.length === 6)) {
+
+                pkmSelected.forEach(() => {
+                    const status = {
+                        status: 'ok'  
+                      };
+                      const active = {
+                        active: true  
+                      };
+                      Object.assign(status,active);
+                });
+
                 // =========== LOADER ===========
                 audioAccept.play()
                 let selectionStage = document.getElementById("pkmSelection")
@@ -373,7 +397,7 @@ const runGameFunction = () => {
                 <p id="loadingText" class="animate__animated animate__flash animate__infinite">Loading...</p>
                 `
                 monitor.appendChild(loading)
-// =========== INICIALIZACION PANTALLA PRINCIPAL ===========
+                // =========== INICIALIZACION PANTALLA PRINCIPAL ===========
                 setTimeout(() => {
                     for (let i = 0; i < pkmSelected.length; i++) {
                         pkmSelected[i].status = "ok"
@@ -435,8 +459,8 @@ const runGameFunction = () => {
                         btnPkm.setAttributeNode(att)
                         let statusPkms = `statusPkm${pokemons.id}`
                         btnPkm.innerHTML = `<figure>
-                                            <img src="${pokemons.spriteFront}" alt="">
-                                            <figcaption>${pokemons.name} <div id="" class="${pokemons.type}Type">${pokemons.type}</div><div id="${statusPkms}" class="okStatusPkm">Status</div> </figcaption>
+                                            <img src="${pokemons.sprites.front_default}" alt="">
+                                            <figcaption>${pokemons.name} <div id="" class="${pokemons.types[0].type.name}Type">${pokemons.types[0].type.name}</div><div id="${statusPkms}" class="okStatusPkm">Status</div> </figcaption>
                                         </figure>`
                         pkmBox.appendChild(btnPkm)
                         let myPokeballs = document.getElementById("myPokeballs")
@@ -449,7 +473,7 @@ const runGameFunction = () => {
                         pokeball.setAttributeNode(attBallSrc)
                         myPokeballs.appendChild(pokeball)
                         let myChoose = document.getElementById(`myPkm${pokemons.id}`)
-// =========== SELECCION DE MIS POKEMON ===========
+                        // =========== SELECCION DE MIS POKEMON ===========
                         myChoose.onclick = () => {
                             if (ableToPick) {
                                 if (pokemons.active === true) {
@@ -457,16 +481,16 @@ const runGameFunction = () => {
                                     ableToFight = true
                                     myPkm.innerHTML = `
                                     <button id="myPkmCard"><figure>
-                                    <img src="${pokemons.spriteFront}"  id="myPkmCardSprite"alt="">
-                                    <figcaption>${pokemons.name} <div id="" class="${pokemons.type}Type">${pokemons.type}</div><div id="cardStatusPkm${pokemons.id}" class="${pokemons.status}StatusPkm">Status</div> </figcaption>
+                                    <img src="${pokemons.sprites.front_default}"  id="myPkmCardSprite"alt="">
+                                    <figcaption>${pokemons.name} <div id="" class="${pokemons.types[0].type.name}Type">${pokemons.types[0].type.name}</div><div id="cardStatusPkm${pokemons.id}" class="${pokemons.status}StatusPkm">Status</div> </figcaption>
                                 </figure></button>
                                     <figure id="myChosenPkm">
-                        <img id="animation" class="" src="${pokemons.spriteBack}" alt="">
+                        <img id="animation" class="myPkmSprite" src="${pokemons.sprites.back_default}" alt="">
                         </figure>`
                                     myBattlinPkm = pkmSelected.findIndex((pkm) => pkm === pokemons);
                                 }
                             }
-                            
+
                         }
                         let pkmFight = document.getElementById("pkmFight")
                         pkmBackup = [...pkmSelected]
@@ -479,21 +503,21 @@ const runGameFunction = () => {
                         }
                         generateEnemyF()
                         let generateEnemy = document.getElementById("generateEnemy")
-// =========== GENERO ENEMIGO AL AZAR ===========
+                        // =========== GENERO ENEMIGO AL AZAR ===========
                         generateEnemy.onclick = () => {
                             audioAccept.play()
                             generateEnemyF()
                         }
                         let exitBattle = document.getElementById("exitBattle");
-// =========== RESET DEL JUEGO===========
+                        // =========== RESET DEL JUEGO===========
                         exitBattle.onclick = () => {
                             audioAccept.play()
                             resetGameConfirmationFunction()
                         }
 
 
-// =========== VALIDACIONES DE LAS PELEAS ===========
-// =========== PELEA GANADA ===========
+                        // =========== VALIDACIONES DE LAS PELEAS ===========
+                        // =========== PELEA GANADA ===========
                         let succesBattle = () => {
                             enemybattlinPkm.splice(0, enemybattlinPkm.length)
                             let liItems = document.getElementById("myEnemyPkm")
@@ -505,10 +529,11 @@ const runGameFunction = () => {
                                 koAudio.play()
                                 dataLayer.push({
                                     'win': 1,
-                                  })
+                                })
                             }
-                            ableToPick = true   }
-// =========== CAMBIOS DE STATUS ===========
+                            ableToPick = true
+                        }
+                        // =========== CAMBIOS DE STATUS ===========
                         let koMyPkmByInjuries = () => {
                             if (pkmSelected[myBattlinPkm].status === "ok") {
                                 pkmSelected[myBattlinPkm].status = "injured"
@@ -532,7 +557,7 @@ const runGameFunction = () => {
                                 myChosedPkm.parentNode.removeChild(myChosedPkm)
                                 ableToFight = false
                                 pkmSelected.splice(myBattlinPkm, 1)
-                                ableToPick = true  
+                                ableToPick = true
                                 koAudio.play()
                             }
                         }
@@ -553,11 +578,11 @@ const runGameFunction = () => {
                                 koAudio.play()
                                 dataLayer.push({
                                     'win': 1,
-                                  })
-                                ableToPick = true  
+                                })
+                                ableToPick = true
                             }
                         }
-// =========== PELEA PERDIDA ===========
+                        // =========== PELEA PERDIDA ===========
                         let failedBattle = () => {
                             pkmSelected[myBattlinPkm].status = "ko"
                             pkmSelected[myBattlinPkm].active = false
@@ -571,9 +596,9 @@ const runGameFunction = () => {
                             pkmSelected.splice(myBattlinPkm, 1)
                             ableToFight = false
                             koAudio.play()
-                            ableToPick = true  
+                            ableToPick = true
                         }
-// =========== ALERTA DE PERDISTE===========
+                        // =========== ALERTA DE PERDISTE===========
                         const modalPerdisteCerrar = document.getElementById('modalPerdiste-cerrar')
                         const modalPerdisteContainer = document.getElementById("perdisteModal")
                         const finalScore = document.getElementById("finalScore")
@@ -583,7 +608,7 @@ const runGameFunction = () => {
 
                             modalPerdisteContainer.classList.remove('modal-active')
                         }
-// =========== FUNCION DE CHECKEO ===========
+                        // =========== FUNCION DE CHECKEO ===========
                         const perdiste = () => {
                             audio2.pause()
                             perdisteAudio.play()
@@ -626,7 +651,7 @@ const runGameFunction = () => {
                                 resetGameFunction()
                             }
                         }
-// =========== CHECKEO DEL TEAM ===========
+                        // =========== CHECKEO DEL TEAM ===========
                         let teamCheck = () => {
                             if (pkmSelected.length === 0) {
 
@@ -634,15 +659,15 @@ const runGameFunction = () => {
                                 setScore(characterName, pkmBackup, score)
                             }
                         }
-// =========== TRIGGER DE LA PELEA ===========
+                        // =========== TRIGGER DE LA PELEA ===========
                         pkmFight.onclick = () => {
                             audioAccept.play()
                             ableToPick = false
                             setTimeout(() => {
                                 if (ableToFight) {
-                                
+
                                     let animation = document.getElementById("animation")
-                                    const animationBattle = () =>{
+                                    const animationBattle = () => {
                                         animation.classList.add('animation')
                                         fightAudio.play()
                                         setTimeout(() => {
@@ -651,54 +676,57 @@ const runGameFunction = () => {
                                     }
                                     animationBattle()
                                     setTimeout(() => {
-                                        if (pkmSelected[myBattlinPkm].type === "fairy") {
-                                            if ((enemybattlinPkm[0].type === "dragon") || (enemybattlinPkm[0].type === "fight")) {
+                                        if (pkmSelected[myBattlinPkm].types[0].type.name === "fairy") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "dragon") || (enemybattlinPkm[0].types[0].type.name === "fight") || (enemybattlinPkm[0].types[0].type.name === "dark")) {
                                                 succesBattle()
-                                            } else if ((enemybattlinPkm[0].type === "poison")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "poison") || (enemybattlinPkm[0].types[0].type.name === "steel")) {
                                                 failedBattle()
                                             } else {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "dragon") {
-                                            if ((enemybattlinPkm[0].type === "dragon")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "dragon") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "dragon")) {
                                                 succesBattle()
                                                 pkmSelected[myBattlinPkm].status === "ko"
                                                 pkmSelected[myBattlinPkm].active = false
                                                 let myChosedPkm = document.getElementById("myChosenPkm")
                                                 myChosedPkm.parentNode.removeChild(myChosedPkm)
-                                            } else if ((enemybattlinPkm[0].type === "ice") || (enemybattlinPkm[0].type === "fairy")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "ice") || (enemybattlinPkm[0].types[0].type.name === "fairy")) {
                                                 failedBattle()
                                             } else {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "ghost") {
-                                            if ((enemybattlinPkm[0].type === "ghost")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "ghost") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "ghost") ) {
                                                 succesBattle()
                                                 pkmSelected[myBattlinPkm].status === "ko"
                                                 pkmSelected[myBattlinPkm].active = false
                                                 let myChosedPkm = document.getElementById("myChosenPkm")
                                                 myChosedPkm.parentNode.removeChild(myChosedPkm)
-                                            } else if ((enemybattlinPkm[0].type === "psychc")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "psychic") ) {
                                                 succesBattle()
-                                            } else if ((enemybattlinPkm[0].type === "normal")) { } else {
+                                            }else if ((enemybattlinPkm[0].types[0].type.name === "dark")) {
+                                                failedBattle()
+                                            }   
+                                            else if ((enemybattlinPkm[0].types[0].type.name === "normal")) {} else {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "rock") {
-                                            if ((enemybattlinPkm[0].type === "fire") || (enemybattlinPkm[0].type === "ice") || (enemybattlinPkm[0].type === "flying") || (enemybattlinPkm[0].type === "bug")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "rock") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "fire") || (enemybattlinPkm[0].types[0].type.name === "ice") || (enemybattlinPkm[0].types[0].type.name === "flying") || (enemybattlinPkm[0].types[0].type.name === "bug")) {
                                                 succesBattle()
-                                            } else if ((enemybattlinPkm[0].type === "water") || (enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "fight") || (enemybattlinPkm[0].type === "ground")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "water") || (enemybattlinPkm[0].types[0].type.name === "grass") || (enemybattlinPkm[0].types[0].type.name === "fight") || (enemybattlinPkm[0].types[0].type.name === "ground") || (enemybattlinPkm[0].types[0].type.name === "steel")) {
                                                 failedBattle()
                                             } else {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "bug") {
-                                            if ((enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "psychc")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "bug") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "grass") || (enemybattlinPkm[0].types[0].type.name === "psychic") || (enemybattlinPkm[0].types[0].type.name === "dark")) {
                                                 succesBattle()
-                                            } else if ((enemybattlinPkm[0].type === "fire") || (enemybattlinPkm[0].type === "flying") || (enemybattlinPkm[0].type === "rock")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "fire") || (enemybattlinPkm[0].types[0].type.name === "flying") || (enemybattlinPkm[0].types[0].type.name === "rock")) {
                                                 pkmSelected[myBattlinPkm].status = "ko"
                                                 pkmSelected[myBattlinPkm].active = false
                                                 let myChosedPkm = document.getElementById("myChosenPkm")
@@ -707,110 +735,110 @@ const runGameFunction = () => {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "psychc") {
-                                            if ((enemybattlinPkm[0].type === "fight") || (enemybattlinPkm[0].type === "poison")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "psychic") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "fight") || (enemybattlinPkm[0].types[0].type.name === "poison")) {
                                                 succesBattle()
-                                            } else if ((enemybattlinPkm[0].type === "bug") || (enemybattlinPkm[0].type === "ghost")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "bug") || (enemybattlinPkm[0].types[0].type.name === "ghost") || (enemybattlinPkm[0].types[0].type.name === "dark")) {
                                                 failedBattle()
-        
+
                                             } else {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "flying") {
-                                            if ((enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "fight") || (enemybattlinPkm[0].type === "bug")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "flying") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "grass") || (enemybattlinPkm[0].types[0].type.name === "fight") || (enemybattlinPkm[0].types[0].type.name === "bug")) {
                                                 succesBattle()
-                                            } else if ((enemybattlinPkm[0].type === "electric") || (enemybattlinPkm[0].type === "ice") || (enemybattlinPkm[0].type === "rock")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "electric") || (enemybattlinPkm[0].types[0].type.name === "ice") || (enemybattlinPkm[0].types[0].type.name === "rock")) {
                                                 failedBattle()
-        
+
                                             } else {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "ground") {
-                                            if ((enemybattlinPkm[0].type === "fire") || (enemybattlinPkm[0].type === "electric") || (enemybattlinPkm[0].type === "poison") || (enemybattlinPkm[0].type === "rock")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "ground") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "fire") || (enemybattlinPkm[0].types[0].type.name === "electric") || (enemybattlinPkm[0].types[0].type.name === "poison") || (enemybattlinPkm[0].types[0].type.name === "rock")|| (enemybattlinPkm[0].types[0].type.name === "steel")) {
                                                 succesBattle()
-                                            } else if ((enemybattlinPkm[0].type === "water") || (enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "ice")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "water") || (enemybattlinPkm[0].types[0].type.name === "grass") || (enemybattlinPkm[0].types[0].type.name === "ice")) {
                                                 failedBattle()
-        
+
                                             } else {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "poison") {
-                                            if ((enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "fairy")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "poison") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "grass") || (enemybattlinPkm[0].types[0].type.name === "fairy")) {
                                                 succesBattle()
-                                            } else if ((enemybattlinPkm[0].type === "ground") || (enemybattlinPkm[0].type === "psychc")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "ground") || (enemybattlinPkm[0].types[0].type.name === "psychic")) {
                                                 failedBattle()
-        
+
                                             } else {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "fight") {
-                                            if ((enemybattlinPkm[0].type === "normal") || (enemybattlinPkm[0].type === "ice") || (enemybattlinPkm[0].type === "rock")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "fight") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "normal") || (enemybattlinPkm[0].types[0].type.name === "ice") || (enemybattlinPkm[0].types[0].type.name === "rock")|| (enemybattlinPkm[0].types[0].type.name === "dark") || (enemybattlinPkm[0].types[0].type.name === "steel")) {
                                                 succesBattle()
-                                            } else if ((enemybattlinPkm[0].type === "flying") || (enemybattlinPkm[0].type === "psychc") || (enemybattlinPkm[0].type === "fairy")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "flying") || (enemybattlinPkm[0].types[0].type.name === "psychic") || (enemybattlinPkm[0].types[0].type.name === "fairy")) {
                                                 failedBattle()
-        
+
                                             } else {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "ice") {
-                                            if ((enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "ground") || (enemybattlinPkm[0].type === "flying") || (enemybattlinPkm[0].type === "dragon")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "ice") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "grass") || (enemybattlinPkm[0].types[0].type.name === "ground") || (enemybattlinPkm[0].types[0].type.name === "flying") || (enemybattlinPkm[0].types[0].type.name === "dragon")) {
                                                 succesBattle()
-                                            } else if ((enemybattlinPkm[0].type === "fire") || (enemybattlinPkm[0].type === "fight") || (enemybattlinPkm[0].type === "rock")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "fire") || (enemybattlinPkm[0].types[0].type.name === "fight") || (enemybattlinPkm[0].types[0].type.name === "rock")|| (enemybattlinPkm[0].types[0].type.name === "steel")) {
                                                 failedBattle()
-        
+
                                             } else {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "grass") {
-                                            if ((enemybattlinPkm[0].type === "water") || (enemybattlinPkm[0].type === "ground") || (enemybattlinPkm[0].type === "rock")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "grass") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "water") || (enemybattlinPkm[0].types[0].type.name === "ground") || (enemybattlinPkm[0].types[0].type.name === "rock")) {
                                                 succesBattle()
-                                            } else if ((enemybattlinPkm[0].type === "fire") || (enemybattlinPkm[0].type === "ice") || (enemybattlinPkm[0].type === "poison") || (enemybattlinPkm[0].type === "flying") || (enemybattlinPkm[0].type === "bug")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "fire") || (enemybattlinPkm[0].types[0].type.name === "ice") || (enemybattlinPkm[0].types[0].type.name === "poison") || (enemybattlinPkm[0].types[0].type.name === "flying") || (enemybattlinPkm[0].types[0].type.name === "bug")) {
                                                 failedBattle()
-        
+
                                             } else {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "electric") {
-                                            if ((enemybattlinPkm[0].type === "water") || (enemybattlinPkm[0].type === "flying")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "electric") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "water") || (enemybattlinPkm[0].types[0].type.name === "flying")) {
                                                 succesBattle()
-                                            } else if ((enemybattlinPkm[0].type === "ground")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "ground")) {
                                                 failedBattle()
-        
+
                                             } else {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "water") {
-                                            if ((enemybattlinPkm[0].type === "fire") || (enemybattlinPkm[0].type === "ground") || (enemybattlinPkm[0].type === "rock")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "water") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "fire") || (enemybattlinPkm[0].types[0].type.name === "ground") || (enemybattlinPkm[0].types[0].type.name === "rock")) {
                                                 succesBattle()
-                                            } else if ((enemybattlinPkm[0].type === "electric") || (enemybattlinPkm[0].type === "grass")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "electric") || (enemybattlinPkm[0].types[0].type.name === "grass")) {
                                                 failedBattle()
-        
+
                                             } else {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "fire") {
-                                            if ((enemybattlinPkm[0].type === "grass") || (enemybattlinPkm[0].type === "ice") || (enemybattlinPkm[0].type === "bug")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "fire") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "grass") || (enemybattlinPkm[0].types[0].type.name === "ice") || (enemybattlinPkm[0].types[0].type.name === "bug")|| (enemybattlinPkm[0].types[0].type.name === "steel")) {
                                                 succesBattle()
-                                            } else if ((enemybattlinPkm[0].type === "water") || (enemybattlinPkm[0].type === "rock") || (enemybattlinPkm[0].type === "ground")) {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "water") || (enemybattlinPkm[0].types[0].type.name === "rock") || (enemybattlinPkm[0].types[0].type.name === "ground")) {
                                                 failedBattle()
-        
+
                                             } else {
                                                 koMyPkmByInjuries()
                                                 koEnemyPkmByInjuries()
                                             }
-                                        } else if (pkmSelected[myBattlinPkm].type === "normal") {
-                                            if ((enemybattlinPkm[0].type === "fight")) {
+                                        } else if (pkmSelected[myBattlinPkm].types[0].type.name === "normal") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "fight")) {
                                                 failedBattle()
-                                            } else if ((enemybattlinPkm[0].type === "ghost")) { } else {
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "ghost")) {} else {
                                                 if (pkmSelected[myBattlinPkm].status === "ok") {
                                                     pkmSelected[myBattlinPkm].status = "injured"
                                                 } else if (pkmSelected[myBattlinPkm].status === "ko") {
@@ -820,35 +848,56 @@ const runGameFunction = () => {
                                                     koEnemyPkmByInjuries()
                                                 }
                                             }
+                                        }else if (pkmSelected[myBattlinPkm].types[0].type.name === "steel") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "ice") || (enemybattlinPkm[0].types[0].type.name === "rock") || (enemybattlinPkm[0].types[0].type.name === "fairy")) {
+                                                succesBattle()
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "fire") || (enemybattlinPkm[0].types[0].type.name === "fight") || (enemybattlinPkm[0].types[0].type.name === "ground")) {
+                                                failedBattle()
+
+                                            } else {
+                                                koMyPkmByInjuries()
+                                                koEnemyPkmByInjuries()
+                                            }
+                                        }else if (pkmSelected[myBattlinPkm].types[0].type.name === "dark") {
+                                            if ((enemybattlinPkm[0].types[0].type.name === "psychic") || (enemybattlinPkm[0].types[0].type.name === "ghost") ) {
+                                                succesBattle()
+                                            } else if ((enemybattlinPkm[0].types[0].type.name === "fight") || (enemybattlinPkm[0].types[0].type.name === "bug") || (enemybattlinPkm[0].types[0].type.name === "fairy")) {
+                                                failedBattle()
+
+                                            } else {
+                                                koMyPkmByInjuries()
+                                                koEnemyPkmByInjuries()
+                                            }
                                         }
                                         teamCheck()
-                                            
-                                            
+
+
                                     }, 0750);
-    
-                                    
-                                    
-    
+
+
+
+
                                 }
-                                }, 1000);
+                            }, 1000);
 
                         }
                     }
-                
-                    }, 3000);
+
+                }, 3000);
             } else if (pkmSelected && (pkmSelected.length < 6)) {
                 selectionAlert()
             }
+
             function generateEnemyF() {
                 if (enemybattlinPkm.length === 0) {
                     let chosenEnemy = pkm[Math.round(Math.random() * pkm.length)]
                     enemybattlinPkm.push(chosenEnemy)
                     enemybattlinPkm[0].status = "ok"
                     let enemyPkm = document.getElementById("enemyPkm")
-                    enemyPkm.innerHTML = `<figure id="myEnemyPkm"><img src="${enemybattlinPkm[0].spriteFront}" id="enemyPkmSprite" alt=""></figure>
+                    enemyPkm.innerHTML = `<figure id="myEnemyPkm"><img src="${enemybattlinPkm[0].sprites.front_default}" id="enemyPkmSprite" alt=""></figure>
                         <button id="enemyPkmCard"><figure>
-                                        <img src="${enemybattlinPkm[0].spriteFront}"  id="enemyPkmCardSprite"alt="">
-                                        <figcaption>${enemybattlinPkm[0].name} <div id="" class="${enemybattlinPkm[0].type}Type">${enemybattlinPkm[0].type}</div><div id="statusEnemy" class="${enemybattlinPkm[0].status}StatusPkm">Status</div> </figcaption>
+                                        <img src="${enemybattlinPkm[0].sprites.front_default}"  id="enemyPkmCardSprite"alt="">
+                                        <figcaption>${enemybattlinPkm[0].name} <div id="" class="${enemybattlinPkm[0].types[0].type.name}Type">${enemybattlinPkm[0].types[0].type.name}</div><div id="statusEnemy" class="${enemybattlinPkm[0].status}StatusPkm">Status</div> </figcaption>
                                     </figure></button>
                         
                         `
@@ -911,7 +960,7 @@ const resetGameConfirmationFunction = () => {
 }
 
 
- // =========== FUNCION RESETEO ===========
+// =========== FUNCION RESETEO ===========
 const resetGameFunction = () => {
     let resetGame = document.getElementById("runGame")
     resetGame.onclick = () => {
@@ -920,21 +969,23 @@ const resetGameFunction = () => {
         audioAccept.play()
     }
 }
- // =========== FUNCION ANIMACION ===========
+// =========== FUNCION ANIMACION ===========
 const animateCSS = (element, animation, prefix = 'animate__') =>
-  new Promise((resolve, reject) => {
-    const animationName = `${prefix}${animation}`;
-    const node = document.getElementById(element);
+    new Promise((resolve, reject) => {
+        const animationName = `${prefix}${animation}`;
+        const node = document.getElementById(element);
 
-    node.classList.add(`${prefix}animated`, animationName);
+        node.classList.add(`${prefix}animated`, animationName);
 
-    function handleAnimationEnd(event) {
-      event.stopPropagation();
-      node.classList.remove(`${prefix}animated`, animationName);
-      resolve('Animation ended');
-    }
+        function handleAnimationEnd(event) {
+            event.stopPropagation();
+            node.classList.remove(`${prefix}animated`, animationName);
+            resolve('Animation ended');
+        }
 
-    node.addEventListener('animationend', handleAnimationEnd, {once: true});
-    ableToPick = true  
+        node.addEventListener('animationend', handleAnimationEnd, {
+            once: true
+        });
+        ableToPick = true
 
-});
+    });

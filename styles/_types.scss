@@ -15,7 +15,7 @@
 }
 .iceType {
     border: 1px solid black;
-    background-color: rgb(121, 255, 244);
+    background-color: #96d8d6;
     width: 5rem;
     border-radius: 5px;
 
@@ -29,14 +29,14 @@
 }
 .bugType {
     border: 1px solid black;
-    background-color: rgb(187, 255, 27);
+    background-color: #a7b723;
     width: 5rem;
     border-radius: 5px;
 
 }
 .poisonType {
     border: 1px solid black;
-    background-color: rgb(204, 93, 248);
+    background-color: #ad39a6;
     width: 5rem;
     border-radius: 5px;
 
@@ -50,7 +50,7 @@
 }
 .groundType {
     border: 1px solid black;
-    background-color: rgb(173, 141, 71);
+    background-color: #715746;
     width: 5rem;
     border-radius: 5px;
 
@@ -71,7 +71,7 @@
 }
 .normalType {
     border: 1px solid black;
-    background-color: rgb(179, 168, 168);
+    background-color:#a5aa74;
     width: 5rem;
     border-radius: 5px;
 
@@ -83,7 +83,7 @@
     border-radius: 5px;
 
 }
-.psychcType {
+.psychicType {
     border: 1px solid black;
     background-color: rgb(250, 62, 250);
     width: 5rem;
@@ -92,21 +92,21 @@
 }
 .dragonType {
     border: 1px solid black;
-    background-color: rgb(103, 62, 250);
+    background-color: #7737fd;
     width: 5rem;
     border-radius: 5px;
 
 }
 .rockType {
     border: 1px solid black;
-    background-color: rgb(145, 79, 4);
+    background-color: #715746;
     width: 5rem;
     border-radius: 5px;
 
 }
-.fightType {
+.fightingType {
     border: 1px solid black;
-    background-color: rgb(255, 23, 23);
+    background-color: #bc3225;
     width: 5rem;
     border-radius: 5px;
 
@@ -114,6 +114,20 @@
 .ghostType {
     border: 1px solid black;
     background-color: rgb(110, 103, 138);
+    width: 5rem;
+    border-radius: 5px;
+
+}
+.steelType {
+    border: 1px solid black;
+    background-color: gray;
+    width: 5rem;
+    border-radius: 5px;
+
+}
+.darkType {
+    border: 1px solid black;
+    background-color: #715746;
     width: 5rem;
     border-radius: 5px;
 
