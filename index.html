@@ -57,22 +57,31 @@
         <section id="mainGame">
 
             <div id="monitor">
-                <div id="volume">
-
-                    <div id="volButtonDiv">
-                        <button id="volButton"><img src="./media/img/volume.png" alt=""></button>
+                <div id="modales">
+                    <div id="rules">
+                        <p id="modal-abrir">?</p>
                     </div>
-                    <div>
-                        <input type="range" class="form-range" id="volumeInput" min="0" max="20">
+    
+                    <div id="redes">
+                        <img id="modalRedes-abrir" src="./media/img/logos/redes.png">
+                    </div>
+    
+                    <div id="topTen">
+                        <img id="modalTopTen-abrir" src="./media/img/topTen.png">
+                    </div>
+                    <div id="volume">
+
+                        <div id="volButtonDiv">
+                            <button id="volButton"><img src="./media/img/volume.png" alt=""></button>
+                        </div>
+                        <div>
+                            <input type="range" class="form-range" id="volumeInput" min="0" max="20">
+                        </div>
                     </div>
                 </div>
-                <div id="rules">
-                    <p id="modal-abrir">?</p>
-                </div>
 
-                <div id="redes">
-                    <img id="modalRedes-abrir" src="./media/img/logos/redes.png">
-                </div>
+
+
                 <div id="rulesModal" class="modal-container">
                     <div class="modal">
                         <p> Bienvenidos a Pokemon Version JavaScript
@@ -121,6 +130,28 @@
                         <button id="modalAlert-cerrar">cerrar</button>
                     </div>
                 </div>
+                <div id="topTenModal" class="modalTopTen-container">
+                    <div class="modalTopTen">
+                        <p id="topTenText">Top Ten</p>
+                        <div id=table>
+                            <table id="topTenTable">
+                                <tbody id="topTenTableBody">
+                                    <tr>
+                                        <th>
+                                            Nombre
+                                        </th>
+                                        <th>
+                                            Score
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                        <button id="modalTopTen-cerrar">cerrar</button>
+                    </div>
+                </div>
 
                 <div id="presentation">
                     <button id="runGame">Start Game</button>
@@ -132,7 +163,6 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="./js/pokemons.js"></script>
     <script src="./js/app.js"></script>
 </body>
 

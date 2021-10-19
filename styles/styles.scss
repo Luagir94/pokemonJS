@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Orbitron', sans-serif;
-    
+
 }
 
 body {
@@ -26,6 +26,18 @@ footer {
 }
 
 
+
+#modales {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: -2.5rem;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem
+}
+
 @import 'mainGame';
 @import 'pkmSelection';
 @import 'types';
@@ -38,3 +50,4 @@ footer {
 @import 'modalAlert';
 @import 'resetAlert';
 @import 'loader';
+@import 'topTen'

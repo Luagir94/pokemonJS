@@ -1,7 +1,5 @@
-#redes {
-
+#topTen {
     z-index: 11;
-    right: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,26 +15,25 @@
     }
 }
 
-#redes:hover {
+#topTen:hover {
     transform: scale(1.5, 1.5);
 }
-
-.modalRedes-container{
+.modalTopTen-container {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     position: absolute;
     top: 0;
     left: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
     visibility: hidden;
     opacity: 0;
 
-
     transition: all 0.3s ease-in;
-    z-index: 100000000;
+    z-index: 10000000;
 }
 
 .modal-active {
@@ -44,60 +41,32 @@
     opacity: 1;
 }
 
-.modalRedes {
+.modalTopTen {
     background-color: rgba(0, 0, 0, 0.8);
-    position: relative;
     width: 600px;
-    border-radius: 5px;
+    border-radius: 5px; 
     text-align: left;
     padding: 22px;
     border: black solid 5px;
     font-size: 1.2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    align-content: center;
     justify-content: center;
-    
-    ul{
-        list-style: none;
-        display: flex;
-        
-        li{
-            list-style: none;
-            img{
-                width: 3rem;
-            }
-            img:hover {
-                transform: scale(1.5, 1.5);
-            }
-        }
-    }
-
+    align-content: center;
+    text-align: center;
     p {
         color: white;
-        a{
-            color: yellow;
-        };
-        
+        font-weight: 1000;
+        font-size: 1.5rem;
+        text-align: center;
     }
 
-    ul {
-        color: white;
-        list-style-image: url("../media/img/pokeballList.png");
-        margin: 0.8rem auto 0.8rem auto;
-        li{
-            margin: 5px auto 5px auto
-        }
-    }
-
-    #modalRedes-cerrar {
+    #modalTopTen-cerrar {
         background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%)
     }
 
-    #modalRedes-cerrar {
+    #modalTopTen-cerrar {
         margin: auto;
-
         padding: 15px 45px;
         text-align: center;
         text-transform: uppercase;
@@ -108,10 +77,9 @@
         border-radius: 10px;
         display: block;
         margin-top: 1rem;
-        bottom: 2rem;
     }
 
-    #modalRedes-cerrar:hover {
+    #modalTopTen-cerrar:hover {
         background-position: right center;
         /* change the direction of the change here */
         color: #fff;
@@ -119,16 +87,32 @@
     }
 
 }
-span.injured{
-    color: black;
-    background-color: rgb(255, 255, 0);
-    border: white solid 1px;
-    border-radius: 5px;
-}
 
-span.ko{
-    color: black;
-    background-color: red;
-    border: white solid 1px;
-    border-radius: 5px;
+#topTenTable{
+    color: white;
+    text-align: center;
+    border: solid 1px white;
+    width: 100%;
+    th{
+        border: solid 1px red;
+    }
+    td{
+        height: auto;
+        border: solid 1px white;
+    }
+}
+#lugar1{
+    font-size: 1.7rem;
+    color: green;
+}
+#lugar2{
+    font-size: 1.5rem;
+    color: green;
+}
+#lugar3{
+    font-size: 1.2rem;
+    color: green;
+}
+#lugar10{
+    color: red;
 }

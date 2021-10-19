@@ -30,15 +30,15 @@
                     list-style: none;
                     display: flex;
                     flex-wrap: wrap;
-                    align-items: flex-start;
-                    justify-content: flex-start;
+                    align-items: center;
+                    justify-content: center;
                     overflow-y: scroll;
                     width: 100%;
 
                     li {
                         .selectionButton {
                             width: 11rem;
-                            height: 4rem;
+                            height: 5rem;
                             margin: 0.5rem;
                             border-radius: 5px;
                             font-weight: bolder;
@@ -52,9 +52,10 @@
                             border-radius: 10px;
                             display: block;
                             position: relative;
+                            
 
                             figure {
-                                padding: 0.5rem;
+                                padding: 0;
                                 display: flex;
 
                                 img {
@@ -70,6 +71,7 @@
 
                                     div {
                                         text-align: center;
+                                        width:  5rem;
                                         font-weight: 1000;
                                     }
 

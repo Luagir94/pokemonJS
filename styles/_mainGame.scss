@@ -44,9 +44,7 @@
                     left: 1rem;
 
                 }
-                .koPokeball{
-                    filter: grayscale(100%)
-                }
+
                 #score {
                     p {
                         font-size: 1.5rem;
@@ -66,8 +64,8 @@
                     left: 10rem;
 
                     img {
-                        width: 12rem;
-                        height: 12rem;
+                        width: 20rem;
+                        height: 20rem;
                         filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
                     }
                     
@@ -437,4 +435,11 @@
 .animation{
     transform: translate(15rem);
     transition: 1s;
+}
+.myPkmSprite{
+    position: absolute;
+    bottom: -6rem
+}
+.koPokeball{
+    filter: grayscale(100%)
 }
