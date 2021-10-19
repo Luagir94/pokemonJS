@@ -2,6 +2,7 @@
 let runGame = document.getElementById("runGame")
 let getStatus = document.getElementById("okStatusPkm")
 let getScoreText = document.getElementById("scoreText")
+
 const pkmSelected = []
 const topTen = []
 let trainer = undefined
@@ -73,22 +74,78 @@ $('#volume').on('change', function () {
     audio2.volume = volValue;
     fightAudio.volume = volValue * 5
 })
+// =========== RENDER DEL TOP 10===========
+const renderTopTen = () => {
+    topTen.splice(0, topTen.length)
+
+    let lista =JSON.parse(localStorage.getItem("topTen"))
+    for (const listaTopTen of lista) {
+        topTen.push(listaTopTen)
+    }
+
+    topTen.sort((a, b) => (b.score) - (a.score))
+    if (topTen.length > 10) {
+        topTen.splice(10, 1)
+    }
+    let topTenTable = document.getElementById("topTenTableBody")
+        topTen.forEach((topTen) => {
+            let playersTopTen = document.createElement("tr")
+            playersTopTen.innerHTML = `
+                        <td>
+                            ${topTen.name}
+                        </td>
+                        <td>
+                            ${topTen.score}
+                        </td>
+            `
+            topTenTable.appendChild(playersTopTen)
+        })
+}
+
+
+renderTopTen()
 // =========== FUNCION PARA SETEAR EL SCORE ===========
-const setScore = (name, team, totalScore) => {
+const setScore = (name, totalScore) => {
+    let limpiarTopTen = document.getElementById("topTenTable")
+    limpiarTopTen.parentNode.removeChild(limpiarTopTen)
+    let table =document.getElementById("table")
+    let refreshTabla=document.createElement("table")
+    let att = document.createAttribute("id")
+                att.value = "topTenTable"
+                refreshTabla.setAttributeNode(att)
+                refreshTabla.innerHTML=`
+                <tbody id="topTenTableBody">
+                <tr>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Score
+                    </th>
+                </tr>
+            </tbody>
+                
+                `
+                table.appendChild(refreshTabla)
     trainer = {
         name: name,
-        team: team,
         score: totalScore,
     }
-    localStorage.clear()
     topTen.push(trainer)
-    topTen.sort((a, b) => (a.score) - (b.score))
+    topTen.sort((a, b) => (b.score) - (a.score))
     console.log(topTen)
+    localStorage.clear()
     const guardarTopTen = (key, value) => {
         localStorage.setItem(key, value)
     }
-    guardarTopTen("Top Ten", JSON.stringify(topTen))
+    if (topTen.length > 10) {
+        topTen.splice(10, 1)
+    }
+    guardarTopTen("topTen", JSON.stringify(topTen))
+    
+                renderTopTen()
 }
+
 // =========== MODAL DE REGLAS===========
 const modalAbrir = document.getElementById('modal-abrir')
 const modalCerrar = document.getElementById('modal-cerrar')
@@ -121,6 +178,23 @@ modalRedesCerrar.onclick = () => {
 modalRedes.onclick = (e) => {
     e.stopPropagation()
 }
+
+// =========== MODAL TOP TEN===========
+const modalTopTenAbrir = document.getElementById('modalTopTen-abrir')
+const modalTopTenCerrar = document.getElementById('modalTopTen-cerrar')
+const modalTopTenContainer = document.getElementsByClassName('modalTopTen-container')[0]
+const modalTopTen = document.getElementsByClassName('modalTopTen')[0]
+modalTopTenAbrir.onclick = () => {
+    modalTopTenContainer.classList.add('modal-active')
+    audioAccept.play()
+}
+modalTopTenCerrar.onclick = () => {
+    modalTopTenContainer.classList.remove('modal-active')
+    audioAccept.play()
+}
+modalTopTen.onclick = (e) => {
+    e.stopPropagation()
+}
 // =========== MODAL DE ALERTA===========
 const modalAlertCerrar = document.getElementById('modalAlert-cerrar')
 const modalAlertContainer = document.getElementById("alertModal")
@@ -145,9 +219,7 @@ const runGameFunction = () => {
     audio.play();
     audio2.pause()
     // =========== SE ELIMINA QUIEN QUEDO FUERA DEL TOP10 ===========
-    if (topTen.length >= 11) {
-        topTen.splice(10, 1)
-    }
+
     // =========== RESETEOS DE VARIABLES Y ARRAYS===========
     pkmSelected.splice(0, pkmSelected.length)
     pkmBackup.splice(0, pkmSelected.length)
@@ -282,7 +354,7 @@ const runGameFunction = () => {
                         let pokeSearch = document.getElementById("pokeSearch")
                         // =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
                         pokeSearch.onsubmit = (e) => e.preventDefault()
-                        // =========== ELIMINAR POKEMON ===========
+                        // =========== ELIMINAR TODOSPOKEMON ===========
                         btnPkm.onclick = () => {
                             const pkmEnLista = pkmSelected.find((pkm) => pkm.id === pokemons.id)
                             if (pkmSelected.length <= 5 && !pkmEnLista) {
@@ -302,7 +374,7 @@ const runGameFunction = () => {
                                 whosh.play()
                             }
                         }
-                        // =========== EVENTO PARA BORRAR LOS POKEMON DE LA LISTA ===========
+                        // =========== EVENTO PARA BORRAR TODOS LOS POKEMON DE LA LISTA ===========
                         let erasePkm = document.getElementById("deletePkm")
                         erasePkm.onclick = () => {
                             for (let i = 0; i < pkmSelected.length; i++) {
@@ -312,7 +384,7 @@ const runGameFunction = () => {
                             pkmSelected.splice(0, pkmSelected.length)
                             let liItems = document.getElementById("pkmChosen")
                             liItems.parentNode.removeChild(liItems)
-                            
+
                             pokelist = false
 
                         }
@@ -614,7 +686,7 @@ const runGameFunction = () => {
                         // =========== ALERTA DE PERDISTE===========
                         const modalPerdisteCerrar = document.getElementById('modalPerdiste-cerrar')
                         const modalPerdisteContainer = document.getElementById("perdisteModal")
-                        const finalScore = document.getElementById("finalScore")
+                        
 
 
                         modalPerdisteCerrar.onclick = () => {
@@ -669,7 +741,7 @@ const runGameFunction = () => {
                             if (pkmSelected.length === 0) {
 
                                 perdiste()
-                                setScore(characterName, pkmBackup, score)
+                                setScore(characterName,score)
                             }
                         }
                         // =========== TRIGGER DE LA PELEA ===========

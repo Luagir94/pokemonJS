@@ -1,15 +1,11 @@
 #monitor{
     #volume {
-        position: absolute;
+
         z-index: 10;
-        right: -2rem;
-        top: 4rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 6rem;
-        height: 15rem;
     
     
         div {

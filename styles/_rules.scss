@@ -1,8 +1,5 @@
 #rules {
-    position: absolute;
     z-index: 11;
-    right: 1rem;
-    top: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,8 +8,9 @@
     font-weight: 1000;
     color: yellow;
     -webkit-text-stroke: 0.1px #3e3ead;
-    font-size: 2rem;
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7))
+    font-size: 2.5rem;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+    margin-bottom: -0.5rem;
 }
 
 #rules:hover {

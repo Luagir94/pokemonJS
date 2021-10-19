@@ -23,6 +23,17 @@ footer {
   height: 10vh;
 }
 
+#modales {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: -2.5rem;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
 #mainGame {
   display: grid;
   align-items: center;
@@ -1003,16 +1014,11 @@ footer {
 }
 
 #monitor #volume {
-  position: absolute;
   z-index: 10;
-  right: -2rem;
-  top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 6rem;
-  height: 15rem;
 }
 
 #monitor #volume div {
@@ -1111,10 +1117,7 @@ footer {
 }
 
 #rules {
-  position: absolute;
   z-index: 11;
-  right: 1rem;
-  top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1123,8 +1126,9 @@ footer {
   font-weight: 1000;
   color: yellow;
   -webkit-text-stroke: 0.1px #3e3ead;
-  font-size: 2rem;
+  font-size: 2.5rem;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+  margin-bottom: -0.5rem;
 }
 
 #rules:hover {
@@ -1220,10 +1224,8 @@ span.ko {
 }
 
 #redes {
-  position: absolute;
   z-index: 11;
   right: 0.5rem;
-  top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1575,4 +1577,104 @@ span.ko {
 
 #loading p {
   font-size: 2rem;
+}
+
+#topTen {
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: 1000;
+  color: yellow;
+  -webkit-text-stroke: 0.1px #3e3ead;
+  font-size: 2rem;
+}
+
+#topTen img {
+  width: 2rem;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+#topTen:hover {
+  transform: scale(1.5, 1.5);
+}
+
+.modalTopTen-container {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  z-index: 10000000;
+}
+
+.modal-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modalTopTen {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 600px;
+  border-radius: 5px;
+  text-align: left;
+  padding: 22px;
+  border: black solid 5px;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.modalTopTen p {
+  color: white;
+  font-weight: 1000;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modalTopTen #modalTopTen-cerrar {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+}
+
+.modalTopTen #modalTopTen-cerrar {
+  margin: auto;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 10px #eee;
+  border-radius: 10px;
+  display: block;
+  margin-top: 1rem;
+}
+
+.modalTopTen #modalTopTen-cerrar:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#topTenTable {
+  color: white;
+  text-align: center;
+  border: solid 1px white;
+}
+
+#topTenTable td {
+  border-top: solid 1px white;
 }
