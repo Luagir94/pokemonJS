@@ -92,7 +92,27 @@
     color: white;
     text-align: center;
     border: solid 1px white;
-    td{
-        border-top: solid 1px white;
+    width: 100%;
+    th{
+        border: solid 1px red;
     }
+    td{
+        height: auto;
+        border: solid 1px white;
+    }
+}
+#lugar1{
+    font-size: 1.7rem;
+    color: green;
+}
+#lugar2{
+    font-size: 1.5rem;
+    color: green;
+}
+#lugar3{
+    font-size: 1.2rem;
+    color: green;
+}
+#lugar10{
+    color: red;
 }

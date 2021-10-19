@@ -78,7 +78,7 @@ $('#volume').on('change', function () {
 const renderTopTen = () => {
     topTen.splice(0, topTen.length)
 
-    let lista =JSON.parse(localStorage.getItem("topTen"))
+    let lista = JSON.parse(localStorage.getItem("topTen"))
     for (const listaTopTen of lista) {
         topTen.push(listaTopTen)
     }
@@ -88,9 +88,15 @@ const renderTopTen = () => {
         topTen.splice(10, 1)
     }
     let topTenTable = document.getElementById("topTenTableBody")
-        topTen.forEach((topTen) => {
-            let playersTopTen = document.createElement("tr")
-            playersTopTen.innerHTML = `
+    let order = 0
+
+    topTen.forEach((topTen) => {
+        let playersTopTen = document.createElement("tr")
+        let att = document.createAttribute("id")
+        order += 1
+        att.value = `lugar${order}`
+        playersTopTen.setAttributeNode(att)
+        playersTopTen.innerHTML = `
                         <td>
                             ${topTen.name}
                         </td>
@@ -98,8 +104,8 @@ const renderTopTen = () => {
                             ${topTen.score}
                         </td>
             `
-            topTenTable.appendChild(playersTopTen)
-        })
+        topTenTable.appendChild(playersTopTen)
+    })
 }
 
 
@@ -108,12 +114,12 @@ renderTopTen()
 const setScore = (name, totalScore) => {
     let limpiarTopTen = document.getElementById("topTenTable")
     limpiarTopTen.parentNode.removeChild(limpiarTopTen)
-    let table =document.getElementById("table")
-    let refreshTabla=document.createElement("table")
+    let table = document.getElementById("table")
+    let refreshTabla = document.createElement("table")
     let att = document.createAttribute("id")
-                att.value = "topTenTable"
-                refreshTabla.setAttributeNode(att)
-                refreshTabla.innerHTML=`
+    att.value = "topTenTable"
+    refreshTabla.setAttributeNode(att)
+    refreshTabla.innerHTML = `
                 <tbody id="topTenTableBody">
                 <tr>
                     <th>
@@ -126,7 +132,7 @@ const setScore = (name, totalScore) => {
             </tbody>
                 
                 `
-                table.appendChild(refreshTabla)
+    table.appendChild(refreshTabla)
     trainer = {
         name: name,
         score: totalScore,
@@ -142,8 +148,8 @@ const setScore = (name, totalScore) => {
         topTen.splice(10, 1)
     }
     guardarTopTen("topTen", JSON.stringify(topTen))
-    
-                renderTopTen()
+
+    renderTopTen()
 }
 
 // =========== MODAL DE REGLAS===========
@@ -686,7 +692,7 @@ const runGameFunction = () => {
                         // =========== ALERTA DE PERDISTE===========
                         const modalPerdisteCerrar = document.getElementById('modalPerdiste-cerrar')
                         const modalPerdisteContainer = document.getElementById("perdisteModal")
-                        
+
 
 
                         modalPerdisteCerrar.onclick = () => {
@@ -741,7 +747,7 @@ const runGameFunction = () => {
                             if (pkmSelected.length === 0) {
 
                                 perdiste()
-                                setScore(characterName,score)
+                                setScore(characterName, score)
                             }
                         }
                         // =========== TRIGGER DE LA PELEA ===========
