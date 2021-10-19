@@ -79,10 +79,12 @@ const renderTopTen = () => {
     topTen.splice(0, topTen.length)
 
     let lista = JSON.parse(localStorage.getItem("topTen"))
-    lista.forEach((el) => {
-        topTen.push(el)
-    });
-
+    if (lista.length >0) {
+        lista.forEach((el) => {
+            topTen.push(el)
+        });
+    
+    }
     topTen.sort((a, b) => (b.score) - (a.score))
     if (topTen.length > 10) {
         topTen.splice(10, 1)
