@@ -149,7 +149,9 @@ const setScore = (name, totalScore) => {
     }
     guardarTopTen("topTen", JSON.stringify(topTen))
 
-    renderTopTen()
+    if (lista !== null) {
+        renderTopTen()
+    }
 }
 
 // =========== MODAL DE REGLAS===========
