@@ -78,7 +78,7 @@ $('#volume').on('change', function () {
 // =========== RENDER DEL TOP 10===========
 const renderTopTen = () => {
     topTen.splice(0, topTen.length)
-    
+    lista = JSON.parse(localStorage.getItem("topTen"))
     
 topTen.push(...lista)
     topTen.sort((a, b) => (b.score) - (a.score))
@@ -148,10 +148,7 @@ const setScore = (name, totalScore) => {
         topTen.splice(10, 1)
     }
     guardarTopTen("topTen", JSON.stringify(topTen))
-
-    if (lista !== null) {
         renderTopTen()
-    }
 }
 
 // =========== MODAL DE REGLAS===========
