@@ -2,7 +2,8 @@
 let runGame = document.getElementById("runGame")
 let getStatus = document.getElementById("okStatusPkm")
 let getScoreText = document.getElementById("scoreText")
-
+let lista = false
+lista = JSON.parse(localStorage.getItem("topTen"))
 const pkmSelected = []
 const topTen = []
 let trainer = undefined
@@ -77,8 +78,8 @@ $('#volume').on('change', function () {
 // =========== RENDER DEL TOP 10===========
 const renderTopTen = () => {
     topTen.splice(0, topTen.length)
-
-    let lista = JSON.parse(localStorage.getItem("topTen"))
+    
+    
 topTen.push(...lista)
     topTen.sort((a, b) => (b.score) - (a.score))
     if (topTen.length > 10) {
@@ -106,7 +107,9 @@ topTen.push(...lista)
 }
 
 
-renderTopTen()
+if (lista !== null) {
+    renderTopTen()
+}
 // =========== FUNCION PARA SETEAR EL SCORE ===========
 const setScore = (name, totalScore) => {
     let limpiarTopTen = document.getElementById("topTenTable")
