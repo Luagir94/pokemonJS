@@ -1,4 +1,3 @@
-# pokemonJS
 #  POKEMON JAVASCRIPT VERSION
 
 ## Videogame Project in Vanilla Js 
