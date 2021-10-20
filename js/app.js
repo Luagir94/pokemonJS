@@ -207,7 +207,7 @@ const alertText = document.getElementById("alertText")
 
 
 const selectionAlert = () => {
-    alertText.innerHTML = `Debes elegir 6 Pokemon.`
+    alertText.innerHTML = `Debes elegir 6 Pokémon.`
     modalAlertContainer.classList.add('modal-active')
     audioAccept.play()
 }
@@ -255,15 +255,15 @@ const runGameFunction = () => {
                             </div>
                         </div>
                         <form id="playerNameInput">
-                            <Label for="playerName">Selecciona Tu Nombre</Label>
+                            <Label for="playerName">Escribe tu nombre.</Label>
                             <input type="text" name="playerName" id="playerName" placeholder="M i n i m o   3   l e t r a s . . .">
-                            <input type="submit" value="Acept"  id="goToPkmSelection"></input>
+                            <input type="submit" value="Aceptar"  id="goToPkmSelection"></input>
                         </form>
                         
                     </div>
                     <div id="oakDiv">
                         <p id="oakText">
-                            Bienvenido, Soy el Profesor Oak, 
+                            Bienvenido! Soy el Profesor Oak, 
                             antes de que comience el juego 
                             te voy a hacer algunas preguntas:
                         </p>
@@ -313,7 +313,7 @@ const runGameFunction = () => {
                 att.value = "pkmSelection"
                 createPkmSelection.setAttributeNode(att)
                 createPkmSelection.innerHTML = `
-                                        <p>Select your Pokemon</p>
+                                        <p>Elige tus Pokémon</p>
                                         <div id="pkmList">
                                         <form id="pokeSearch">
                                                 <label for="fname">Buscador:</label><br>
@@ -324,12 +324,12 @@ const runGameFunction = () => {
                                             </ol>
                                         </div>
                                         <div id="selectedBox">
-                                            <p>Your Pokemon</p>
+                                            <p>Tus Pokémon</p>
                                             <div id="selectedPkm">
                                             </div>
                                             <div id="deleteNext">
-                                                <button class="actionButton" id="deletePkm">Delete Pokemons</button>
-                                                <button class="actionButton" id="toGame">Next</button>
+                                                <button class="actionButton" id="deletePkm">Eliminar Pokémon</button>
+                                                <button class="actionButton" id="toGame">Empezar</button>
                                             </div>
                                         </div>
                                         <div>
