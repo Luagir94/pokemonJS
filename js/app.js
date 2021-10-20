@@ -364,7 +364,7 @@ const runGameFunction = () => {
                         let pokeSearch = document.getElementById("pokeSearch")
                         // =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
                         pokeSearch.onsubmit = (e) => e.preventDefault()
-                        // =========== ELIMINAR TODOSPOKEMON ===========
+                        // =========== ELIMINAR TODOS POKEMON ===========
                         const getFilter = ()=>{
                             let addFilter = document.getElementById(`pokemon${pokemons.id}`)
                             addFilter.classList.toggle("koPokeball")
@@ -391,7 +391,9 @@ const runGameFunction = () => {
                         erasePkm.onclick = () => {
                             for (let i = 0; i < pkmSelected.length; i++) {
                                 let removeFilter = document.getElementById(`pokemon${pkmSelected[i].id}`)
-                                removeFilter.classList.remove("koPokeball")
+                                if (removeFilter) {
+                                    removeFilter.classList.remove("koPokeball")
+                                }
                             }
                             pkmSelected.splice(0, pkmSelected.length)
                             let liItems = document.getElementById("pkmChosen")
