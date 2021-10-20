@@ -13,8 +13,8 @@ This project was developed for the JavaScript course on the CoderHouse platform 
 
 
 ### Recomendations
-> If you don't see the game like in the pictures, resize it with navigator's zoom in/out
-> Wait a few seconds to start play the game, let de DOM charge
+- If you don't see the game like in the pictures, resize it with navigator's zoom in/out
+- Wait a few seconds to start play the game, let de DOM charge
 ### Author
 
 > Luciano Giraudi
