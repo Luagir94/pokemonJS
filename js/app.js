@@ -200,7 +200,7 @@ modalTopTenCerrar.onclick = () => {
 modalTopTen.onclick = (e) => {
     e.stopPropagation()
 }
-// =========== MODAL DE ALERTA===========
+// =========== MODAL DE ALERTA ===========
 const modalAlertCerrar = document.getElementById('modalAlert-cerrar')
 const modalAlertContainer = document.getElementById("alertModal")
 const alertText = document.getElementById("alertText")
@@ -990,7 +990,7 @@ const runGameFunction = () => {
         }
     }
 }
-// =========== INICIALIZA EL JUEGO===========
+// =========== INICIALIZA EL JUEGO ===========
 // =========== AVANZA A LA SELECCION DE PERSONAJE ===========
 runGame.onclick = () => {
     runGameFunction()
@@ -1065,10 +1065,8 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
             node.classList.remove(`${prefix}animated`, animationName);
             resolve('Animation ended');
         }
-
         node.addEventListener('animationend', handleAnimationEnd, {
             once: true
         });
         ableToPick = true
-
     });
