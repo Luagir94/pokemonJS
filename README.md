@@ -11,6 +11,10 @@ This project was developed for the JavaScript course on the CoderHouse platform 
 [![pkm-Selection.png](https://i.postimg.cc/L5QFhZjw/pkm-Selection.png)](https://postimg.cc/p5j66rGJ)
 [![battle.png](https://i.postimg.cc/MK48SV6j/battle.png)](https://postimg.cc/bsQ50G2z)
 
+
+### Recomendations
+> If you don't see the game like in the pictures, resize it with navigator's zoom in/out
+> Wait a few seconds to start play the game, let de DOM charge
 ### Author
 
 > Luciano Giraudi
@@ -22,6 +26,7 @@ This project was developed for the JavaScript course on the CoderHouse platform 
 | library/API's                                                    | used                      |
 | ---------------------------------------------------------------- | ------------------------- |
 | [AnimateCss](https://animate.style/)                             | Animation Framework       |
+| [JQuery](https://jquery.com/)                                    | JavaScript Framework      |
 | [PokeApi](https://pokeapi.co/)                                   | The RESTful Pokémon API   |
 
 
