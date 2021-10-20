@@ -355,27 +355,34 @@ const runGameFunction = () => {
                     <figcaption>${pokemons.name} <div id="" class="${pokemons.types[0].type.name}Type">${pokemons.types[0].type.name}</div> <span>${pokemons.id}</span></figcaption>
                 </figure>
             </button>`
+            const pkmEnLista = pkmSelected.find((pkm) => pkm.id === pokemons.id)
+            if (pkmEnLista) {
+                
+                btnPkm.classList.add("koPokeball")
+            }
                         pkmListSelection.appendChild(btnPkm)
                         let pokeSearch = document.getElementById("pokeSearch")
                         // =========== PREVENCION DEL REFRESCO DE LA PAGINA ===========
                         pokeSearch.onsubmit = (e) => e.preventDefault()
                         // =========== ELIMINAR TODOSPOKEMON ===========
+                        const getFilter = ()=>{
+                            let addFilter = document.getElementById(`pokemon${pokemons.id}`)
+                            addFilter.classList.toggle("koPokeball")
+                        }
                         btnPkm.onclick = () => {
                             const pkmEnLista = pkmSelected.find((pkm) => pkm.id === pokemons.id)
                             if (pkmSelected.length <= 5 && !pkmEnLista) {
                                 whosh.play()
                                 pkmSelected.push(pokemons)
                                 addToList(pokemons.name, pokemons.types[0].type.name, pokemons.sprites.front_default, pokemons.id)
-                                let addFilter = document.getElementById(`pokemon${pokemons.id}`)
-                                addFilter.classList.add("koPokeball")
+                                getFilter()
                             }
                             let eraseFromList = document.getElementById(`pkmChosen${pokemons.id}`)
                             eraseFromList.onclick = () => {
                                 const deleteIndex = pkmSelected.findIndex((pkm) => pkm === pokemons)
                                 pkmSelected.splice(pkmSelected[deleteIndex], 1)
                                 eraseFromList.parentNode.removeChild(eraseFromList)
-                                let removeFilter = document.getElementById(`pokemon${pokemons.id}`)
-                                removeFilter.classList.remove("koPokeball")
+                                getFilter()
                                 whosh.play()
                             }
                         }
@@ -399,6 +406,7 @@ const runGameFunction = () => {
                         let buscarType = (search) => pkm.filter((pokemon) => pokemon.types[0].type.name.toLowerCase().includes(search))
                         let buscarId = (search) => pkm.filter((pokemon) => pokemon.id == search)
                         pokeSearchInput.oninput = () => {
+
                             const search = pokeSearchInput.value.trim().toLowerCase()
                             const searchId = pokeSearchInput.value
                             const nameSearch = buscarName(search)
