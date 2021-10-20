@@ -36,4 +36,5 @@ This project was developed for the JavaScript course on the CoderHouse platform 
 - Responsiveness
 - Re-create in React JS
 - Generate my own BackEnd
+- Some kind of Hard Mode game.
 ---
