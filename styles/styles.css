@@ -263,7 +263,6 @@ footer {
 
 #mainGame #display #actionButtons #exitBattle:hover {
   background-position: right center;
-  /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
@@ -287,7 +286,6 @@ footer {
 
 #mainGame #display #actionButtons #pkmFight:hover {
   background-position: right center;
-  /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
@@ -311,7 +309,6 @@ footer {
 
 #mainGame #display #actionButtons #rulesButton:hover {
   background-position: right center;
-  /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
@@ -336,7 +333,6 @@ footer {
 
 #mainGame #display #actionButtons #generateEnemy:hover {
   background-position: right center;
-  /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
@@ -363,7 +359,7 @@ footer {
   margin: 0.5rem;
   border-radius: 5px;
   font-weight: bolder;
-  background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+  transition: 0.5s;
   margin: 10px;
   text-align: center;
   text-transform: uppercase;
@@ -375,48 +371,37 @@ footer {
 }
 
 #mainGame #display #pkmBox button figure {
-  padding: 0.1rem;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
 }
 
 #mainGame #display #pkmBox button figure img {
-  width: 3rem;
-  height: 3rem;
+  height: 4rem;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
 
-#mainGame #display #pkmBox button figure figcaption {
-  margin-left: 0.5rem;
-}
-
-#mainGame #display #pkmBox button figure figcaption div {
-  margin-bottom: 3px;
-}
-
-#mainGame #display #pkmBox button figure figcaption .okStatusPkm {
+#mainGame #display #pkmBox button.okStatusPkm {
   border: 1px solid black;
-  background-color: green;
-  width: 5rem;
+  background-image: linear-gradient(to right, #66ff6b 0%, #51ff4b 51%, #1dff15 100%);
   border-radius: 5px;
 }
 
-#mainGame #display #pkmBox button figure figcaption .injuredStatusPkm {
+#mainGame #display #pkmBox button.injuredStatusPkm {
   border: 1px solid black;
-  background-color: yellow;
-  width: 5rem;
+  background-image: linear-gradient(to right, #f5ff6b 0%, #fffc43 51%, #ffe600 100%);
   border-radius: 5px;
 }
 
-#mainGame #display #pkmBox button figure figcaption .koStatusPkm {
+#mainGame #display #pkmBox button.koStatusPkm {
   border: 1px solid black;
-  background-color: red;
-  width: 5rem;
+  background-image: linear-gradient(to right, #ff6b6b 0%, #ff4343 51%, #ff0000 100%);
   border-radius: 5px;
 }
 
 #mainGame #display #pkmBox button:hover {
   background-position: right center;
-  /* change the direction of the change here */
   text-decoration: none;
 }
 
@@ -435,21 +420,21 @@ footer {
   margin: -1rem;
 }
 
-.okStatusPkm {
+#myPkmCard .okStatusPkm {
   border: 1px solid black;
   background-color: green;
   width: 5rem;
   border-radius: 5px;
 }
 
-.injuredStatusPkm {
+#myPkmCard .injuredStatusPkm {
   border: 1px solid black;
   background-color: yellow;
   width: 5rem;
   border-radius: 5px;
 }
 
-.koStatusPkm {
+#myPkmCard .koStatusPkm {
   border: 1px solid black;
   background-color: red;
   width: 5rem;
@@ -500,8 +485,8 @@ footer {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   overflow-y: scroll;
   width: 100%;
 }
