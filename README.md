@@ -27,6 +27,7 @@ This project was developed for the JavaScript course on the CoderHouse platform 
 | ---------------------------------------------------------------- | ------------------------- |
 | [AnimateCss](https://animate.style/)                             | Animation Framework       |
 | [JQuery](https://jquery.com/)                                    | JavaScript Framework      |
+| [UnderscoreJS](https://underscorejs.org/)                                    | JavaScript Framework      |
 | [PokeApi](https://pokeapi.co/)                                   | The RESTful Pokémon API   |
 
 
