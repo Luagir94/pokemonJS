@@ -414,7 +414,7 @@ const runGameFunction = () => {
                             const nameSearch = buscarName(search)
                             const typeSearch = buscarType(search)
                             const idSearch = buscarId(searchId)
-                            const generalSearch = [...nameSearch, ...typeSearch, ...idSearch]
+                            const generalSearch = _.uniq([...nameSearch, ...typeSearch, ...idSearch])
                             generatePkm(generalSearch)
 
                         }
