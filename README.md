@@ -1,6 +1,6 @@
 #  POKEMON JAVASCRIPT VERSION
 
-## Videogame Project in Vanilla Js 
+## Videogame Project in Vanilla Js & JQuery
 
 This project was developed for the JavaScript course on the CoderHouse platform [![coderhouse](https://emprelatam.com/wp-content/uploads/2019/10/logos-coderhouse-01.png)](https://www.coderhouse.com/)
 
